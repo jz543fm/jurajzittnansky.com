@@ -68,6 +68,73 @@ const translations = {
   },
 
 
+  fr: {
+    navAbout: "À propos",
+    navExperience: "Expérience",
+    navStack: "Technologies",
+    navProjects: "Projets",
+    navContact: "Contact",
+    sayHello: "Me contacter",
+
+    availability: "INGÉNIEUR LOGICIEL · SLOVAQUIE",
+    heroGreeting: "Bonjour, je m'appelle",
+    heroDescription: "Je combine le développement logiciel, les infrastructures cloud-native et une approche axée sur la sécurité afin de concevoir des systèmes fiables.",
+    exploreWork: "Découvrir mes projets",
+    getInTouch: "Me contacter",
+
+    aboutEyebrow: "01 / À PROPOS",
+    aboutTitle: "L'ingénierie au service du sens.",
+    aboutText1: "Je suis ingénieur logiciel originaire de Slovaquie. Au cours de mon parcours professionnel, j'ai travaillé dans le développement logiciel, le DevOps, les infrastructures cloud et l'automatisation.",
+    aboutText2: "J'aime concevoir et développer des systèmes distribués évolutifs, en particulier dans des environnements Kubernetes. Mon expérience comprend également les infrastructures privées dédiées à l'IA et aux GPU, l'orchestration de conteneurs, la supervision et l'automatisation.",
+    aboutText3: "Je m'intéresse également à la cybersécurité, aux tests de sécurité et aux environnements Linux. J'aime comprendre le fonctionnement des systèmes et trouver des moyens d'améliorer leur fiabilité et leur sécurité.",
+
+    experienceEyebrow: "02 / PARCOURS",
+    experienceTitle: "Expérience professionnelle",
+    experienceSubtitle: "Un parcours à travers le développement logiciel, les infrastructures et les technologies cloud-native.",
+    job1Date: "AOÛT 2025 — AUJOURD'HUI",
+    job1Text: "Développement de solutions logicielles, contribution à l'architecture technique et utilisation de technologies cloud-native, notamment les opérateurs et contrôleurs Kubernetes.",
+    job2Text: "Infrastructure cloud privée dédiée à l'IA, plateformes Kubernetes hautement disponibles, CI/CD, supervision, alertes et automatisation.",
+    job3Text: "Automatisation des infrastructures et missions d'ingénierie DevOps.",
+    job4Title: "Développeur logiciel / Ingénieur DevOps",
+    job4Text: "Expérience en développement logiciel, systèmes Linux, développement d'applications et infrastructures.",
+
+    stackEyebrow: "03 / TECHNOLOGIES",
+    stackTitle: "Mon environnement technique",
+    stackSubtitle: "Outils et technologies avec lesquels j'ai une expérience pratique.",
+    stackCloud: "Cloud et infrastructures",
+    stackObserve: "Supervision et observabilité",
+    stackCode: "Programmation",
+    stackSecurity: "Cybersécurité",
+    stackTools: "Outils et plateformes",
+
+    projectsEyebrow: "04 / PROJETS SÉLECTIONNÉS",
+    projectsTitle: "Ce que j'ai développé.",
+    projectsSubtitle: "Des projets pratiques et des expérimentations techniques disponibles sur mon GitHub.",
+    project1Text: "Un environnement Kali Linux conteneurisé destiné aux tests de sécurité, aux expérimentations et à l'utilisation d'outils de sécurité.",
+    project2Text: "Un environnement Parrot OS conteneurisé comprenant les éditions Core et Security ainsi que des exemples de déploiement.",
+    project3Text: "Des expérimentations autour des tests de charge des workloads Kubernetes et du comportement des clusters.",
+    project4Text: "Une configuration personnalisée du prompt Starship et des scripts pour améliorer l'environnement en ligne de commande.",
+    moreGithub: "Découvrir d'autres projets sur GitHub",
+
+    educationEyebrow: "05 / FORMATION",
+    educationTitle: "Les fondations de mon expertise.",
+    degreeMaster: "Master · Informatique",
+    degreeBachelor: "Licence · Réseaux informatiques",
+
+    contactEyebrow: "06 / CONTACT",
+    contactTitle: "Vous avez un<br><span>défi technique intéressant ?</span>",
+    contactText: "Je serais ravi d'échanger sur les technologies, les idées d'ingénierie et les projets intéressants.",
+
+    formName: "Votre nom",
+    formEmail: "Votre adresse e-mail",
+    formMessage: "Votre message",
+    formSubmit: "Envoyer le message",
+    formNote: "Ce formulaire ouvrira votre application de messagerie.",
+    formError: "Veuillez vérifier tous les champs ainsi que votre adresse e-mail.",
+
+    footerText: "Designed by $ sudo pkill -u root",
+  },
+
   ja: {
     navAbout: "私について",
     navExperience: "職務経歴",
@@ -388,6 +455,8 @@ function setLanguage(language) {
     sk: "Ing. Juraj Žittňanský | Softvérový inžinier",
     en: "Ing. Juraj Žittňanský | Software Engineer",
     de: "Ing. Juraj Žittňanský | Software Engineer",
+    ja: "ユライ・ジットナンスキー | ソフトウェアエンジニア",
+    fr: "Juraj Žittňanský | Ingénieur logiciel",
     ar: "يوراي زيتنانسكي | مهندس برمجيات"
   };
 
