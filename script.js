@@ -1,298 +1,341 @@
 
 const translations = {
-  en: {
-    navAbout: "About",
-    navExperience: "Experience",
-    navProjects: "Projects",
-    navContact: "Contact",
-    sayHello: "Say hello ↗",
-    availability: "SOFTWARE ENGINEER · SLOVAKIA",
-    heroGreeting: "Hello, I'm",
-    heroDescription: "Software Engineer passionate about scalable distributed systems, Kubernetes and cloud infrastructure.",
-    exploreWork: "Explore my work",
-    getInTouch: "Get in touch",
-    aboutEyebrow: "01 / ABOUT ME",
-    aboutTitle: "A bit about me",
-    aboutText1: "Hi, I'm Juraj — a Software Engineer from Slovakia with a broad interest in software engineering. Throughout my career, I've explored different areas of the field, from frontend and backend development to DevOps, cloud infrastructure, automation and cybersecurity.",
-    aboutText2: "I enjoy designing and building scalable distributed systems, particularly in Kubernetes environments. I've also contributed to building GPU infrastructure and worked with container orchestration, infrastructure automation, monitoring and security-focused projects.",
-    aboutText3: "I'm curious about how systems work under the hood. Whether it's distributed architectures, cloud platforms or cybersecurity, I enjoy exploring technologies, solving engineering challenges and turning ideas into practical solutions.",
-    expertiseEyebrow: "02 / WHAT I DO",
-    expertiseTitle: "Areas of interest",
-    skill1Title: "Cloud & Kubernetes",
-    skill1Text: "Building and operating scalable cloud-native platforms, Kubernetes clusters and infrastructure.",
-    skill2Title: "Distributed Systems",
-    skill2Text: "Designing reliable systems that can scale, communicate and work together.",
-    skill3Title: "DevOps & Automation",
-    skill3Text: "Automating workflows, improving delivery pipelines and building observable infrastructure.",
-    skill4Title: "Software Development",
-    skill4Text: "Exploring software across frontend, backend and application development.",
-    experienceEyebrow: "03 / CAREER",
-    experienceTitle: "Where I've worked",
-    experienceSubtitle: "A selection of experiences that shaped my engineering journey.",
-    job1Date: "2025 — PRESENT",
-    job1Text: "Working on software solutions, technical architecture and cloud-native technologies, including Kubernetes operators and controllers.",
-    job2Text: "Contributed to private cloud infrastructure, high-availability Kubernetes platforms, CI/CD pipelines, monitoring, alerting and automation.",
-    job3Text: "Worked on infrastructure automation and DevOps-related engineering tasks.",
-    job4Title: "Software Developer / DevOps",
-    job4Text: "Gained experience across software development, Linux systems, application development and infrastructure engineering.",
-    projectsEyebrow: "04 / SELECTED WORK",
-    projectsTitle: "Things I've explored",
-    projectsSubtitle: "A few projects and experiments from my GitHub.",
-    project1Text: "A containerized Kali Linux environment for flexible security testing and experimentation.",
-    project2Text: "A containerized Parrot OS environment with Core and Security editions, custom Dockerfiles, Docker Compose and Kubernetes deployment examples.",
-    project3Text: "A Kubernetes stress-testing project focused on deploying workloads and exploring cluster behaviour under resource pressure.",
-    project4Text: "A customized Starship shell prompt configuration with installation scripts for a cleaner and more informative command-line experience.",
-    moreGithub: "Explore more on GitHub ↗",
-    educationEyebrow: "05 / EDUCATION",
-    educationTitle: "Learning never stops",
-    degreeMaster: "Master's Degree · Informatics",
-    degreeBachelor: "Bachelor's Degree · Computer Networks",
-    contactEyebrow: "06 / GET IN TOUCH",
-    contactTitle: "Have an interesting<br><span>challenge in mind?</span>",
-    contactText: "Feel free to reach out. I'm always happy to discuss technology, engineering ideas and interesting projects.",
-    formName: "Your name",
-    formNamePlaceholder: "John Doe",
-    formEmail: "Your email",
-    formEmailPlaceholder: "john@example.com",
-    formMessage: "Message",
-    formMessagePlaceholder: "Tell me about your idea...",
-    formSubmit: "Send message",
-    formNote: "This form opens your email application to send the message.",
-    formError: "Please complete all fields with a valid email address.",
-    footerText: "Hosted on Cloudflare - sudo pkill -u root."
+  sk: {
+    navAbout:"O mne",
+    navExperience:"Skúsenosti",
+    navStack:"Technológie",
+    navProjects:"Projekty",
+    navContact:"Kontakt",
+    sayHello:"Napíš mi",
+
+    availability:"SOFTVÉROVÝ INŽINIER · SLOVENSKO",
+    heroGreeting:"Ahoj, volám sa",
+    heroDescription:"Prepájam vývoj softvéru, cloud-native infraštruktúru a bezpečnostné myslenie pri budovaní spoľahlivých systémov.",
+    exploreWork:"Pozrieť projekty",
+    getInTouch:"Kontakt",
+
+    aboutEyebrow:"01 / O MNE",
+    aboutTitle:"Technológie, ktoré dávajú zmysel.",
+    aboutText1:"Som softvérový inžinier zo Slovenska. Počas svojej kariéry som pracoval na vývoji softvéru, DevOps, cloudovej infraštruktúre a automatizácii.",
+    aboutText2:"Baví ma navrhovať a budovať škálovateľné distribuované systémy, najmä v prostredí Kubernetes. Skúsenosti mám aj s privátnou AI/GPU infraštruktúrou, orchestráciou kontajnerov, monitoringom a automatizáciou.",
+    aboutText3:"Zaujímam sa aj o cybersecurity, bezpečnostné testovanie a Linuxové prostredia. Rád skúmam, ako systémy fungujú a kde sa dá zlepšiť ich spoľahlivosť a bezpečnosť.",
+
+    experienceEyebrow:"02 / KARIÉRA",
+    experienceTitle:"Pracovné skúsenosti",
+    experienceSubtitle:"Cesta naprieč vývojom softvéru, infraštruktúrou a cloud-native technológiami.",
+    job1Date:"AUG 2025 — SÚČASNOSŤ",
+    job1Text:"Vývoj softvérových riešení, technická architektúra a cloud-native technológie vrátane Kubernetes operátorov a controllerov.",
+    job2Text:"Privátna AI cloudová infraštruktúra, vysoko dostupné Kubernetes platformy, CI/CD, monitoring, alerting a automatizácia.",
+    job3Text:"Automatizácia infraštruktúry a technické úlohy v oblasti DevOps.",
+    job4Title:"Softvérový vývojár / DevOps inžinier",
+    job4Text:"Skúsenosti s vývojom softvéru, Linux systémami, vývojom aplikácií a infraštruktúrou.",
+
+    stackEyebrow:"03 / TECHNOLÓGIE",
+    stackTitle:"Môj technický stack",
+    stackSubtitle:"Nástroje a technológie, s ktorými mám praktické skúsenosti.",
+    stackCloud:"Cloud a infraštruktúra",
+    stackObserve:"Monitoring a observabilita",
+    stackCode:"Programovanie",
+    stackSecurity:"Cybersecurity",
+    stackTools:"Nástroje a platformy",
+
+    projectsEyebrow:"04 / VYBRANÉ PROJEKTY",
+    projectsTitle:"Veci, ktoré som vytvoril.",
+    projectsSubtitle:"Praktické projekty a technické experimenty z môjho GitHubu.",
+    project1Text:"Kontajnerizované prostredie Kali Linux na bezpečnostné testovanie, experimentovanie a prácu s bezpečnostnými nástrojmi.",
+    project2Text:"Kontajnerizované prostredie Parrot OS s edíciami Core a Security a príkladmi nasadenia.",
+    project3Text:"Experimenty so záťažovým testovaním Kubernetes workloadov a správania klastra.",
+    project4Text:"Vlastná konfigurácia Starship promptu a skripty pre pohodlnejšie prostredie príkazového riadka.",
+    moreGithub:"Ďalšie projekty na GitHube",
+
+    educationEyebrow:"05 / VZDELANIE",
+    educationTitle:"Základy, na ktorých staviam.",
+    degreeMaster:"Inžinierske štúdium · Informatika",
+    degreeBachelor:"Bakalárske štúdium · Počítačové siete",
+
+    contactEyebrow:"06 / KONTAKT",
+    contactTitle:"Máš zaujímavú<br><span>technickú výzvu?</span>",
+    contactText:"Rád sa porozprávam o technológiách, technických nápadoch a zaujímavých projektoch.",
+
+    formName:"Tvoje meno",
+    formEmail:"Tvoj e-mail",
+    formMessage:"Správa",
+    formSubmit:"Odoslať správu",
+    formNote:"Formulár otvorí tvoju e-mailovú aplikáciu.",
+    formError:"Skontroluj, prosím, všetky polia a e-mailovú adresu.",
+
+    footerText:"Navrhnuté a vytvorené so zvedavosťou."
   },
 
-  sk: {
-    navAbout: "O mne",
-    navExperience: "Skúsenosti",
-    navProjects: "Projekty",
-    navContact: "Kontakt",
-    sayHello: "Napíš mi ↗",
-    availability: "SOFTVÉROVÝ INŽINIER · SLOVENSKO",
-    heroGreeting: "Ahoj, volám sa",
-    heroDescription: "Som softvérový inžinier so záujmom o škálovateľné distribuované systémy, Kubernetes a cloudovú infraštruktúru.",
-    exploreWork: "Moje projekty",
-    getInTouch: "Kontaktuj ma",
-    aboutEyebrow: "01 / O MNE",
-    aboutTitle: "Niečo o mne",
-    aboutText1: "Ahoj, som Juraj — softvérový inžinier zo Slovenska so širokým záujmom o vývoj softvéru. Počas svojej kariéry som získal skúsenosti v rôznych oblastiach, od frontendového a backendového vývoja až po DevOps, cloudovú infraštruktúru, automatizáciu a kybernetickú bezpečnosť.",
-    aboutText2: "Baví ma navrhovať a budovať škálovateľné distribuované systémy, najmä v prostredí Kubernetes. Podieľal som sa aj na budovaní GPU infraštruktúry a pracoval s orchestráciou kontajnerov, automatizáciou infraštruktúry, monitoringom a projektmi zameranými na bezpečnosť.",
-    aboutText3: "Zaujíma ma, ako systémy fungujú pod povrchom. Či už ide o distribuované architektúry, cloudové platformy alebo kybernetickú bezpečnosť, rád objavujem nové technológie, riešim technické výzvy a premieňam nápady na praktické riešenia.",
-    expertiseEyebrow: "02 / ČOMU SA VENUJEM",
-    expertiseTitle: "Oblasti môjho záujmu",
-    skill1Title: "Cloud a Kubernetes",
-    skill1Text: "Budovanie a prevádzka škálovateľných cloud-native platforiem, Kubernetes klastrov a infraštruktúry.",
-    skill2Title: "Distribuované systémy",
-    skill2Text: "Návrh spoľahlivých systémov, ktoré dokážu škálovať, komunikovať a spolupracovať.",
-    skill3Title: "DevOps a automatizácia",
-    skill3Text: "Automatizácia pracovných postupov, zlepšovanie CI/CD procesov a budovanie monitorovateľnej infraštruktúry.",
-    skill4Title: "Vývoj softvéru",
-    skill4Text: "Skúsenosti a záujem o frontendový, backendový a aplikačný vývoj.",
-    experienceEyebrow: "03 / KARIÉRA",
-    experienceTitle: "Moje pracovné skúsenosti",
-    experienceSubtitle: "Výber pracovných skúseností, ktoré formovali moju profesionálnu cestu.",
-    job1Date: "2025 — SÚČASNOSŤ",
-    job1Text: "Práca na softvérových riešeniach, technickej architektúre a cloud-native technológiách vrátane Kubernetes operátorov a controllerov.",
-    job2Text: "Podieľal som sa na vývoji privátnej cloudovej infraštruktúry, vysoko dostupných Kubernetes platforiem, CI/CD pipeline, monitoringu, alertingu a automatizácie.",
-    job3Text: "Práca na automatizácii infraštruktúry a technických úlohách v oblasti DevOps.",
-    job4Title: "Softvérový vývojár / DevOps inžinier",
-    job4Text: "Získavanie skúseností s vývojom softvéru, Linux systémami, vývojom aplikácií a infraštruktúrou.",
-    projectsEyebrow: "04 / VYBRANÉ PROJEKTY",
-    projectsTitle: "Moje projekty",
-    projectsSubtitle: "Výber projektov a technických experimentov z môjho GitHubu.",
-    project1Text: "Kontajnerizované prostredie Kali Linux určené na bezpečnostné testovanie a experimentovanie.",
-    project2Text: "Kontajnerizované prostredie Parrot OS s edíciami Core a Security, vlastnými Dockerfile, Docker Compose a príkladmi nasadenia v Kubernetes.",
-    project3Text: "Projekt zameraný na záťažové testovanie Kubernetes, nasadzovanie workloadov a skúmanie správania klastra pri vysokom zaťažení.",
-    project4Text: "Vlastná konfigurácia terminálového nástroja Starship spolu s inštalačnými skriptami pre prehľadnejšie prostredie príkazového riadka.",
-    moreGithub: "Ďalšie projekty na GitHube ↗",
-    educationEyebrow: "05 / VZDELANIE",
-    educationTitle: "Vzdelávanie nikdy nekončí",
-    degreeMaster: "Inžinierske štúdium · Informatika",
-    degreeBachelor: "Bakalárske štúdium · Počítačové siete",
-    contactEyebrow: "06 / KONTAKT",
-    contactTitle: "Máš zaujímavú<br><span>technickú výzvu?</span>",
-    contactText: "Neváhaj ma kontaktovať. Rád diskutujem o technológiách, technických nápadoch a zaujímavých projektoch.",
-    formName: "Tvoje meno",
-    formNamePlaceholder: "Ján Novák",
-    formEmail: "Tvoj e-mail",
-    formEmailPlaceholder: "jan@example.com",
-    formMessage: "Správa",
-    formMessagePlaceholder: "Napíš mi o svojom nápade...",
-    formSubmit: "Odoslať správu",
-    formNote: "Tento formulár otvorí tvoju e-mailovú aplikáciu na odoslanie správy.",
-    formError: "Vyplň, prosím, všetky polia a zadaj platnú e-mailovú adresu.",
-    footerText: "Vytvorené so zvedavosťou a vášňou pre technológie."
+  en: {
+    navAbout:"About",
+    navExperience:"Experience",
+    navStack:"Tech stack",
+    navProjects:"Projects",
+    navContact:"Contact",
+    sayHello:"Say hello",
+
+    availability:"SOFTWARE ENGINEER · SLOVAKIA",
+    heroGreeting:"Hello, I'm",
+    heroDescription:"I combine software engineering, cloud-native infrastructure and security-minded thinking to build reliable systems.",
+    exploreWork:"Explore projects",
+    getInTouch:"Get in touch",
+
+    aboutEyebrow:"01 / ABOUT",
+    aboutTitle:"Engineering with purpose.",
+    aboutText1:"I'm a Software Engineer from Slovakia. Throughout my career, I've worked across software development, DevOps, cloud infrastructure and automation.",
+    aboutText2:"I enjoy designing and building scalable distributed systems, especially in Kubernetes environments. My experience also includes private AI/GPU infrastructure, container orchestration, monitoring and automation.",
+    aboutText3:"I'm also interested in cybersecurity, security testing and Linux environments. I enjoy exploring how systems work and identifying ways to improve their reliability and security.",
+
+    experienceEyebrow:"02 / CAREER",
+    experienceTitle:"Professional experience",
+    experienceSubtitle:"A journey across software development, infrastructure and cloud-native technologies.",
+    job1Date:"AUG 2025 — PRESENT",
+    job1Text:"Developing software solutions, contributing to technical architecture and working with cloud-native technologies, including Kubernetes operators and controllers.",
+    job2Text:"Private AI cloud infrastructure, highly available Kubernetes platforms, CI/CD, monitoring, alerting and automation.",
+    job3Text:"Infrastructure automation and DevOps engineering tasks.",
+    job4Title:"Software Developer / DevOps Engineer",
+    job4Text:"Experience across software development, Linux systems, application development and infrastructure.",
+
+    stackEyebrow:"03 / TECHNOLOGIES",
+    stackTitle:"Technical stack",
+    stackSubtitle:"Tools and technologies I have practical experience working with.",
+    stackCloud:"Cloud & Infrastructure",
+    stackObserve:"Observability",
+    stackCode:"Programming",
+    stackSecurity:"Cybersecurity",
+    stackTools:"Tools & Platforms",
+
+    projectsEyebrow:"04 / SELECTED PROJECTS",
+    projectsTitle:"Things I've built.",
+    projectsSubtitle:"Practical projects and technical experiments from my GitHub.",
+    project1Text:"A containerized Kali Linux environment for security testing, experimentation and working with security tools.",
+    project2Text:"A containerized Parrot OS environment with Core and Security editions and deployment examples.",
+    project3Text:"Experiments with Kubernetes workload stress testing and cluster behaviour.",
+    project4Text:"A custom Starship prompt configuration and scripts for a more useful command-line environment.",
+    moreGithub:"Explore more on GitHub",
+
+    educationEyebrow:"05 / EDUCATION",
+    educationTitle:"The foundations I build on.",
+    degreeMaster:"Master's Degree · Informatics",
+    degreeBachelor:"Bachelor's Degree · Computer Networks",
+
+    contactEyebrow:"06 / CONTACT",
+    contactTitle:"Have an interesting<br><span>technical challenge?</span>",
+    contactText:"I'm happy to discuss technology, engineering ideas and interesting projects.",
+
+    formName:"Your name",
+    formEmail:"Your email",
+    formMessage:"Message",
+    formSubmit:"Send message",
+    formNote:"This form opens your email application.",
+    formError:"Please check all fields and your email address.",
+
+    footerText:"Designed and built with curiosity."
   },
 
   de: {
-    navAbout: "Über mich",
-    navExperience: "Erfahrung",
-    navProjects: "Projekte",
-    navContact: "Kontakt",
-    sayHello: "Kontakt aufnehmen ↗",
-    availability: "SOFTWARE ENGINEER · SLOWAKEI",
-    heroGreeting: "Hallo, ich bin",
-    heroDescription: "Software Engineer mit Begeisterung für skalierbare verteilte Systeme, Kubernetes und Cloud-Infrastruktur.",
-    exploreWork: "Meine Projekte",
-    getInTouch: "Kontakt",
-    aboutEyebrow: "01 / ÜBER MICH",
-    aboutTitle: "Ein bisschen über mich",
-    aboutText1: "Hallo, ich bin Juraj — ein Software Engineer aus der Slowakei mit einem breiten Interesse an Softwareentwicklung. Im Laufe meiner Karriere habe ich verschiedene Bereiche kennengelernt, von Frontend- und Backend-Entwicklung bis hin zu DevOps, Cloud-Infrastruktur, Automatisierung und Cybersicherheit.",
-    aboutText2: "Ich beschäftige mich gerne mit der Entwicklung skalierbarer verteilter Systeme, insbesondere in Kubernetes-Umgebungen. Außerdem konnte ich am Aufbau einer GPU-Infrastruktur mitwirken und Erfahrungen mit Container-Orchestrierung, Infrastrukturautomatisierung, Monitoring und sicherheitsorientierten Projekten sammeln.",
-    aboutText3: "Mich interessiert, wie Systeme im Hintergrund funktionieren. Ob verteilte Architekturen, Cloud-Plattformen oder Cybersicherheit – ich beschäftige mich gerne mit neuen Technologien, löse technische Herausforderungen und setze Ideen in praktische Lösungen um.",
-    expertiseEyebrow: "02 / WAS ICH MACHE",
-    expertiseTitle: "Interessengebiete",
-    skill1Title: "Cloud & Kubernetes",
-    skill1Text: "Entwicklung und Betrieb skalierbarer Cloud-native-Plattformen, Kubernetes-Cluster und Infrastrukturen.",
-    skill2Title: "Verteilte Systeme",
-    skill2Text: "Entwicklung zuverlässiger Systeme, die skalieren, kommunizieren und zusammenarbeiten können.",
-    skill3Title: "DevOps & Automatisierung",
-    skill3Text: "Automatisierung von Workflows, Verbesserung von Delivery-Pipelines und Aufbau transparenter Infrastrukturen.",
-    skill4Title: "Softwareentwicklung",
-    skill4Text: "Erfahrung und Interesse an Frontend-, Backend- und Anwendungsentwicklung.",
-    experienceEyebrow: "03 / KARRIERE",
-    experienceTitle: "Meine beruflichen Stationen",
-    experienceSubtitle: "Ein Überblick über Erfahrungen, die meinen beruflichen Weg geprägt haben.",
-    job1Date: "2025 — HEUTE",
-    job1Text: "Arbeit an Softwarelösungen, technischer Architektur und Cloud-native-Technologien, einschließlich Kubernetes Operators und Controllern.",
-    job2Text: "Mitwirkung an privater Cloud-Infrastruktur, hochverfügbaren Kubernetes-Plattformen, CI/CD-Pipelines, Monitoring, Alerting und Automatisierung.",
-    job3Text: "Arbeit an Infrastrukturautomatisierung und verschiedenen DevOps-Aufgaben.",
-    job4Title: "Softwareentwickler / DevOps",
-    job4Text: "Erfahrungen in Softwareentwicklung, Linux-Systemen, Anwendungsentwicklung und Infrastruktur gesammelt.",
-    projectsEyebrow: "04 / AUSGEWÄHLTE PROJEKTE",
-    projectsTitle: "Meine Projekte",
-    projectsSubtitle: "Einige Projekte und Experimente aus meinem GitHub.",
-    project1Text: "Eine containerisierte Kali-Linux-Umgebung für flexible Sicherheitstests und Experimente.",
-    project2Text: "Eine containerisierte Parrot-OS-Umgebung mit Core- und Security-Editionen, eigenen Dockerfiles, Docker Compose und Kubernetes-Deployment-Beispielen.",
-    project3Text: "Ein Kubernetes-Stresstest-Projekt zur Bereitstellung von Workloads und Untersuchung des Clusterverhaltens unter Ressourcenbelastung.",
-    project4Text: "Eine angepasste Starship-Shell-Konfiguration mit Installationsskripten für eine übersichtlichere Kommandozeilenumgebung.",
-    moreGithub: "Mehr auf GitHub entdecken ↗",
-    educationEyebrow: "05 / AUSBILDUNG",
-    educationTitle: "Lernen hört nie auf",
-    degreeMaster: "Masterabschluss · Informatik",
-    degreeBachelor: "Bachelorabschluss · Computernetzwerke",
-    contactEyebrow: "06 / KONTAKT",
-    contactTitle: "Eine interessante<br><span>Herausforderung im Sinn?</span>",
-    contactText: "Melde dich gerne. Ich freue mich immer über Gespräche zu Technologie, technischen Ideen und interessanten Projekten.",
-    formName: "Dein Name",
-    formNamePlaceholder: "Max Mustermann",
-    formEmail: "Deine E-Mail-Adresse",
-    formEmailPlaceholder: "max@example.com",
-    formMessage: "Nachricht",
-    formMessagePlaceholder: "Erzähl mir von deiner Idee...",
-    formSubmit: "Nachricht senden",
-    formNote: "Dieses Formular öffnet dein E-Mail-Programm zum Versenden der Nachricht.",
-    formError: "Bitte fülle alle Felder korrekt aus.",
-    footerText: "Mit Neugier entworfen und entwickelt."
+    navAbout:"Über mich",
+    navExperience:"Erfahrung",
+    navStack:"Technologien",
+    navProjects:"Projekte",
+    navContact:"Kontakt",
+    sayHello:"Kontakt aufnehmen",
+
+    availability:"SOFTWARE ENGINEER · SLOWAKEI",
+    heroGreeting:"Hallo, ich bin",
+    heroDescription:"Ich verbinde Softwareentwicklung, Cloud-native-Infrastruktur und sicherheitsorientiertes Denken, um zuverlässige Systeme zu entwickeln.",
+    exploreWork:"Projekte ansehen",
+    getInTouch:"Kontakt",
+
+    aboutEyebrow:"01 / ÜBER MICH",
+    aboutTitle:"Technik mit Sinn.",
+    aboutText1:"Ich bin Software Engineer aus der Slowakei. Im Laufe meiner Karriere habe ich in den Bereichen Softwareentwicklung, DevOps, Cloud-Infrastruktur und Automatisierung gearbeitet.",
+    aboutText2:"Ich entwickle gerne skalierbare verteilte Systeme, insbesondere in Kubernetes-Umgebungen. Zu meinen Erfahrungen gehören auch private AI/GPU-Infrastruktur, Container-Orchestrierung, Monitoring und Automatisierung.",
+    aboutText3:"Ich interessiere mich auch für Cybersecurity, Sicherheitstests und Linux-Umgebungen. Mich fasziniert, wie Systeme funktionieren und wie sich ihre Zuverlässigkeit und Sicherheit verbessern lassen.",
+
+    experienceEyebrow:"02 / KARRIERE",
+    experienceTitle:"Berufserfahrung",
+    experienceSubtitle:"Ein Weg durch Softwareentwicklung, Infrastruktur und Cloud-native-Technologien.",
+    job1Date:"AUG 2025 — HEUTE",
+    job1Text:"Entwicklung von Softwarelösungen, technische Architektur und Cloud-native-Technologien einschließlich Kubernetes Operators und Controllern.",
+    job2Text:"Private AI-Cloud-Infrastruktur, hochverfügbare Kubernetes-Plattformen, CI/CD, Monitoring, Alerting und Automatisierung.",
+    job3Text:"Infrastrukturautomatisierung und DevOps-Aufgaben.",
+    job4Title:"Softwareentwickler / DevOps Engineer",
+    job4Text:"Erfahrung in Softwareentwicklung, Linux-Systemen, Anwendungsentwicklung und Infrastruktur.",
+
+    stackEyebrow:"03 / TECHNOLOGIEN",
+    stackTitle:"Technischer Stack",
+    stackSubtitle:"Werkzeuge und Technologien, mit denen ich praktische Erfahrung habe.",
+    stackCloud:"Cloud & Infrastruktur",
+    stackObserve:"Observability",
+    stackCode:"Programmierung",
+    stackSecurity:"Cybersecurity",
+    stackTools:"Tools & Plattformen",
+
+    projectsEyebrow:"04 / AUSGEWÄHLTE PROJEKTE",
+    projectsTitle:"Meine Projekte.",
+    projectsSubtitle:"Praktische Projekte und technische Experimente auf GitHub.",
+    project1Text:"Eine containerisierte Kali-Linux-Umgebung für Sicherheitstests, Experimente und die Arbeit mit Sicherheitstools.",
+    project2Text:"Eine containerisierte Parrot-OS-Umgebung mit Core- und Security-Editionen und Deployment-Beispielen.",
+    project3Text:"Experimente mit Kubernetes-Workload-Stresstests und Clusterverhalten.",
+    project4Text:"Eine eigene Starship-Prompt-Konfiguration mit Skripten für eine bessere Kommandozeilenumgebung.",
+    moreGithub:"Mehr auf GitHub entdecken",
+
+    educationEyebrow:"05 / AUSBILDUNG",
+    educationTitle:"Das Fundament meiner Arbeit.",
+    degreeMaster:"Masterabschluss · Informatik",
+    degreeBachelor:"Bachelorabschluss · Computernetzwerke",
+
+    contactEyebrow:"06 / KONTAKT",
+    contactTitle:"Eine interessante<br><span>technische Herausforderung?</span>",
+    contactText:"Ich freue mich auf Gespräche über Technologie, technische Ideen und interessante Projekte.",
+
+    formName:"Dein Name",
+    formEmail:"Deine E-Mail",
+    formMessage:"Nachricht",
+    formSubmit:"Nachricht senden",
+    formNote:"Dieses Formular öffnet dein E-Mail-Programm.",
+    formError:"Bitte überprüfe alle Felder und deine E-Mail-Adresse.",
+
+    footerText:"Mit Neugier entworfen und entwickelt."
   },
 
   ar: {
-    navAbout: "نبذة عني",
-    navExperience: "الخبرة",
-    navProjects: "المشاريع",
-    navContact: "تواصل معي",
-    sayHello: "تواصل معي ↗",
-    availability: "مهندس برمجيات · سلوفاكيا",
-    heroGreeting: "مرحباً، أنا",
-    heroDescription: "مهندس برمجيات مهتم ببناء الأنظمة الموزعة القابلة للتوسع وبيئات Kubernetes والبنية التحتية السحابية.",
-    exploreWork: "اكتشف أعمالي",
-    getInTouch: "تواصل معي",
-    aboutEyebrow: "01 / نبذة عني",
-    aboutTitle: "نبذة مختصرة عني",
-    aboutText1: "مرحباً، أنا يوراي — مهندس برمجيات من سلوفاكيا ولدي اهتمام واسع بهندسة البرمجيات. خلال مسيرتي المهنية، استكشفت مجالات متعددة، بدءاً من تطوير الواجهات الأمامية والخلفية، وصولاً إلى DevOps والبنية التحتية السحابية والأتمتة والأمن السيبراني.",
-    aboutText2: "أستمتع بتصميم وبناء الأنظمة الموزعة القابلة للتوسع، خصوصاً في بيئات Kubernetes. كما ساهمت في بناء بنية تحتية لوحدات GPU وعملت مع تنسيق الحاويات وأتمتة البنية التحتية والمراقبة ومشاريع الأمن.",
-    aboutText3: "يهمني فهم كيفية عمل الأنظمة من الداخل. سواء كانت بنى موزعة أو منصات سحابية أو أمناً سيبرانياً، أستمتع باستكشاف التقنيات وحل التحديات الهندسية وتحويل الأفكار إلى حلول عملية.",
-    expertiseEyebrow: "02 / مجالات عملي",
-    expertiseTitle: "مجالات الاهتمام",
-    skill1Title: "السحابة وKubernetes",
-    skill1Text: "بناء وتشغيل منصات سحابية قابلة للتوسع وعناقيد Kubernetes والبنية التحتية.",
-    skill2Title: "الأنظمة الموزعة",
-    skill2Text: "تصميم أنظمة موثوقة قابلة للتوسع والتواصل والعمل معاً.",
-    skill3Title: "DevOps والأتمتة",
-    skill3Text: "أتمتة سير العمل وتحسين خطوط تسليم البرمجيات وبناء بنية تحتية قابلة للمراقبة.",
-    skill4Title: "تطوير البرمجيات",
-    skill4Text: "استكشاف مجالات تطوير الواجهات الأمامية والخلفية وتطبيقات البرمجيات.",
-    experienceEyebrow: "03 / المسيرة المهنية",
-    experienceTitle: "خبراتي المهنية",
-    experienceSubtitle: "مجموعة من التجارب التي ساهمت في تشكيل مسيرتي الهندسية.",
-    job1Date: "2025 — حتى الآن",
-    job1Text: "العمل على الحلول البرمجية والهندسة التقنية والتقنيات السحابية الحديثة، بما في ذلك مشغلات ووحدات التحكم الخاصة بـ Kubernetes.",
-    job2Text: "المساهمة في البنية التحتية السحابية الخاصة ومنصات Kubernetes عالية التوافر وخطوط CI/CD والمراقبة والتنبيهات والأتمتة.",
-    job3Text: "العمل على أتمتة البنية التحتية ومهام هندسة DevOps.",
-    job4Title: "مطور برمجيات / مهندس DevOps",
-    job4Text: "اكتساب الخبرة في تطوير البرمجيات وأنظمة Linux وتطوير التطبيقات وهندسة البنية التحتية.",
-    projectsEyebrow: "04 / مشاريع مختارة",
-    projectsTitle: "مشاريع وتجارب تقنية",
-    projectsSubtitle: "مجموعة من المشاريع والتجارب المنشورة على GitHub.",
-    project1Text: "بيئة Kali Linux تعمل داخل الحاويات لاختبارات الأمان والتجارب التقنية.",
-    project2Text: "بيئة Parrot OS تعمل داخل الحاويات وتتضمن إصداري Core وSecurity وملفات Docker مخصصة وأمثلة لنشر Kubernetes.",
-    project3Text: "مشروع لاختبار الضغط على Kubernetes، يركز على نشر أحمال العمل ودراسة سلوك العناقيد تحت ضغط الموارد.",
-    project4Text: "إعداد مخصص لأداة Starship مع سكربتات تثبيت لتحسين تجربة استخدام سطر الأوامر.",
-    moreGithub: "اكتشف المزيد على GitHub ↗",
-    educationEyebrow: "05 / التعليم",
-    educationTitle: "التعلم لا يتوقف",
-    degreeMaster: "درجة الماجستير · المعلوماتية",
-    degreeBachelor: "درجة البكالوريوس · شبكات الحاسوب",
-    contactEyebrow: "06 / تواصل معي",
-    contactTitle: "هل لديك<br><span>تحدٍ تقني مثير للاهتمام؟</span>",
-    contactText: "يسعدني التواصل معك ومناقشة التقنيات والأفكار الهندسية والمشاريع المثيرة للاهتمام.",
-    formName: "اسمك",
-    formNamePlaceholder: "الاسم الكامل",
-    formEmail: "بريدك الإلكتروني",
-    formEmailPlaceholder: "name@example.com",
-    formMessage: "الرسالة",
-    formMessagePlaceholder: "أخبرني عن فكرتك...",
-    formSubmit: "إرسال الرسالة",
-    formNote: "سيؤدي هذا النموذج إلى فتح تطبيق البريد الإلكتروني لإرسال الرسالة.",
-    formError: "يرجى ملء جميع الحقول بشكل صحيح.",
-    footerText: "تم التصميم والتطوير بشغف وفضول."
+    navAbout:"نبذة عني",
+    navExperience:"الخبرة",
+    navStack:"التقنيات",
+    navProjects:"المشاريع",
+    navContact:"تواصل",
+    sayHello:"تواصل معي",
+
+    availability:"مهندس برمجيات · سلوفاكيا",
+    heroGreeting:"مرحباً، أنا",
+    heroDescription:"أجمع بين هندسة البرمجيات والبنية التحتية السحابية والتفكير الأمني لبناء أنظمة موثوقة.",
+    exploreWork:"استكشف المشاريع",
+    getInTouch:"تواصل معي",
+
+    aboutEyebrow:"01 / نبذة عني",
+    aboutTitle:"هندسة برمجية بهدف واضح.",
+    aboutText1:"أنا مهندس برمجيات من سلوفاكيا. عملت خلال مسيرتي في تطوير البرمجيات وDevOps والبنية التحتية السحابية والأتمتة.",
+    aboutText2:"أستمتع بتصميم وبناء الأنظمة الموزعة القابلة للتوسع، خصوصاً في بيئات Kubernetes. تشمل خبرتي أيضاً البنية التحتية الخاصة بالذكاء الاصطناعي ووحدات GPU وتنسيق الحاويات والمراقبة والأتمتة.",
+    aboutText3:"أهتم أيضاً بالأمن السيبراني واختبارات الأمان وبيئات Linux. أستمتع بفهم كيفية عمل الأنظمة والبحث عن طرق لتحسين موثوقيتها وأمانها.",
+
+    experienceEyebrow:"02 / المسيرة المهنية",
+    experienceTitle:"الخبرة المهنية",
+    experienceSubtitle:"مسيرة تجمع بين تطوير البرمجيات والبنية التحتية والتقنيات السحابية.",
+    job1Date:"أغسطس 2025 — الآن",
+    job1Text:"تطوير الحلول البرمجية والمساهمة في الهندسة التقنية والعمل مع التقنيات السحابية، بما في ذلك Kubernetes Operators وControllers.",
+    job2Text:"بنية تحتية سحابية خاصة بالذكاء الاصطناعي ومنصات Kubernetes عالية التوافر وCI/CD والمراقبة والتنبيهات والأتمتة.",
+    job3Text:"أتمتة البنية التحتية ومهام هندسة DevOps.",
+    job4Title:"مطور برمجيات / مهندس DevOps",
+    job4Text:"خبرة في تطوير البرمجيات وأنظمة Linux وتطوير التطبيقات والبنية التحتية.",
+
+    stackEyebrow:"03 / التقنيات",
+    stackTitle:"المجموعة التقنية",
+    stackSubtitle:"أدوات وتقنيات لدي خبرة عملية في استخدامها.",
+    stackCloud:"السحابة والبنية التحتية",
+    stackObserve:"المراقبة",
+    stackCode:"البرمجة",
+    stackSecurity:"الأمن السيبراني",
+    stackTools:"الأدوات والمنصات",
+
+    projectsEyebrow:"04 / مشاريع مختارة",
+    projectsTitle:"مشاريع قمت ببنائها.",
+    projectsSubtitle:"مشاريع عملية وتجارب تقنية من حسابي على GitHub.",
+    project1Text:"بيئة Kali Linux تعمل داخل الحاويات لاختبارات الأمان والتجارب والعمل مع أدوات الأمن.",
+    project2Text:"بيئة Parrot OS داخل الحاويات بإصداري Core وSecurity وأمثلة للنشر.",
+    project3Text:"تجارب لاختبار ضغط أحمال Kubernetes ودراسة سلوك العناقيد.",
+    project4Text:"إعداد مخصص لأداة Starship وسكربتات لتحسين بيئة سطر الأوامر.",
+    moreGithub:"اكتشف المزيد على GitHub",
+
+    educationEyebrow:"05 / التعليم",
+    educationTitle:"الأساس الذي أبني عليه.",
+    degreeMaster:"درجة الماجستير · المعلوماتية",
+    degreeBachelor:"درجة البكالوريوس · شبكات الحاسوب",
+
+    contactEyebrow:"06 / التواصل",
+    contactTitle:"هل لديك<br><span>تحدٍ تقني مثير؟</span>",
+    contactText:"يسعدني الحديث عن التكنولوجيا والأفكار الهندسية والمشاريع المثيرة للاهتمام.",
+
+    formName:"اسمك",
+    formEmail:"بريدك الإلكتروني",
+    formMessage:"الرسالة",
+    formSubmit:"إرسال الرسالة",
+    formNote:"يفتح هذا النموذج تطبيق البريد الإلكتروني.",
+    formError:"يرجى التحقق من جميع الحقول وعنوان البريد.",
+
+    footerText:"صُمم وطُور بفضول وشغف."
   }
 };
 
-// LANGUAGE SWITCHER
-
 const languageSelect = document.querySelector("#languageSelect");
+const menuToggle = document.querySelector("#menuToggle");
+const navLinks = document.querySelector("#navLinks");
 
 function setLanguage(language) {
-  const dictionary = translations[language];
-  if (!dictionary) return;
+  const selectedLanguage = translations[language] ? language : "sk";
+  const dictionary = translations[selectedLanguage];
 
-  document.documentElement.lang = language;
-  document.documentElement.dir = language === "ar" ? "rtl" : "ltr";
+  document.documentElement.lang = selectedLanguage;
+  document.documentElement.dir =
+    selectedLanguage === "ar" ? "rtl" : "ltr";
 
   document.querySelectorAll("[data-i18n]").forEach((element) => {
     const key = element.dataset.i18n;
+
     if (Object.prototype.hasOwnProperty.call(dictionary, key)) {
       element.innerHTML = dictionary[key];
     }
   });
 
-  document.querySelectorAll("[data-i18n-placeholder]").forEach((element) => {
-    const key = element.dataset.i18nPlaceholder;
-    if (Object.prototype.hasOwnProperty.call(dictionary, key)) {
-      element.placeholder = dictionary[key];
+  const placeholders = {
+    sk: {
+      contactName: "Ján Novák",
+      contactEmail: "jan@example.com",
+      contactMessage: "Napíš mi o svojom nápade..."
+    },
+    en: {
+      contactName: "John Doe",
+      contactEmail: "john@example.com",
+      contactMessage: "Tell me about your idea..."
+    },
+    de: {
+      contactName: "Max Mustermann",
+      contactEmail: "max@example.com",
+      contactMessage: "Erzähl mir von deiner Idee..."
+    },
+    ar: {
+      contactName: "الاسم الكامل",
+      contactEmail: "name@example.com",
+      contactMessage: "أخبرني عن فكرتك..."
     }
+  };
+
+  Object.entries(placeholders[selectedLanguage]).forEach(([id, value]) => {
+    const field = document.getElementById(id);
+    if (field) field.placeholder = value;
   });
 
-  if (languageSelect) {
-    languageSelect.value = language;
-  }
-
   const titles = {
-    en: "Ing. Juraj Žittňanský | Software Engineer",
     sk: "Ing. Juraj Žittňanský | Softvérový inžinier",
+    en: "Ing. Juraj Žittňanský | Software Engineer",
     de: "Ing. Juraj Žittňanský | Software Engineer",
     ar: "يوراي زيتنانسكي | مهندس برمجيات"
   };
 
-  document.title = titles[language];
+  document.title = titles[selectedLanguage];
+
+  if (languageSelect) {
+    languageSelect.value = selectedLanguage;
+  }
 
   try {
-    localStorage.setItem("preferredLanguage", language);
-  } catch (error) {
-    console.warn("Could not save language preference:", error);
-  }
+    localStorage.setItem("preferredLanguage", selectedLanguage);
+  } catch (_) {}
 }
+
+/* Language selector */
 
 if (languageSelect) {
   languageSelect.addEventListener("change", (event) => {
@@ -300,7 +343,29 @@ if (languageSelect) {
   });
 }
 
-// CONTACT FORM
+/* Mobile navigation */
+
+if (menuToggle && navLinks) {
+  menuToggle.addEventListener("click", () => {
+    const isOpen = navLinks.classList.toggle("open");
+
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+    menuToggle.setAttribute(
+      "aria-label",
+      isOpen ? "Close navigation" : "Open navigation"
+    );
+  });
+
+  navLinks.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("open");
+      menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.setAttribute("aria-label", "Open navigation");
+    });
+  });
+}
+
+/* Contact form */
 
 const contactForm = document.querySelector("#contactForm");
 const formStatus = document.querySelector("#formStatus");
@@ -309,22 +374,28 @@ if (contactForm) {
   contactForm.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    const name = contactForm.querySelector('[name="name"]')?.value.trim();
-    const email = contactForm.querySelector('[name="email"]')?.value.trim();
-    const message = contactForm.querySelector('[name="message"]')?.value.trim();
+    const name = contactForm.elements.name.value.trim();
+    const email = contactForm.elements.email.value.trim();
+    const message = contactForm.elements.message.value.trim();
 
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const currentLanguage =
+      document.documentElement.lang || "sk";
 
-    if (!name || !email || !message || !emailPattern.test(email)) {
+    const emailIsValid =
+      /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+    if (!name || !message || !emailIsValid) {
       if (formStatus) {
-        const language = document.documentElement.lang || "en";
         formStatus.textContent =
-          translations[language]?.formError || translations.en.formError;
+          translations[currentLanguage].formError;
       }
       return;
     }
 
-    const subject = encodeURIComponent(`Portfolio contact from ${name}`);
+    const subject = encodeURIComponent(
+      `Portfolio contact from ${name}`
+    );
+
     const body = encodeURIComponent(
       `Name: ${name}\nEmail: ${email}\n\n${message}`
     );
@@ -334,23 +405,21 @@ if (contactForm) {
   });
 }
 
-// FOOTER YEAR
+/* Current year */
 
-const yearElement = document.querySelector("#year");
+const year = document.querySelector("#year");
 
-if (yearElement) {
-  yearElement.textContent = new Date().getFullYear();
+if (year) {
+  year.textContent = new Date().getFullYear();
 }
 
-// INITIALIZE LANGUAGE — Slovak by default
+/* Slovak is the default language on first visit. */
 
 let savedLanguage = null;
 
 try {
   savedLanguage = localStorage.getItem("preferredLanguage");
-} catch (error) {
-  console.warn("Could not read language preference:", error);
-}
+} catch (_) {}
 
 const initialLanguage =
   savedLanguage && translations[savedLanguage]
@@ -358,4 +427,3 @@ const initialLanguage =
     : "sk";
 
 setLanguage(initialLanguage);
-
