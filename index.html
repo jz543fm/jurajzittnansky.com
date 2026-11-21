@@ -1,0 +1,344 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b0f0e">
+  <meta name="description" content="Ing. Juraj Žittňanský — Software Engineer focused on Kubernetes, distributed systems, DevOps and cloud infrastructure.">
+  <title>Ing. Juraj Žittňanský | Software Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="nav container">
+      <a class="logo" href="#home">J<span>.</span>Z</a>
+
+      <div class="nav-links">
+        <a href="#about" data-i18n="navAbout">About</a>
+        <a href="#experience" data-i18n="navExperience">Experience</a>
+        <a href="#projects" data-i18n="navProjects">Projects</a>
+        <a href="#contact" data-i18n="navContact">Contact</a>
+      </div>
+
+      <div class="nav-actions">
+        <label class="sr-only" for="languageSelect">Language</label>
+        <select id="languageSelect" class="language-select" aria-label="Select language">
+          <option value="en">EN</option>
+          <option value="de">DE</option>
+          <option value="ar">AR</option>
+        </select>
+        <a class="nav-cta" href="#contact" data-i18n="sayHello">Say hello ↗</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero container" id="home">
+      <div class="hero-content">
+        <div class="status">
+          <span class="status-dot"></span>
+          <span data-i18n="availability">SOFTWARE ENGINEER · SLOVAKIA</span>
+        </div>
+
+        <p class="hero-intro" data-i18n="heroGreeting">Hello, I'm</p>
+        <h1>Ing. Juraj<br><span>Žittňanský.</span></h1>
+
+        <p class="hero-description" data-i18n="heroDescription">
+          Software Engineer passionate about scalable distributed systems,
+          Kubernetes and cloud infrastructure.
+        </p>
+
+        <div class="hero-buttons">
+          <a class="button button-primary" href="#projects" data-i18n="exploreWork">
+            Explore my work <span>↗</span>
+          </a>
+          <a class="button button-secondary" href="#contact" data-i18n="getInTouch">
+            Get in touch
+          </a>
+        </div>
+
+        <div class="social-links">
+          <a href="https://github.com/jz543fm" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+          <a href="https://www.linkedin.com/in/juraj-%C5%BEitt%C5%88ansk%C3%BD-193773190/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          <a href="https://gitlab.com/jz543fm" target="_blank" rel="noopener noreferrer">GitLab ↗</a>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-label="Abstract technology illustration">
+        <div class="visual-glow"></div>
+        <div class="visual-grid"></div>
+        <div class="terminal">
+          <div class="terminal-top">
+            <div class="terminal-dots"><i></i><i></i><i></i></div>
+            <span>~/juraj</span>
+          </div>
+          <div class="terminal-body">
+            <p><span class="terminal-green">$</span> whoami</p>
+            <p class="terminal-output">software-engineer/devops-engineer</p>
+            <p><span class="terminal-green">$</span> focus --list</p>
+            <p class="terminal-output">Kubernetes</p>
+            <p class="terminal-output">Distributed Systems</p>
+            <p class="terminal-output">Cloud &amp; DevOps</p>
+            <p><span class="terminal-green">$</span> <span class="cursor">_</span></p>
+          </div>
+        </div>
+        <div class="visual-tag tag-top">K8s / CLOUD</div>
+        <div class="visual-tag tag-bottom">BUILD · AUTOMATE · SCALE</div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section container" id="about">
+      <div class="section-heading">
+        <span class="eyebrow" data-i18n="aboutEyebrow">01 / ABOUT ME</span>
+        <h2 data-i18n="aboutTitle">A bit about me</h2>
+      </div>
+
+      <div class="about-content">
+        <p data-i18n="aboutText1">
+          Hi, I'm Juraj — a Software Engineer from Slovakia who loves building
+          scalable distributed systems, especially in Kubernetes environments.
+          Throughout my career, I've explored different areas of software
+          engineering, from frontend and backend development to DevOps,
+          cloud infrastructure and automation.
+        </p>
+
+        <p data-i18n="aboutText2">
+          I enjoy working on systems that need to be reliable, scalable and
+          maintainable. I've also had the opportunity to contribute to building
+          GPU infrastructure, expanding my experience with modern computing
+          platforms and cloud technologies.
+        </p>
+
+        <p data-i18n="aboutText3">
+          I'm always curious about how things work behind the scenes and enjoy
+          turning complex technical challenges into practical solutions.
+        </p>
+      </div>
+    </section>
+
+    <!-- EXPERTISE -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow" data-i18n="expertiseEyebrow">02 / WHAT I DO</span>
+          <h2 data-i18n="expertiseTitle">Areas of interest</h2>
+        </div>
+
+        <div class="expertise-grid">
+          <article class="expertise-card">
+            <span class="card-number">01</span>
+            <div class="card-icon">⌘</div>
+            <h3 data-i18n="skill1Title">Cloud &amp; Kubernetes</h3>
+            <p data-i18n="skill1Text">Building and operating scalable cloud-native platforms, Kubernetes clusters and infrastructure.</p>
+            <div class="tag-list">
+              <span>Kubernetes</span><span>Helm</span><span>Docker</span><span>Terraform</span>
+            </div>
+          </article>
+
+          <article class="expertise-card">
+            <span class="card-number">02</span>
+            <div class="card-icon">⌁</div>
+            <h3 data-i18n="skill2Title">Distributed Systems</h3>
+            <p data-i18n="skill2Text">Designing reliable systems that can scale, communicate and work together.</p>
+            <div class="tag-list">
+              <span>Microservices</span><span>Go</span><span>Linux</span>
+            </div>
+          </article>
+
+          <article class="expertise-card">
+            <span class="card-number">03</span>
+            <div class="card-icon">◈</div>
+            <h3 data-i18n="skill3Title">DevOps &amp; Automation</h3>
+            <p data-i18n="skill3Text">Automating workflows, improving delivery pipelines and building observable infrastructure.</p>
+            <div class="tag-list">
+              <span>CI/CD</span><span>Ansible</span><span>Prometheus</span><span>Grafana</span>
+            </div>
+          </article>
+
+          <article class="expertise-card">
+            <span class="card-number">04</span>
+            <div class="card-icon">▧</div>
+            <h3 data-i18n="skill4Title">Software Development</h3>
+            <p data-i18n="skill4Text">Exploring software across frontend, backend and application development.</p>
+            <div class="tag-list">
+              <span>Java</span><span>JavaScript</span><span>TypeScript</span><span>Node.js</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="section container" id="experience">
+      <div class="section-heading">
+        <span class="eyebrow" data-i18n="experienceEyebrow">03 / CAREER</span>
+        <h2 data-i18n="experienceTitle">Where I've worked</h2>
+        <p class="section-subtitle" data-i18n="experienceSubtitle">
+          A selection of experiences that shaped my engineering journey.
+        </p>
+      </div>
+
+      <div class="timeline">
+        <article class="timeline-item">
+          <div class="timeline-date" data-i18n="job1Date">2025 — PRESENT</div>
+          <div class="timeline-content">
+            <h3>Software Engineer</h3>
+            <p class="company">Polystar · Elisa Industriq</p>
+            <p data-i18n="job1Text">Working on software solutions, technical architecture and cloud-native technologies, including Kubernetes operators and controllers.</p>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-date">2022 — 2025</div>
+          <div class="timeline-content">
+            <h3>DevOps Engineer</h3>
+            <p class="company">Seznam.cz</p>
+            <p data-i18n="job2Text">Contributed to private cloud infrastructure, Kubernetes platforms, CI/CD, monitoring and automation.</p>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-date">2022</div>
+          <div class="timeline-content">
+            <h3>DevOps Engineer</h3>
+            <p class="company">Adaptiware</p>
+            <p data-i18n="job3Text">Worked on infrastructure automation and DevOps-related engineering tasks.</p>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-date">2019 — 2022</div>
+          <div class="timeline-content">
+            <h3 data-i18n="job4Title">Software Developer / DevOps</h3>
+            <p class="company">ADUS Technologies · Deutsche Telekom IT Solutions</p>
+            <p data-i18n="job4Text">Gained experience across software development, Linux systems, application development and infrastructure.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section section-alt" id="projects">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow" data-i18n="projectsEyebrow">04 / SELECTED WORK</span>
+          <h2 data-i18n="projectsTitle">Things I've explored</h2>
+          <p class="section-subtitle" data-i18n="projectsSubtitle">
+            A few projects and experiments from my GitHub.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+          <a class="project-card" href="https://github.com/jz543fm/kali-dockerized" target="_blank" rel="noopener noreferrer">
+            <div class="project-top"><span>01</span><span>↗</span></div>
+            <div class="project-symbol">⌁</div>
+            <h3>Kali Dockerized</h3>
+            <p data-i18n="project1Text">A containerized Kali Linux environment for flexible security testing and experimentation.</p>
+            <div class="project-tech">Docker · Linux · Security</div>
+          </a>
+
+          <a class="project-card" href="https://github.com/jz543fm/docker-parrot" target="_blank" rel="noopener noreferrer">
+            <div class="project-top"><span>02</span><span>↗</span></div>
+            <div class="project-symbol">◉</div>
+            <h3>Docker Parrot</h3>
+            <p data-i18n="project2Text">A Dockerized Parrot OS environment, exploring portable and reproducible development setups.</p>
+            <div class="project-tech">Docker · Linux</div>
+          </a>
+
+          <a class="project-card" href="https://github.com/jz543fm/stress-K8s" target="_blank" rel="noopener noreferrer">
+            <div class="project-top"><span>03</span><span>↗</span></div>
+            <div class="project-symbol">⌘</div>
+            <h3>Stress K8s</h3>
+            <p data-i18n="project3Text">Experiments with Kubernetes workloads and cluster stress testing.</p>
+            <div class="project-tech">Kubernetes · Containers</div>
+          </a>
+
+          <a class="project-card" href="https://github.com/jz543fm/starship-conf" target="_blank" rel="noopener noreferrer">
+            <div class="project-top"><span>04</span><span>↗</span></div>
+            <div class="project-symbol">✳</div>
+            <h3>Starship Config</h3>
+            <p data-i18n="project4Text">Personal shell prompt configuration and command-line environment customization.</p>
+            <div class="project-tech">Shell · Configuration</div>
+          </a>
+        </div>
+
+        <a class="text-link" href="https://github.com/jz543fm" target="_blank" rel="noopener noreferrer" data-i18n="moreGithub">
+          Explore more on GitHub ↗
+        </a>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="section container" id="education">
+      <div class="section-heading">
+        <span class="eyebrow" data-i18n="educationEyebrow">05 / EDUCATION</span>
+        <h2 data-i18n="educationTitle">Learning never stops</h2>
+      </div>
+
+      <div class="education-card">
+        <div>
+          <h3>Technical University of Košice</h3>
+          <p data-i18n="degreeMaster">Master's Degree · Informatics</p>
+          <span class="education-date">2020 — 2022</span>
+        </div>
+        <div class="education-divider"></div>
+        <div>
+          <h3>Technical University of Košice</h3>
+          <p data-i18n="degreeBachelor">Bachelor's Degree · Computer Networks</p>
+          <span class="education-date">2017 — 2020</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section contact-section" id="contact">
+      <div class="container contact-layout">
+        <div>
+          <span class="eyebrow" data-i18n="contactEyebrow">06 / GET IN TOUCH</span>
+          <h2 data-i18n="contactTitle">Have an interesting<br><span>challenge in mind?</span></h2>
+          <p class="contact-description" data-i18n="contactText">
+            Feel free to reach out. I'm always happy to discuss technology,
+            engineering ideas and interesting projects.
+          </p>
+          <a class="contact-email" href="mailto:zittnansky.juraj@gmail.com">
+            zittnansky.juraj@gmail.com ↗
+          </a>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+          <label for="name" data-i18n="formName">Your name</label>
+          <input id="name" name="name" type="text" required placeholder="John Doe" data-i18n-placeholder="formNamePlaceholder">
+
+          <label for="email" data-i18n="formEmail">Your email</label>
+          <input id="email" name="email" type="email" required placeholder="john@example.com" data-i18n-placeholder="formEmailPlaceholder">
+
+          <label for="message" data-i18n="formMessage">Message</label>
+          <textarea id="message" name="message" rows="5" required placeholder="Tell me about your idea..." data-i18n-placeholder="formMessagePlaceholder"></textarea>
+
+          <button class="button button-primary form-button" type="submit">
+            <span data-i18n="formSubmit">Send message</span> <span>↗</span>
+          </button>
+          <p class="form-note" data-i18n="formNote">This form opens your email application to send the message.</p>
+          <p class="form-status" id="formStatus" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <a class="logo" href="#home">J<span>.</span>Z</a>
+      <p data-i18n="footerText">Designed &amp; built with curiosity.</p>
+      <span>© <span id="year"></span> Ing. Juraj Žittňanský</span>
+    </div>
+  </footer>
+</body>
+</html>
