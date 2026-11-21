@@ -268,6 +268,74 @@ const translations = {
     footerText: "Designed by $ sudo pkill -u root",
   },
 
+  it: {
+    navAbout: "Chi sono",
+    navExperience: "Esperienza",
+    navStack: "Tecnologie",
+    navProjects: "Progetti",
+    navContact: "Contatti",
+    sayHello: "Scrivimi",
+
+    availability: "INGEGNERE SOFTWARE · SLOVACCHIA",
+    heroGreeting: "Ciao, mi chiamo",
+    heroDescription: "Unisco sviluppo software, infrastrutture cloud-native e attenzione alla sicurezza per realizzare sistemi affidabili.",
+    exploreWork: "Scopri i progetti",
+    getInTouch: "Contattami",
+
+    aboutEyebrow: "01 / CHI SONO",
+    aboutTitle: "Tecnologia con uno scopo.",
+    aboutText1: "Sono un ingegnere software slovacco. Nel corso della mia carriera ho lavorato nello sviluppo software, nel DevOps, nelle infrastrutture cloud e nell'automazione.",
+    aboutText2: "Mi piace progettare e realizzare sistemi distribuiti e scalabili, soprattutto in ambienti Kubernetes. Ho esperienza anche con infrastrutture private per AI/GPU, orchestrazione dei container, monitoraggio e automazione.",
+    aboutText3: "Mi interessano anche la cybersecurity, i test di sicurezza e gli ambienti Linux. Mi piace approfondire il funzionamento dei sistemi e individuare modi per migliorarne l'affidabilità e la sicurezza.",
+
+    experienceEyebrow: "02 / CARRIERA",
+    experienceTitle: "Esperienza professionale",
+    experienceSubtitle: "Un percorso tra sviluppo software, infrastrutture e tecnologie cloud-native.",
+    job1Date: "AGO 2025 — PRESENTE",
+    job1Text: "Sviluppo di soluzioni software, contributo all'architettura tecnica e utilizzo di tecnologie cloud-native, inclusi operator e controller Kubernetes.",
+    job2Text: "Infrastruttura cloud privata per l'AI, piattaforme Kubernetes ad alta disponibilità, CI/CD, monitoraggio, sistemi di allerta e automazione.",
+    job3Text: "Automazione delle infrastrutture e attività di ingegneria DevOps.",
+    job4Title: "Sviluppatore software / Ingegnere DevOps",
+    job4Text: "Esperienza nello sviluppo software, nei sistemi Linux, nello sviluppo di applicazioni e nelle infrastrutture.",
+
+    stackEyebrow: "03 / TECNOLOGIE",
+    stackTitle: "Il mio stack tecnologico",
+    stackSubtitle: "Strumenti e tecnologie con cui ho maturato esperienza pratica.",
+    stackCloud: "Cloud e infrastrutture",
+    stackObserve: "Monitoraggio e osservabilità",
+    stackCode: "Programmazione",
+    stackSecurity: "Cybersecurity",
+    stackTools: "Strumenti e piattaforme",
+
+    projectsEyebrow: "04 / PROGETTI SELEZIONATI",
+    projectsTitle: "Ciò che ho realizzato.",
+    projectsSubtitle: "Progetti pratici e sperimentazioni tecniche disponibili sul mio GitHub.",
+    project1Text: "Un ambiente Kali Linux containerizzato per test di sicurezza, sperimentazione e utilizzo di strumenti di sicurezza.",
+    project2Text: "Un ambiente Parrot OS containerizzato con le edizioni Core e Security ed esempi di deployment.",
+    project3Text: "Esperimenti con test di carico dei workload Kubernetes e analisi del comportamento dei cluster.",
+    project4Text: "Una configurazione personalizzata del prompt Starship e script per migliorare l'ambiente a riga di comando.",
+    moreGithub: "Scopri altri progetti su GitHub",
+
+    educationEyebrow: "05 / FORMAZIONE",
+    educationTitle: "Le basi su cui costruisco.",
+    degreeMaster: "Laurea magistrale · Informatica",
+    degreeBachelor: "Laurea triennale · Reti informatiche",
+
+    contactEyebrow: "06 / CONTATTI",
+    contactTitle: "Hai una<br><span>sfida tecnica interessante?</span>",
+    contactText: "Mi fa piacere parlare di tecnologia, idee ingegneristiche e progetti interessanti.",
+
+    formName: "Il tuo nome",
+    formEmail: "La tua e-mail",
+    formMessage: "Messaggio",
+    formSubmit: "Invia messaggio",
+    formNote: "Questo modulo aprirà la tua applicazione di posta elettronica.",
+    formError: "Controlla tutti i campi e verifica il tuo indirizzo e-mail.",
+
+    footerText: "Designed by $ sudo pkill -u root",
+  },
+
+
   de: {
     navAbout:"Über mich",
     navExperience:"Erfahrung",
@@ -443,6 +511,21 @@ function setLanguage(language) {
       contactName: "الاسم الكامل",
       contactEmail: "name@example.com",
       contactMessage: "أخبرني عن فكرتك..."
+    },
+    it: {
+      contactName: "Nome completo",
+      contactEmail: "nome@example.com",
+      contactMessage: "Parlami della tua idea..."
+    },
+    fr: {
+      contactName: "Nom complet",
+      contactEmail: "nom@example.com",
+      contactMessage: "Parlez-moi de votre idée..."
+    },
+    ja: {
+      contactName: "フルネーム",
+      contactEmail: "name@example.com",
+      contactMessage: "あなたのアイデアについて教えてください..."
     }
   };
 
@@ -457,7 +540,8 @@ function setLanguage(language) {
     de: "Ing. Juraj Žittňanský | Software Engineer",
     ja: "ユライ・ジットナンスキー | ソフトウェアエンジニア",
     fr: "Juraj Žittňanský | Ingénieur logiciel",
-    ar: "يوراي زيتنانسكي | مهندس برمجيات"
+    ar: "يوراي زيتنانسكي | مهندس برمجيات",
+    it: "Juraj Žittňanský | Ingegnere del software"
   };
 
   document.title = titles[selectedLanguage];
