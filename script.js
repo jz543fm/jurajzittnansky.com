@@ -67,6 +67,73 @@ const translations = {
     footerText: "Designed by $ sudo pkill -u root",
   },
 
+
+  ja: {
+    navAbout: "私について",
+    navExperience: "職務経歴",
+    navStack: "技術スタック",
+    navProjects: "プロジェクト",
+    navContact: "お問い合わせ",
+    sayHello: "お問い合わせ",
+
+    availability: "ソフトウェアエンジニア · スロバキア",
+    heroGreeting: "こんにちは、私は",
+    heroDescription: "ソフトウェア開発、クラウドネイティブなインフラストラクチャ、セキュリティを意識した設計を組み合わせ、信頼性の高いシステムを構築しています。",
+    exploreWork: "プロジェクトを見る",
+    getInTouch: "お問い合わせ",
+
+    aboutEyebrow: "01 / 私について",
+    aboutTitle: "意味のあるテクノロジーを。",
+    aboutText1: "スロバキア出身のソフトウェアエンジニアです。これまでソフトウェア開発、DevOps、クラウドインフラストラクチャ、自動化の分野で経験を積んできました。",
+    aboutText2: "特にKubernetes環境における、スケーラブルな分散システムの設計と構築に取り組むことが好きです。また、プライベートAI/GPUインフラストラクチャ、コンテナオーケストレーション、監視、運用自動化にも携わってきました。",
+    aboutText3: "サイバーセキュリティ、セキュリティテスト、Linux環境にも関心があります。システムの仕組みを理解し、信頼性と安全性を向上させる方法を探求することが好きです。",
+
+    experienceEyebrow: "02 / キャリア",
+    experienceTitle: "職務経歴",
+    experienceSubtitle: "ソフトウェア開発、インフラストラクチャ、クラウドネイティブ技術にわたる経験。",
+    job1Date: "2025年8月 — 現在",
+    job1Text: "ソフトウェアソリューションの開発、技術アーキテクチャの設計、Kubernetes OperatorやControllerを含むクラウドネイティブ技術に取り組んでいます。",
+    job2Text: "プライベートAIクラウドインフラストラクチャ、高可用性Kubernetesプラットフォーム、CI/CD、監視、アラート、自動化に携わりました。",
+    job3Text: "インフラストラクチャの自動化およびDevOpsエンジニアリング業務を担当しました。",
+    job4Title: "ソフトウェア開発者 / DevOpsエンジニア",
+    job4Text: "ソフトウェア開発、Linuxシステム、アプリケーション開発、インフラストラクチャに関する経験があります。",
+
+    stackEyebrow: "03 / テクノロジー",
+    stackTitle: "技術スタック",
+    stackSubtitle: "実務経験のあるツールとテクノロジー。",
+    stackCloud: "クラウドとインフラストラクチャ",
+    stackObserve: "監視とオブザーバビリティ",
+    stackCode: "プログラミング",
+    stackSecurity: "サイバーセキュリティ",
+    stackTools: "ツールとプラットフォーム",
+
+    projectsEyebrow: "04 / 主なプロジェクト",
+    projectsTitle: "これまでに作ったもの。",
+    projectsSubtitle: "GitHubで公開している実践的なプロジェクトと技術的な実験。",
+    project1Text: "セキュリティテスト、技術検証、各種セキュリティツールの利用を目的とした、DockerベースのKali Linux環境です。",
+    project2Text: "CoreおよびSecurityエディションとデプロイ例を含む、コンテナ化されたParrot OS環境です。",
+    project3Text: "Kubernetesのワークロードに対する負荷テストと、クラスターの動作に関する実験です。",
+    project4Text: "コマンドライン環境を使いやすくするための、Starshipプロンプトのカスタム設定とスクリプトです。",
+    moreGithub: "GitHubで他のプロジェクトを見る",
+
+    educationEyebrow: "05 / 学歴",
+    educationTitle: "現在の技術を支える基礎。",
+    degreeMaster: "修士課程 · 情報学",
+    degreeBachelor: "学士課程 · コンピュータネットワーク",
+
+    contactEyebrow: "06 / お問い合わせ",
+    contactTitle: "技術的な<br><span>課題をお持ちですか？</span>",
+    contactText: "テクノロジー、エンジニアリングのアイデア、興味深いプロジェクトについて、ぜひお話ししましょう。",
+
+    formName: "お名前",
+    formEmail: "メールアドレス",
+    formMessage: "メッセージ",
+    formSubmit: "メッセージを送信",
+    formNote: "送信すると、お使いのメールアプリが開きます。",
+    formError: "すべての項目とメールアドレスが正しく入力されているか確認してください。",
+
+    footerText: "Designed by $ sudo pkill -u root",
+  },
   en: {
     navAbout:"About",
     navExperience:"Experience",
