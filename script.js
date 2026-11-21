@@ -64,7 +64,7 @@ const translations = {
     formNote:"Formulár otvorí tvoju e-mailovú aplikáciu.",
     formError:"Skontroluj, prosím, všetky polia a e-mailovú adresu.",
 
-    footerText:"Navrhnuté a vytvorené so zvedavosťou."
+    footerText: "Designed by $ sudo pkill -u root",
   },
 
   en: {
@@ -131,7 +131,7 @@ const translations = {
     formNote:"This form opens your email application.",
     formError:"Please check all fields and your email address.",
 
-    footerText:"Designed and built with curiosity."
+    footerText: "Designed by $ sudo pkill -u root",
   },
 
   de: {
@@ -198,7 +198,7 @@ const translations = {
     formNote:"Dieses Formular öffnet dein E-Mail-Programm.",
     formError:"Bitte überprüfe alle Felder und deine E-Mail-Adresse.",
 
-    footerText:"Mit Neugier entworfen und entwickelt."
+    footerText: "Designed by $ sudo pkill -u root",
   },
 
   ar: {
@@ -265,7 +265,7 @@ const translations = {
     formNote:"يفتح هذا النموذج تطبيق البريد الإلكتروني.",
     formError:"يرجى التحقق من جميع الحقول وعنوان البريد.",
 
-    footerText:"صُمم وطُور بفضول وشغف."
+    footerText: "Designed by $ sudo pkill -u root",
   }
 };
 
