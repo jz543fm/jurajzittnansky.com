@@ -64,6 +64,25 @@ const projectFilters = [
         color: #6ee7b7;
         border-color: rgba(52, 211, 153, 0.25);
       }
+      @keyframes cliDollarBlink {
+        0%, 49% { opacity: 0.075; }
+        50%, 100% { opacity: 0.012; }
+      }
+      .bg-cli-dollar {
+        animation: cliDollarBlink 1.25s steps(1, end) infinite;
+      }
+      @keyframes cursorBlink {
+        0%, 49% { opacity: 1; }
+        50%, 100% { opacity: 0; }
+      }
+      .cli-cursor {
+        display: inline-block;
+        animation: cursorBlink 1s steps(1, end) infinite;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .bg-cli-dollar { animation: none; opacity: 0.035; }
+        .cli-cursor { animation: none; opacity: 1; }
+      }
     </style>
   </head>
   <body class="relative bg-[#050507] text-zinc-100 font-['Inter'] antialiased selection:bg-emerald-500/30 selection:text-emerald-200 overflow-x-hidden">
@@ -71,28 +90,30 @@ const projectFilters = [
     <!-- Scroll progress indikátor -->
     <div id="scroll-progress" class="fixed top-0 left-0 z-[60] h-[2px] w-0 bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 shadow-[0_0_12px_rgba(16,185,129,0.8)] transition-[width] duration-75"></div>
 
-    <!-- Prémiové pozadie: dot-matrix + duálna ambientná žiara -->
-    <div aria-hidden="true" class="pointer-events-none fixed inset-0 -z-10">
+    <!-- Pozadie: dot-matrix + ambientná žiara + preblikávajúci CLI znak $ -->
+    <div aria-hidden="true" class="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
       <div class="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.06)_1px,transparent_1px)] [background-size:24px_24px] [mask-image:radial-gradient(ellipse_75%_60%_at_50%_0%,#000_55%,transparent_100%)]"></div>
       <div class="absolute -top-40 left-1/2 -translate-x-1/2 h-[480px] w-[860px] rounded-full bg-gradient-to-tr from-emerald-500/12 via-teal-500/8 to-cyan-500/10 blur-[140px]"></div>
-      <div class="absolute top-[50%] -right-40 h-[380px] w-[380px] rounded-full bg-emerald-500/5 blur-[130px]"></div>
+      <div class="absolute top-[55%] -right-40 h-[360px] w-[360px] rounded-full bg-emerald-400/[0.04] blur-[120px]"></div>
+      <span class="bg-cli-dollar fixed right-6 bottom-3 font-['JetBrains_Mono'] text-[13rem] sm:text-[19rem] font-bold leading-none text-emerald-400 select-none">$</span>
     </div>
 
-    <!-- Floating Glass Navigácia -->
+    <!-- Navigácia v CLI duchu -->
     <header class="sticky top-0 z-50 border-b border-white/[0.06] bg-[#050507]/75 backdrop-blur-2xl">
       <nav aria-label="Hlavná navigácia" class="mx-auto flex max-w-6xl items-center justify-between px-6 py-3.5">
-        <a href="#home" class="group flex items-center gap-2 font-['JetBrains_Mono'] text-lg font-bold tracking-tight">
-          <span class="flex h-8 w-8 items-center justify-center rounded-lg border border-white/10 bg-white/[0.03] text-sm shadow-inner group-hover:border-emerald-400/50 transition">
-            J<span class="text-emerald-400">.</span>Z
+        <a href="#home" class="group flex items-center gap-2 font-['JetBrains_Mono'] text-sm sm:text-base font-bold tracking-tight">
+          <span class="flex h-8 w-8 items-center justify-center rounded-lg border border-white/10 bg-white/[0.03] text-xs text-emerald-400 shadow-inner group-hover:border-emerald-400/50 transition">
+            $
           </span>
+          <span class="text-zinc-200">juraj<span class="text-emerald-400">@</span>cli<span class="cli-cursor text-emerald-400 ml-0.5">_</span></span>
         </a>
 
-        <div id="desktop-nav" class="hidden md:flex items-center gap-1 rounded-full border border-white/[0.07] bg-white/[0.02] px-2 py-1 text-xs text-zinc-400 backdrop-blur-md">
-          <a href="#about" data-section="about" data-i18n="nav.about" class="nav-link rounded-full border border-transparent px-3.5 py-1.5 hover:bg-white/[0.06] hover:text-white transition">{t["nav.about"]}</a>
-          <a href="#experience" data-section="experience" data-i18n="nav.experience" class="nav-link rounded-full border border-transparent px-3.5 py-1.5 hover:bg-white/[0.06] hover:text-white transition">{t["nav.experience"]}</a>
-          <a href="#stack" data-section="stack" data-i18n="nav.stack" class="nav-link rounded-full border border-transparent px-3.5 py-1.5 hover:bg-white/[0.06] hover:text-white transition">{t["nav.stack"]}</a>
-          <a href="#projects" data-section="projects" data-i18n="nav.projects" class="nav-link rounded-full border border-transparent px-3.5 py-1.5 hover:bg-white/[0.06] hover:text-white transition">{t["nav.projects"]}</a>
-          <a href="#contact" data-section="contact" data-i18n="nav.contact" class="nav-link rounded-full border border-transparent px-3.5 py-1.5 hover:bg-white/[0.06] hover:text-white transition">{t["nav.contact"]}</a>
+        <div id="desktop-nav" class="hidden md:flex items-center gap-1 rounded-full border border-white/[0.07] bg-white/[0.02] px-2 py-1 font-['JetBrains_Mono'] text-xs text-zinc-400 backdrop-blur-md">
+          <a href="#about" data-section="about" data-i18n="nav.about" class="nav-link rounded-full border border-transparent px-3 py-1.5 hover:bg-white/[0.06] hover:text-white transition">{t["nav.about"]}</a>
+          <a href="#experience" data-section="experience" data-i18n="nav.experience" class="nav-link rounded-full border border-transparent px-3 py-1.5 hover:bg-white/[0.06] hover:text-white transition">{t["nav.experience"]}</a>
+          <a href="#stack" data-section="stack" data-i18n="nav.stack" class="nav-link rounded-full border border-transparent px-3 py-1.5 hover:bg-white/[0.06] hover:text-white transition">{t["nav.stack"]}</a>
+          <a href="#projects" data-section="projects" data-i18n="nav.projects" class="nav-link rounded-full border border-transparent px-3 py-1.5 hover:bg-white/[0.06] hover:text-white transition">{t["nav.projects"]}</a>
+          <a href="#contact" data-section="contact" data-i18n="nav.contact" class="nav-link rounded-full border border-transparent px-3 py-1.5 hover:bg-white/[0.06] hover:text-white transition">{t["nav.contact"]}</a>
         </div>
 
         <div class="flex items-center gap-2">
@@ -100,9 +121,9 @@ const projectFilters = [
             id="cmdk-trigger"
             type="button"
             title="Command Palette (⌘K)"
-            class="hidden sm:inline-flex cursor-pointer items-center gap-2 rounded-lg border border-white/10 bg-white/[0.03] px-2.5 py-1.5 font-['JetBrains_Mono'] text-[11px] text-zinc-400 hover:border-white/20 hover:text-zinc-200 transition"
+            class="hidden sm:inline-flex cursor-pointer items-center gap-2 rounded-lg border border-white/10 bg-white/[0.03] px-2.5 py-1.5 font-['JetBrains_Mono'] text-[11px] text-zinc-400 hover:border-emerald-400/40 hover:text-emerald-300 transition"
           >
-            <span>⌘K</span>
+            <span>$ ⌘K</span>
           </button>
 
           <select id="lang-select" aria-label="Jazyk" class="cursor-pointer rounded-lg border border-white/10 bg-white/[0.03] px-2.5 py-1.5 font-['JetBrains_Mono'] text-xs text-zinc-300 hover:border-white/20 focus:border-emerald-400 focus:outline-none transition">
@@ -111,7 +132,7 @@ const projectFilters = [
             ))}
           </select>
 
-          <a href="#contact" data-i18n="nav.cta" class="hidden sm:inline-flex rounded-lg bg-gradient-to-b from-emerald-400 to-emerald-500 px-4 py-1.5 text-xs sm:text-sm font-semibold text-zinc-950 shadow-[0_0_24px_-4px_rgba(16,185,129,0.5)] hover:brightness-110 transition">
+          <a href="#contact" data-i18n="nav.cta" class="hidden sm:inline-flex rounded-lg bg-gradient-to-b from-emerald-400 to-emerald-500 px-4 py-1.5 font-['JetBrains_Mono'] text-xs font-semibold text-zinc-950 shadow-[0_0_24px_-4px_rgba(16,185,129,0.5)] hover:brightness-110 transition">
             {t["nav.cta"]}
           </a>
 
@@ -122,12 +143,11 @@ const projectFilters = [
             aria-expanded="false"
             class="md:hidden inline-flex h-8 w-8 cursor-pointer items-center justify-center rounded-lg border border-white/10 bg-white/[0.03] font-['JetBrains_Mono'] text-xs text-zinc-300 hover:border-white/25"
           >
-            ☰
+            $_
           </button>
         </div>
       </nav>
 
-      <!-- Mobilné rozbalovacie menu -->
       <div id="mobile-menu" class="hidden md:hidden border-t border-white/[0.06] bg-[#07070b]/95 px-6 py-4 space-y-2 font-['JetBrains_Mono'] text-xs text-zinc-300">
         <a href="#about" data-i18n="nav.about" class="mobile-nav-link block rounded-lg px-3 py-2 hover:bg-white/[0.05]">{t["nav.about"]}</a>
         <a href="#experience" data-i18n="nav.experience" class="mobile-nav-link block rounded-lg px-3 py-2 hover:bg-white/[0.05]">{t["nav.experience"]}</a>
@@ -143,7 +163,7 @@ const projectFilters = [
       <!-- Hero sekcia -->
       <section class="grid grid-cols-1 lg:grid-cols-12 gap-12 py-20 lg:py-28 items-center">
         <div class="lg:col-span-7 space-y-7">
-          <div class="inline-flex items-center gap-2.5 rounded-full border border-emerald-400/20 bg-emerald-400/[0.06] px-3.5 py-1.5 font-['JetBrains_Mono'] text-[11px] tracking-wider text-emerald-300 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
+          <div class="inline-flex items-center gap-2.5 rounded-full border border-emerald-400/20 bg-emerald-400/[0.06] px-3.5 py-1.5 font-['JetBrains_Mono'] text-[11px] tracking-wider text-emerald-300">
             <span class="relative flex h-2 w-2">
               <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
               <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
@@ -169,17 +189,17 @@ const projectFilters = [
 
           <div class="flex flex-wrap gap-2">
             {profile.heroTags.map((tag) => (
-              <span class="rounded-full border border-white/[0.08] bg-white/[0.02] px-3.5 py-1 font-['JetBrains_Mono'] text-xs text-zinc-300 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] hover:border-emerald-400/40 hover:text-emerald-300 transition">
-                {tag}
+              <span class="rounded-full border border-white/[0.08] bg-white/[0.02] px-3.5 py-1 font-['JetBrains_Mono'] text-xs text-zinc-300 hover:border-emerald-400/40 hover:text-emerald-300 transition">
+                $ {tag}
               </span>
             ))}
           </div>
 
           <div class="flex flex-wrap items-center gap-4 pt-2">
-            <a href="#projects" data-i18n="hero.btnProjects" class="rounded-xl bg-white px-6 py-3 text-sm font-semibold text-zinc-950 shadow-[0_0_30px_-6px_rgba(255,255,255,0.35)] hover:bg-zinc-200 transition">
+            <a href="#projects" data-i18n="hero.btnProjects" class="rounded-xl bg-white px-6 py-3 font-['JetBrains_Mono'] text-sm font-semibold text-zinc-950 shadow-[0_0_30px_-6px_rgba(255,255,255,0.3)] hover:bg-zinc-200 transition">
               {t["hero.btnProjects"]}
             </a>
-            <a href="#contact" data-i18n="hero.btnContact" class="rounded-xl border border-white/10 bg-white/[0.03] px-6 py-3 text-sm font-medium text-zinc-200 hover:border-white/25 hover:bg-white/[0.06] transition">
+            <a href="#contact" data-i18n="hero.btnContact" class="rounded-xl border border-white/10 bg-white/[0.03] px-6 py-3 font-['JetBrains_Mono'] text-sm font-medium text-zinc-200 hover:border-white/25 hover:bg-white/[0.06] transition">
               {t["hero.btnContact"]}
             </a>
           </div>
@@ -187,58 +207,58 @@ const projectFilters = [
           <div class="flex items-center gap-6 pt-3 font-['JetBrains_Mono'] text-xs text-zinc-500">
             {profile.socials.map((s) => (
               <a href={s.url} target="_blank" rel="noopener noreferrer" class="hover:text-emerald-400 transition">
-                {s.name} ↗
+                $ open {s.name.toLowerCase()} ↗
               </a>
             ))}
           </div>
         </div>
 
-        <!-- Pravý stĺpec: Prémiový sklenený terminál -->
+        <!-- Pravý stĺpec: Vylepšený CLI / zsh terminál -->
         <div class="lg:col-span-5 space-y-3">
-          <div dir="ltr" class="relative overflow-hidden rounded-2xl border border-white/10 bg-[#0a0a0e]/90 shadow-[0_24px_80px_-16px_rgba(0,0,0,0.9),inset_0_1px_0_rgba(255,255,255,0.1)] backdrop-blur-xl">
+          <div dir="ltr" class="relative overflow-hidden rounded-2xl border border-emerald-400/15 bg-[#09090d]/95 shadow-[0_24px_80px_-16px_rgba(0,0,0,0.9),inset_0_1px_0_rgba(255,255,255,0.1)] backdrop-blur-xl">
             <div class="flex items-center justify-between border-b border-white/[0.06] bg-white/[0.02] px-4 py-3">
               <div class="flex items-center gap-1.5">
                 <span class="h-2.5 w-2.5 rounded-full bg-zinc-700 hover:bg-red-500 transition"></span>
                 <span class="h-2.5 w-2.5 rounded-full bg-zinc-700 hover:bg-amber-500 transition"></span>
                 <span class="h-2.5 w-2.5 rounded-full bg-zinc-700 hover:bg-emerald-500 transition"></span>
               </div>
-              <span class="font-['JetBrains_Mono'] text-[11px] text-zinc-500">~/juraj/engineering — zsh</span>
-              <span class="flex items-center gap-1 font-['JetBrains_Mono'] text-[10px] text-emerald-400">● LIVE</span>
+              <span class="font-['JetBrains_Mono'] text-[11px] text-zinc-400">~/juraj/engineering — zsh <span class="text-emerald-400/80">(pipefail)</span></span>
+              <span class="flex items-center gap-1 font-['JetBrains_Mono'] text-[10px] text-emerald-400">● TTY0</span>
             </div>
 
             <div id="terminal-output" class="space-y-2 p-5 font-['JetBrains_Mono'] text-xs sm:text-sm max-h-64 overflow-y-auto">
-              <p><span class="text-emerald-400 font-bold">❯</span> whoami</p>
+              <p><span class="text-emerald-400 font-bold">$</span> whoami</p>
               <p class="text-zinc-300 pl-4">software-engineer</p>
-              <p><span class="text-emerald-400 font-bold">❯</span> focus --list</p>
+              <p><span class="text-emerald-400 font-bold">$</span> focus --list | awk &apos;&#123;print $0&#125;&apos;</p>
               <div class="text-zinc-400 pl-4 space-y-0.5">
                 <p><span class="text-emerald-400/70">01</span> cloud-native & kubernetes</p>
                 <p><span class="text-emerald-400/70">02</span> distributed-systems</p>
                 <p><span class="text-emerald-400/70">03</span> offensive-security & linux</p>
               </div>
-              <p class="text-zinc-600 text-xs pt-1"># zadaj 'help' alebo použi šípky ↑/↓</p>
+              <p class="text-zinc-600 text-xs pt-1"># skús 'help', 'man', 'projects', 'stack' alebo 'lang en' (↑/↓ história)</p>
             </div>
 
-            <form id="terminal-form" class="flex items-center gap-2 border-t border-white/[0.06] bg-black/40 px-5 py-3 font-['JetBrains_Mono'] text-xs sm:text-sm">
-              <span class="text-emerald-400 font-bold">❯</span>
+            <form id="terminal-form" class="flex items-center gap-2 border-t border-white/[0.06] bg-black/50 px-5 py-3 font-['JetBrains_Mono'] text-xs sm:text-sm">
+              <span class="text-emerald-400 font-bold">$</span>
               <input
                 id="terminal-input"
                 type="text"
                 autocomplete="off"
-                placeholder="help | projects | lang en | clear"
-                class="w-full bg-transparent text-zinc-200 placeholder-zinc-600 focus:outline-none"
+                placeholder="help | projects | stack | lang en | clear"
+                class="w-full bg-transparent text-zinc-100 placeholder-zinc-600 focus:outline-none"
               />
             </form>
 
             <div class="flex justify-between border-t border-white/[0.06] bg-white/[0.015] px-6 py-2.5 font-['JetBrains_Mono'] text-[10px] tracking-[0.2em] text-zinc-500">
-              <span>BUILD</span>
-              <span>SECURE</span>
-              <span>SCALE</span>
+              <span>$ BUILD</span>
+              <span>$ SECURE</span>
+              <span>$ SCALE</span>
             </div>
           </div>
 
           <div dir="ltr" class="flex items-center justify-between px-2 font-['JetBrains_Mono'] text-[11px] text-zinc-500">
-            <span class="flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span> CLOUD NATIVE</span>
-            <span>DEVOPS · SECURITY · SOFTWARE</span>
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span> EXIT_CODE=0</span>
+            <span>BASH · ZSH · KUBECTL · PODMAN</span>
             <span>01 — 06</span>
           </div>
         </div>
@@ -255,7 +275,7 @@ const projectFilters = [
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
           <div class="bento-card lg:col-span-6 rounded-2xl border border-white/[0.08] p-8">
-            <span class="font-['JetBrains_Mono'] text-4xl text-emerald-400/80 block mb-3">“</span>
+            <span class="font-['JetBrains_Mono'] text-sm text-emerald-400/90 block mb-3">$ cat ~/.motto</span>
             <p data-i18n="about.quote" class="text-lg sm:text-xl text-zinc-200 leading-relaxed">{t["about.quote"]}</p>
           </div>
           <div class="bento-card lg:col-span-6 rounded-2xl border border-white/[0.08] p-8 flex flex-col justify-between space-y-6">
@@ -297,10 +317,10 @@ const projectFilters = [
           {profile.experience.map((job) => (
             <article class="bento-card group relative grid grid-cols-1 md:grid-cols-12 gap-4 rounded-2xl border border-white/[0.08] p-6 sm:p-7 hover:border-emerald-400/30 transition">
               <div class="md:col-span-3 font-['JetBrains_Mono'] text-xs text-zinc-500 pt-1">
-                {job.period}
+                $ {job.period}
               </div>
               <div class="md:col-span-8 space-y-2.5">
-                <h3 class="text-xl font-semibold text-zinc-100 group-hover:text-white transition">{job.role}</h3>
+                <h3 class="text-xl font-semibold text-zinc-100 transition">{job.role}</h3>
                 <p class="text-sm font-medium text-emerald-400">{job.company}</p>
                 <p class="text-sm text-zinc-400 leading-relaxed">{job.desc}</p>
                 <div class="flex flex-wrap gap-2 pt-2">
@@ -312,7 +332,7 @@ const projectFilters = [
                 </div>
               </div>
               <div class="hidden md:block md:col-span-1 text-right font-['JetBrains_Mono'] text-2xl font-bold text-white/[0.06] group-hover:text-emerald-400/25 transition">
-                {job.num}
+                #{job.num}
               </div>
             </article>
           ))}
@@ -332,8 +352,11 @@ const projectFilters = [
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {profile.stack.map((group) => (
             <article class="bento-card rounded-2xl border border-white/[0.08] p-6 hover:border-white/15 transition">
-              <div class="flex h-10 w-10 items-center justify-center rounded-xl border border-emerald-400/20 bg-emerald-400/[0.06] font-['JetBrains_Mono'] text-lg text-emerald-400 mb-4">
-                {group.icon}
+              <div class="flex items-center justify-between mb-4">
+                <div class="flex h-10 w-10 items-center justify-center rounded-xl border border-emerald-400/20 bg-emerald-400/[0.06] font-['JetBrains_Mono'] text-lg text-emerald-400">
+                  {group.icon}
+                </div>
+                <span class="font-['JetBrains_Mono'] text-[11px] text-zinc-600">$ which</span>
               </div>
               <h3 class="text-lg font-semibold text-zinc-100 mb-4">{group.category}</h3>
               <div class="flex flex-wrap gap-2">
@@ -360,7 +383,6 @@ const projectFilters = [
           <p data-i18n="proj.sub" class="text-sm text-zinc-400">{t["proj.sub"]}</p>
         </div>
 
-        <!-- Filtre kategórií projektov -->
         <div id="project-filters" class="flex flex-wrap gap-2 mb-8 font-['JetBrains_Mono'] text-xs">
           {projectFilters.map((f, idx) => (
             <button
@@ -398,7 +420,7 @@ const projectFilters = [
               >
                 <div>
                   <div class="flex items-center justify-between font-['JetBrains_Mono'] text-[11px] text-zinc-500 mb-5">
-                    <span>{proj.num}</span>
+                    <span>$ {proj.num}</span>
                     <span class="flex h-7 w-7 items-center justify-center rounded-full border border-white/[0.06] bg-white/[0.02] group-hover:border-emerald-400/40 group-hover:text-emerald-400 transition">↗</span>
                   </div>
                   <div class="font-['JetBrains_Mono'] text-xl text-emerald-400 mb-2.5">{proj.icon}</div>
@@ -436,7 +458,7 @@ const projectFilters = [
         <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
           {profile.education.map((edu) => (
             <article class="bento-card rounded-2xl border border-white/[0.08] p-6 sm:p-7 hover:border-white/15 transition">
-              <div class="font-['JetBrains_Mono'] text-xs text-emerald-400 mb-2">{edu.period}</div>
+              <div class="font-['JetBrains_Mono'] text-xs text-emerald-400 mb-2">$ {edu.period}</div>
               <h3 class="text-lg font-semibold text-zinc-100">{edu.school}</h3>
               <p class="text-sm text-zinc-400 mt-1">{edu.degree}</p>
             </article>
@@ -458,7 +480,7 @@ const projectFilters = [
           </p>
           <div class="flex flex-wrap items-center gap-4">
             <a href={`mailto:${profile.email}`} class="inline-flex items-center gap-2 rounded-xl bg-gradient-to-b from-emerald-400 to-emerald-500 px-6 py-3 font-['JetBrains_Mono'] text-sm font-semibold text-zinc-950 shadow-[0_0_30px_-5px_rgba(16,185,129,0.5)] hover:brightness-110 transition">
-              {profile.email} ↗
+              $ mailto {profile.email} ↗
             </a>
             <button
               id="copy-email-btn"
@@ -477,11 +499,12 @@ const projectFilters = [
     <div id="cmdk-backdrop" class="fixed inset-0 z-[70] hidden items-start justify-center bg-black/75 px-4 pt-24 backdrop-blur-sm">
       <div class="w-full max-w-lg overflow-hidden rounded-2xl border border-white/15 bg-[#0c0c11] shadow-2xl">
         <div class="flex items-center border-b border-white/[0.08] px-4 py-3">
-          <span class="font-['JetBrains_Mono'] text-xs text-emerald-400 mr-3">⌘K</span>
+          <span class="font-['JetBrains_Mono'] text-xs text-emerald-400 mr-3">$ ⌘K</span>
           <input
             id="cmdk-search"
             type="text"
-            data-i18n-placeholder="cmdk.placeholder" placeholder={t["cmdk.placeholder"]}
+            data-i18n-placeholder="cmdk.placeholder"
+            placeholder={t["cmdk.placeholder"]}
             class="w-full bg-transparent text-sm text-zinc-100 placeholder-zinc-500 focus:outline-none"
           />
           <button id="cmdk-close" type="button" class="cursor-pointer font-['JetBrains_Mono'] text-xs text-zinc-500 hover:text-zinc-300">ESC</button>
@@ -493,13 +516,12 @@ const projectFilters = [
     <!-- Footer -->
     <footer class="border-t border-white/[0.06] py-10 text-center sm:text-left">
       <div class="mx-auto flex max-w-6xl flex-col sm:flex-row items-center justify-between gap-4 px-6 font-['JetBrains_Mono'] text-xs text-zinc-500">
-        <a href="#home" class="font-bold text-zinc-200">J<span class="text-emerald-400">.</span>Z</a>
+        <a href="#home" class="font-bold text-zinc-200">$ J<span class="text-emerald-400">.</span>Z</a>
         <p dir="ltr">Designed by $ sudo pkill -u root</p>
         <span>© {new Date().getFullYear()} {profile.name} {profile.surname}</span>
       </div>
     </footer>
 
-    <!-- Klientský skript -->
     <script define:vars={{ translations, projectTranslations, languages, projects: profile.projects, email: profile.email }}>
       // 1. Scroll progress bar + Scroll Spy
       const progressBar = document.getElementById('scroll-progress');
@@ -551,7 +573,7 @@ const projectFilters = [
       }, { threshold: 0.08 });
       document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 
-      // 4. Spotlight hover na bento kartách
+      // 4. Spotlight hover efekt na kartách
       document.querySelectorAll('.bento-card').forEach((card) => {
         card.addEventListener('mousemove', (e) => {
           const rect = card.getBoundingClientRect();
@@ -560,7 +582,7 @@ const projectFilters = [
         });
       });
 
-      // 5. Prepínanie jazykov (i18n)
+      // 5. Prepínanie jazykov (i18n) vrátane popisov projektov
       const select = document.getElementById('lang-select');
       let currentLang = localStorage.getItem('lang') || 'sk';
 
@@ -624,7 +646,7 @@ const projectFilters = [
         });
       });
 
-      // 7. Interaktívny terminál s históriou a príkazom 'lang'
+      // 7. Terminál s históriou a príkazmi
       const form = document.getElementById('terminal-form');
       const input = document.getElementById('terminal-input');
       const output = document.getElementById('terminal-output');
@@ -632,7 +654,8 @@ const projectFilters = [
       let historyIdx = -1;
 
       const commands = {
-        help: 'Príkazy: whoami, focus, stack, projects, lang <code>, contact, clear',
+        help: 'Príkazy: whoami, focus, stack, projects, man, lang <code>, contact, clear',
+        man: 'NAME: juraj-cli — cloud-native, kubernetes, linux, security & automation portfolio',
         whoami: 'Ing. Juraj Žittňanský — Software & DevOps Engineer (Slovakia)',
         focus: '• cloud-native • distributed-systems • cybersecurity',
         stack: 'Kubernetes, Docker, Helm, Kustomize, Terraform, Java, TS, Node.js, Linux',
@@ -668,7 +691,7 @@ const projectFilters = [
         }
 
         const pCmd = document.createElement('p');
-        pCmd.innerHTML = `<span class="text-emerald-400 font-bold">❯</span> ${raw.replace(/</g, '&lt;')}`;
+        pCmd.innerHTML = `<span class="text-emerald-400 font-bold">$</span> ${raw.replace(/</g, '&lt;')}`;
         output.appendChild(pCmd);
 
         let responseText = commands[cmd];
@@ -684,7 +707,7 @@ const projectFilters = [
 
         const pRes = document.createElement('p');
         pRes.className = 'text-zinc-400 pl-4';
-        pRes.textContent = responseText || `Neznámy príkaz: ${raw} (skús 'help')`;
+        pRes.textContent = responseText || `bash: ${raw}: command not found (try 'help')`;
         output.appendChild(pRes);
 
         output.scrollTop = output.scrollHeight;
