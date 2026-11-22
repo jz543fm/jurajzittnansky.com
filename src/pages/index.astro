@@ -550,16 +550,20 @@ const projectFilters = [
       // 2. Mobilné menu
       const mobileBtn = document.getElementById('mobile-menu-btn');
       const mobileMenu = document.getElementById('mobile-menu');
-      mobileBtn?.addEventListener('click', () => {
-        const isOpen = !mobileMenu?.classList.contains('hidden');
-        mobileMenu?.classList.toggle('hidden', isOpen);
-        mobileBtn.setAttribute('aria-expanded', String(!isOpen));
+      function toggleMobileMenu(forceState) {
+        if (!mobileMenu || !mobileBtn) return;
+        const currentlyOpen = !mobileMenu.classList.contains('hidden');
+        const nextOpen = typeof forceState === 'boolean' ? forceState : !currentlyOpen;
+        mobileMenu.classList.toggle('hidden', !nextOpen);
+        mobileBtn.setAttribute('aria-expanded', String(nextOpen));
+      }
+      mobileBtn?.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        toggleMobileMenu();
       });
       document.querySelectorAll('.mobile-nav-link').forEach((link) => {
-        link.addEventListener('click', () => {
-          mobileMenu?.classList.add('hidden');
-          mobileBtn?.setAttribute('aria-expanded', 'false');
-        });
+        link.addEventListener('click', () => toggleMobileMenu(false));
       });
 
       // 3. Reveal animácie pri skrolovaní

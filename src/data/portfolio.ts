@@ -17,7 +17,8 @@ export const projectTranslations: Record<string, Record<string, string>> = {
     "bin-to-deb": "Nástroje a skripty na tvorbu Debian balíkov z binárnych súborov, ktoré zjednodušujú prípravu softvéru na inštaláciu v systémoch založených na Debiane.",
     "kali-dockerized": "Kontajnerizované prostredie Kali Linux určené na bezpečnostné testovanie a experimentovanie. Obsahuje podporu systemd a integráciu ProxyChains na smerovanie vybranej sieťovej prevádzky cez proxy reťazce.",
     "docker-parrot": "Kontajnerizované prostredie Parrot OS s edíciami Core a Security, určené na bezpečnostný výskum, testovanie a prácu v Linuxovom prostredí.",
-    "starship-conf": "Vlastná konfigurácia Starship promptu a pomocné skripty na prispôsobenie a zefektívnenie terminálového prostredia."
+    "starship-conf": "Vlastná konfigurácia Starship promptu a pomocné skripty na prispôsobenie a zefektívnenie terminálového prostredia.",
+    "nav.education": "05 / Vzdelanie",
   },
   en: {
     "stress-K8s": "Kubernetes workload stress testing and analysis of cluster behaviour under different conditions.",
@@ -26,7 +27,8 @@ export const projectTranslations: Record<string, Record<string, string>> = {
     "bin-to-deb": "Tools and scripts for building Debian packages from binary files, simplifying software preparation for installation on Debian-based systems.",
     "kali-dockerized": "A containerized Kali Linux environment for security testing and experimentation. It includes systemd support and ProxyChains integration to route selected network traffic through proxy chains.",
     "docker-parrot": "A containerized Parrot OS environment with Core and Security editions, designed for security research, testing and working in a Linux environment.",
-    "starship-conf": "A custom Starship prompt configuration and supporting scripts for personalizing and improving the command-line environment."
+    "starship-conf": "A custom Starship prompt configuration and supporting scripts for personalizing and improving the command-line environment.",
+    "nav.education": "05 / Education",
   },
   de: {
     "stress-K8s": "Lasttests für Kubernetes-Workloads und Analyse des Clusterverhaltens unter verschiedenen Bedingungen.",
@@ -35,7 +37,8 @@ export const projectTranslations: Record<string, Record<string, string>> = {
     "bin-to-deb": "Tools und Skripte zur Erstellung von Debian-Paketen aus Binärdateien, um die Vorbereitung von Software für die Installation auf Debian-basierten Systemen zu vereinfachen.",
     "kali-dockerized": "Eine containerisierte Kali-Linux-Umgebung für Sicherheitstests und Experimente. Sie bietet systemd-Unterstützung und eine ProxyChains-Integration, um ausgewählten Netzwerkverkehr über Proxy-Ketten zu leiten.",
     "docker-parrot": "Eine containerisierte Parrot-OS-Umgebung mit Core- und Security-Editionen für Sicherheitsforschung, Tests und die Arbeit in einer Linux-Umgebung.",
-    "starship-conf": "Eine benutzerdefinierte Starship-Prompt-Konfiguration und ergänzende Skripte zur Anpassung und Verbesserung der Kommandozeilenumgebung."
+    "starship-conf": "Eine benutzerdefinierte Starship-Prompt-Konfiguration und ergänzende Skripte zur Anpassung und Verbesserung der Kommandozeilenumgebung.",
+    "nav.education": "05 / Ausbildung",
   },
   ar: {
     "stress-K8s": "اختبارات ضغط أحمال Kubernetes وتحليل سلوك العنقود في ظل ظروف مختلفة.",
@@ -44,7 +47,8 @@ export const projectTranslations: Record<string, Record<string, string>> = {
     "bin-to-deb": "أدوات ونصوص برمجية لإنشاء حزم Debian من الملفات الثنائية، مما يسهّل تجهيز البرامج لتثبيتها على الأنظمة المعتمدة على Debian.",
     "kali-dockerized": "بيئة Kali Linux تعمل داخل حاويات لاختبارات الأمان والتجارب. تتضمن دعم systemd وتكاملاً مع ProxyChains لتوجيه حركة مرور الشبكة المحددة عبر سلاسل الوكلاء.",
     "docker-parrot": "بيئة Parrot OS داخل حاويات بإصداري Core وSecurity، مخصصة للأبحاث الأمنية والاختبارات والعمل ضمن بيئة Linux.",
-    "starship-conf": "إعداد مخصص لموجه Starship ونصوص مساعدة لتخصيص وتحسين بيئة سطر الأوامر."
+    "starship-conf": "إعداد مخصص لموجه Starship ونصوص مساعدة لتخصيص وتحسين بيئة سطر الأوامر.",
+    "nav.education": "05 / التعليم",
   },
   ja: {
     "stress-K8s": "さまざまな条件下での Kubernetes ワークロードの負荷テストとクラスター動作の分析。",
@@ -53,7 +57,8 @@ export const projectTranslations: Record<string, Record<string, string>> = {
     "bin-to-deb": "バイナリファイルから Debian パッケージを作成するツールとスクリプト。Debian ベースのシステムへのソフトウェア導入準備を簡素化します。",
     "kali-dockerized": "セキュリティテストや実験向けのコンテナ化 Kali Linux 環境。systemd に対応し、ProxyChains を統合することで、選択したネットワーク通信をプロキシチェーン経由で転送できます。",
     "docker-parrot": "セキュリティ研究、テスト、Linux 環境での作業向けに、Core と Security エディションを備えたコンテナ化 Parrot OS 環境。",
-    "starship-conf": "Starship プロンプトのカスタム設定と、コマンドライン環境をカスタマイズ・改善するための補助スクリプト。"
+    "starship-conf": "Starship プロンプトのカスタム設定と、コマンドライン環境をカスタマイズ・改善するための補助スクリプト。",
+    "nav.education": "05 / 学歴",
   },
   fr: {
     "stress-K8s": "Tests de charge des workloads Kubernetes et analyse du comportement du cluster dans différentes conditions.",
@@ -62,7 +67,8 @@ export const projectTranslations: Record<string, Record<string, string>> = {
     "bin-to-deb": "Outils et scripts permettant de créer des paquets Debian à partir de fichiers binaires et de simplifier la préparation des logiciels pour les systèmes basés sur Debian.",
     "kali-dockerized": "Un environnement Kali Linux conteneurisé destiné aux tests de sécurité et à l'expérimentation. Il prend en charge systemd et intègre ProxyChains pour acheminer certains flux réseau à travers des chaînes de proxys.",
     "docker-parrot": "Un environnement Parrot OS conteneurisé avec les éditions Core et Security, destiné à la recherche en sécurité, aux tests et au travail sous Linux.",
-    "starship-conf": "Une configuration personnalisée de Starship et des scripts complémentaires pour personnaliser et améliorer l'environnement en ligne de commande."
+    "starship-conf": "Une configuration personnalisée de Starship et des scripts complémentaires pour personnaliser et améliorer l'environnement en ligne de commande.",
+    "nav.education": "05 / Formation",
   },
   it: {
     "stress-K8s": "Test di carico dei workload Kubernetes e analisi del comportamento del cluster in diverse condizioni.",
@@ -71,7 +77,8 @@ export const projectTranslations: Record<string, Record<string, string>> = {
     "bin-to-deb": "Strumenti e script per creare pacchetti Debian da file binari, semplificando la preparazione del software per l'installazione su sistemi basati su Debian.",
     "kali-dockerized": "Un ambiente Kali Linux containerizzato per test di sicurezza e sperimentazione. Include il supporto a systemd e l'integrazione di ProxyChains per instradare il traffico di rete selezionato attraverso catene di proxy.",
     "docker-parrot": "Un ambiente Parrot OS containerizzato con edizioni Core e Security, pensato per la ricerca sulla sicurezza, i test e l'utilizzo in ambiente Linux.",
-    "starship-conf": "Una configurazione personalizzata di Starship e script di supporto per personalizzare e migliorare l'ambiente a riga di comando."
+    "starship-conf": "Una configurazione personalizzata di Starship e script di supporto per personalizzare e migliorare l'ambiente a riga di comando.",
+    "nav.education": "05 / Formazione",
   },
   pl: {
     "stress-K8s": "Testy obciążeniowe workloadów Kubernetes i analiza zachowania klastra w różnych warunkach.",
@@ -129,7 +136,8 @@ export const translations: Record<string, Record<string, string>> = {
     "cmdk.sec.education": "Sekcia: 05 / Vzdelanie",
     "cmdk.sec.contact": "Sekcia: 06 / Kontakt",
     "cmdk.copy": "Akcia: Kopírovať e-mail",
-    "cmdk.copied": "Skopírované do schránky"
+    "cmdk.copied": "Skopírované do schránky",
+    "nav.education": "05 / Edukacja",
   },
   en: {
     "nav.about": "About",
