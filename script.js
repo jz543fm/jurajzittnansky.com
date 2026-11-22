@@ -29,7 +29,7 @@ const translations = {
     experienceSubtitle: "Cesta naprieč vývojom softvéru, infraštruktúrou a cloud-native technológiami.",
     job1Date: "AUG 2025 — SÚČASNOSŤ",
     job1Text: "Vývoj softvérových riešení, technická architektúra a cloud-native technológie vrátane Kubernetes operátorov a controllerov.",
-    job2Text: "Privátna AI cloudová infraštruktúra, Kubernetes platformy, CI/CD, monitoring, alerting a automatizácia.",
+    job2Text: "Vývoj a prevádzka Private AI / Cloud infraštruktúry, Kubernetes platforiem, CI/CD, monitoringu, alertingu a automatizácie.",
     job3Text: "Automatizácia infraštruktúry a technické úlohy v oblasti DevOps.",
     job4Title: "Software Developer / DevOps Engineer",
     job4Text: "Skúsenosti s vývojom softvéru, Linux systémami, vývojom aplikácií a infraštruktúrou.",
@@ -89,7 +89,7 @@ const translations = {
     experienceSubtitle: "A journey across software development, infrastructure and cloud-native technologies.",
     job1Date: "AUG 2025 — PRESENT",
     job1Text: "Software development, technical architecture and cloud-native technologies, including Kubernetes operators and controllers.",
-    job2Text: "Private AI cloud infrastructure, Kubernetes platforms, CI/CD, monitoring, alerting and automation.",
+    job2Text: "Development and operation of Private AI / Cloud infrastructure, Kubernetes platforms, CI/CD, monitoring, alerting and automation.",
     job3Text: "Infrastructure automation and technical tasks in the DevOps field.",
     job4Title: "Software Developer / DevOps Engineer",
     job4Text: "Experience with software development, Linux systems, application development and infrastructure.",
@@ -149,7 +149,7 @@ const translations = {
     experienceSubtitle: "Mein Weg durch Softwareentwicklung, Infrastruktur und cloud-native Technologien.",
     job1Date: "AUG 2025 — HEUTE",
     job1Text: "Softwareentwicklung, technische Architektur und cloud-native Technologien, einschließlich Kubernetes Operators und Controller.",
-    job2Text: "Private KI-Cloud-Infrastruktur, Kubernetes-Plattformen, CI/CD, Monitoring, Alerting und Automatisierung.",
+    job2Text: "Entwicklung und Betrieb von Private AI / Cloud-Infrastruktur, Kubernetes-Plattformen, CI/CD, Monitoring, Alerting und Automatisierung.",
     job3Text: "Infrastrukturautomatisierung und technische Aufgaben im DevOps-Bereich.",
     job4Title: "Software Developer / DevOps Engineer",
     job4Text: "Erfahrung in Softwareentwicklung, Linux-Systemen, Anwendungsentwicklung und Infrastruktur.",
@@ -209,7 +209,7 @@ const translations = {
     experienceSubtitle: "مسيرة تجمع بين تطوير البرمجيات والبنية التحتية والتقنيات السحابية الحديثة.",
     job1Date: "أغسطس 2025 — حتى الآن",
     job1Text: "تطوير البرمجيات والهندسة التقنية والتقنيات السحابية، بما في ذلك Kubernetes Operators وControllers.",
-    job2Text: "البنية التحتية السحابية الخاصة بالذكاء الاصطناعي ومنصات Kubernetes وCI/CD والمراقبة والتنبيهات والأتمتة.",
+    job2Text: "تطوير وتشغيل بنية Private AI / Cloud التحتية ومنصات Kubernetes وCI/CD والمراقبة والتنبيهات والأتمتة.",
     job3Text: "أتمتة البنية التحتية والمهام التقنية في مجال DevOps.",
     job4Title: "مطور برمجيات / مهندس DevOps",
     job4Text: "خبرة في تطوير البرمجيات وأنظمة Linux وتطوير التطبيقات والبنية التحتية.",
@@ -269,7 +269,7 @@ const translations = {
     experienceSubtitle: "ソフトウェア開発、インフラ、クラウドネイティブ技術にわたる経験。",
     job1Date: "2025年8月 — 現在",
     job1Text: "Kubernetes Operator や Controller を含む、ソフトウェア開発、技術アーキテクチャ、クラウドネイティブ技術。",
-    job2Text: "プライベートAIクラウドインフラ、Kubernetesプラットフォーム、CI/CD、監視、アラート、自動化。",
+    job2Text: "Private AI / Cloud インフラの開発と運用、Kubernetes プラットフォーム、CI/CD、監視、アラート、自動化。",
     job3Text: "インフラの自動化および DevOps 分野の技術業務。",
     job4Title: "ソフトウェア開発者 / DevOps エンジニア",
     job4Text: "ソフトウェア開発、Linux システム、アプリケーション開発、インフラに関する経験。",
@@ -329,7 +329,7 @@ const translations = {
     experienceSubtitle: "Un parcours entre développement logiciel, infrastructures et technologies cloud-native.",
     job1Date: "AOÛT 2025 — AUJOURD'HUI",
     job1Text: "Développement logiciel, architecture technique et technologies cloud-native, notamment les opérateurs et contrôleurs Kubernetes.",
-    job2Text: "Infrastructure cloud privée pour l'IA, plateformes Kubernetes, CI/CD, supervision, alertes et automatisation.",
+    job2Text: "Développement et exploitation d'infrastructures Private AI / Cloud, de plateformes Kubernetes, de CI/CD, de supervision, d'alertes et d'automatisation.",
     job3Text: "Automatisation des infrastructures et tâches techniques dans le domaine du DevOps.",
     job4Title: "Développeur logiciel / Ingénieur DevOps",
     job4Text: "Expérience en développement logiciel, systèmes Linux, développement d'applications et infrastructures.",
@@ -389,7 +389,7 @@ const translations = {
     experienceSubtitle: "Un percorso tra sviluppo software, infrastrutture e tecnologie cloud-native.",
     job1Date: "AGO 2025 — PRESENTE",
     job1Text: "Sviluppo software, architettura tecnica e tecnologie cloud-native, inclusi operator e controller Kubernetes.",
-    job2Text: "Infrastruttura cloud privata per l'AI, piattaforme Kubernetes, CI/CD, monitoraggio, alerting e automazione.",
+    job2Text: "Sviluppo e gestione di infrastrutture Private AI / Cloud, piattaforme Kubernetes, CI/CD, monitoraggio, alerting e automazione.",
     job3Text: "Automazione delle infrastrutture e attività tecniche nell'ambito DevOps.",
     job4Title: "Sviluppatore software / DevOps Engineer",
     job4Text: "Esperienza nello sviluppo software, nei sistemi Linux, nello sviluppo di applicazioni e nelle infrastrutture.",
@@ -449,7 +449,7 @@ const translations = {
     experienceSubtitle: "Ścieżka obejmująca rozwój oprogramowania, infrastrukturę i technologie cloud-native.",
     job1Date: "SIE 2025 — OBECNIE",
     job1Text: "Tworzenie oprogramowania, architektura techniczna i technologie cloud-native, w tym operatory i kontrolery Kubernetes.",
-    job2Text: "Prywatna infrastruktura chmurowa AI, platformy Kubernetes, CI/CD, monitoring, alertowanie i automatyzacja.",
+    job2Text: "Rozwój i utrzymanie infrastruktury Private AI / Cloud, platform Kubernetes, CI/CD, monitoringu, alertowania i automatyzacji.",
     job3Text: "Automatyzacja infrastruktury i zadania techniczne w obszarze DevOps.",
     job4Title: "Programista oprogramowania / DevOps Engineer",
     job4Text: "Doświadczenie w tworzeniu oprogramowania, systemach Linux, rozwoju aplikacji i infrastrukturze.",
@@ -527,6 +527,90 @@ const ogLocales = {
   pl: "pl_PL"
 };
 
+
+
+const projectTranslations = {
+  sk: {
+    "stress-K8s": "Testovanie záťaže Kubernetes workloadov a analýza správania klastra pri rôznych podmienkach.",
+    "K8s-Prometheus-Node-Exporter": "Nasadenie a konfigurácia Prometheus Node Exportera na zber systémových metrík a monitorovanie Kubernetes uzlov.",
+    "heuristic-detection": "Detekcia phishingových stránok pomocou približne 20 vážených heuristík. Projekt podporuje manuálne testovanie konkrétnych URL, automatizované spracovanie CSV datasetov aj dynamickú analýzu navštívených stránok prostredníctvom Chrome rozšírenia, Selenium a ChromeDriver.",
+    "bin-to-deb": "Nástroje a skripty na tvorbu Debian balíkov z binárnych súborov, ktoré zjednodušujú prípravu softvéru na inštaláciu v systémoch založených na Debiane.",
+    "kali-dockerized": "Kontajnerizované prostredie Kali Linux určené na bezpečnostné testovanie a experimentovanie. Obsahuje podporu systemd a integráciu ProxyChains na smerovanie vybranej sieťovej prevádzky cez proxy reťazce.",
+    "docker-parrot": "Kontajnerizované prostredie Parrot OS s edíciami Core a Security, určené na bezpečnostný výskum, testovanie a prácu v Linuxovom prostredí.",
+    "starship-conf": "Vlastná konfigurácia Starship promptu a pomocné skripty na prispôsobenie a zefektívnenie terminálového prostredia."
+  },
+
+  en: {
+    "stress-K8s": "Kubernetes workload stress testing and analysis of cluster behaviour under different conditions.",
+    "K8s-Prometheus-Node-Exporter": "Deployment and configuration of Prometheus Node Exporter to collect system metrics and monitor Kubernetes nodes.",
+    "heuristic-detection": "Phishing website detection using approximately 20 weighted heuristics. The project supports manual testing of specific URLs, automated processing of CSV datasets, and dynamic analysis of visited websites through a Chrome extension, Selenium and ChromeDriver.",
+    "bin-to-deb": "Tools and scripts for building Debian packages from binary files, simplifying software preparation for installation on Debian-based systems.",
+    "kali-dockerized": "A containerized Kali Linux environment for security testing and experimentation. It includes systemd support and ProxyChains integration to route selected network traffic through proxy chains.",
+    "docker-parrot": "A containerized Parrot OS environment with Core and Security editions, designed for security research, testing and working in a Linux environment.",
+    "starship-conf": "A custom Starship prompt configuration and supporting scripts for personalizing and improving the command-line environment."
+  },
+
+  de: {
+    "stress-K8s": "Lasttests für Kubernetes-Workloads und Analyse des Clusterverhaltens unter verschiedenen Bedingungen.",
+    "K8s-Prometheus-Node-Exporter": "Bereitstellung und Konfiguration des Prometheus Node Exporters zur Erfassung von Systemmetriken und Überwachung von Kubernetes-Knoten.",
+    "heuristic-detection": "Erkennung von Phishing-Webseiten mithilfe von etwa 20 gewichteten Heuristiken. Das Projekt unterstützt manuelle Tests bestimmter URLs, die automatisierte Verarbeitung von CSV-Datensätzen sowie die dynamische Analyse besuchter Webseiten über eine Chrome-Erweiterung, Selenium und ChromeDriver.",
+    "bin-to-deb": "Tools und Skripte zur Erstellung von Debian-Paketen aus Binärdateien, um die Vorbereitung von Software für die Installation auf Debian-basierten Systemen zu vereinfachen.",
+    "kali-dockerized": "Eine containerisierte Kali-Linux-Umgebung für Sicherheitstests und Experimente. Sie bietet systemd-Unterstützung und eine ProxyChains-Integration, um ausgewählten Netzwerkverkehr über Proxy-Ketten zu leiten.",
+    "docker-parrot": "Eine containerisierte Parrot-OS-Umgebung mit Core- und Security-Editionen für Sicherheitsforschung, Tests und die Arbeit in einer Linux-Umgebung.",
+    "starship-conf": "Eine benutzerdefinierte Starship-Prompt-Konfiguration und ergänzende Skripte zur Anpassung und Verbesserung der Kommandozeilenumgebung."
+  },
+
+  ar: {
+    "stress-K8s": "اختبارات ضغط أحمال Kubernetes وتحليل سلوك العنقود في ظل ظروف مختلفة.",
+    "K8s-Prometheus-Node-Exporter": "نشر وإعداد Prometheus Node Exporter لجمع مقاييس النظام ومراقبة عُقد Kubernetes.",
+    "heuristic-detection": "اكتشاف مواقع التصيد الاحتيالي باستخدام نحو 20 قاعدة استدلالية موزونة. يدعم المشروع الاختبار اليدوي لعناوين URL محددة، والمعالجة الآلية لمجموعات بيانات CSV، والتحليل الديناميكي للمواقع التي تتم زيارتها عبر إضافة Chrome وSelenium وChromeDriver.",
+    "bin-to-deb": "أدوات ونصوص برمجية لإنشاء حزم Debian من الملفات الثنائية، مما يسهّل تجهيز البرامج لتثبيتها على الأنظمة المعتمدة على Debian.",
+    "kali-dockerized": "بيئة Kali Linux تعمل داخل حاويات لاختبارات الأمان والتجارب. تتضمن دعم systemd وتكاملاً مع ProxyChains لتوجيه حركة مرور الشبكة المحددة عبر سلاسل الوكلاء.",
+    "docker-parrot": "بيئة Parrot OS داخل حاويات بإصداري Core وSecurity، مخصصة للأبحاث الأمنية والاختبارات والعمل ضمن بيئة Linux.",
+    "starship-conf": "إعداد مخصص لموجه Starship ونصوص مساعدة لتخصيص وتحسين بيئة سطر الأوامر."
+  },
+
+  ja: {
+    "stress-K8s": "さまざまな条件下での Kubernetes ワークロードの負荷テストとクラスター動作の分析。",
+    "K8s-Prometheus-Node-Exporter": "システムメトリクスの収集と Kubernetes ノードの監視を目的とした Prometheus Node Exporter のデプロイと設定。",
+    "heuristic-detection": "約20種類の重み付きヒューリスティックによるフィッシングサイト検出。特定URLの手動テスト、CSVデータセットの自動処理、Chrome拡張機能・Selenium・ChromeDriverを利用した閲覧サイトの動的分析に対応しています。",
+    "bin-to-deb": "バイナリファイルから Debian パッケージを作成するツールとスクリプト。Debian ベースのシステムへのソフトウェア導入準備を簡素化します。",
+    "kali-dockerized": "セキュリティテストや実験向けのコンテナ化 Kali Linux 環境。systemd に対応し、ProxyChains を統合することで、選択したネットワーク通信をプロキシチェーン経由で転送できます。",
+    "docker-parrot": "セキュリティ研究、テスト、Linux 環境での作業向けに、Core と Security エディションを備えたコンテナ化 Parrot OS 環境。",
+    "starship-conf": "Starship プロンプトのカスタム設定と、コマンドライン環境をカスタマイズ・改善するための補助スクリプト。"
+  },
+
+  fr: {
+    "stress-K8s": "Tests de charge des workloads Kubernetes et analyse du comportement du cluster dans différentes conditions.",
+    "K8s-Prometheus-Node-Exporter": "Déploiement et configuration de Prometheus Node Exporter pour collecter les métriques système et surveiller les nœuds Kubernetes.",
+    "heuristic-detection": "Détection de sites de phishing à l'aide d'environ 20 heuristiques pondérées. Le projet prend en charge les tests manuels d'URL spécifiques, le traitement automatisé de jeux de données CSV et l'analyse dynamique des sites visités via une extension Chrome, Selenium et ChromeDriver.",
+    "bin-to-deb": "Outils et scripts permettant de créer des paquets Debian à partir de fichiers binaires et de simplifier la préparation des logiciels pour les systèmes basés sur Debian.",
+    "kali-dockerized": "Un environnement Kali Linux conteneurisé destiné aux tests de sécurité et à l'expérimentation. Il prend en charge systemd et intègre ProxyChains pour acheminer certains flux réseau à travers des chaînes de proxys.",
+    "docker-parrot": "Un environnement Parrot OS conteneurisé avec les éditions Core et Security, destiné à la recherche en sécurité, aux tests et au travail sous Linux.",
+    "starship-conf": "Une configuration personnalisée de Starship et des scripts complémentaires pour personnaliser et améliorer l'environnement en ligne de commande."
+  },
+
+  it: {
+    "stress-K8s": "Test di carico dei workload Kubernetes e analisi del comportamento del cluster in diverse condizioni.",
+    "K8s-Prometheus-Node-Exporter": "Distribuzione e configurazione di Prometheus Node Exporter per raccogliere metriche di sistema e monitorare i nodi Kubernetes.",
+    "heuristic-detection": "Rilevamento di siti di phishing tramite circa 20 euristiche ponderate. Il progetto supporta test manuali di URL specifici, elaborazione automatizzata di dataset CSV e analisi dinamica dei siti visitati tramite un'estensione Chrome, Selenium e ChromeDriver.",
+    "bin-to-deb": "Strumenti e script per creare pacchetti Debian da file binari, semplificando la preparazione del software per l'installazione su sistemi basati su Debian.",
+    "kali-dockerized": "Un ambiente Kali Linux containerizzato per test di sicurezza e sperimentazione. Include il supporto a systemd e l'integrazione di ProxyChains per instradare il traffico di rete selezionato attraverso catene di proxy.",
+    "docker-parrot": "Un ambiente Parrot OS containerizzato con edizioni Core e Security, pensato per la ricerca sulla sicurezza, i test e l'utilizzo in ambiente Linux.",
+    "starship-conf": "Una configurazione personalizzata di Starship e script di supporto per personalizzare e migliorare l'ambiente a riga di comando."
+  },
+
+  pl: {
+    "stress-K8s": "Testy obciążeniowe workloadów Kubernetes i analiza zachowania klastra w różnych warunkach.",
+    "K8s-Prometheus-Node-Exporter": "Wdrożenie i konfiguracja Prometheus Node Exporter w celu zbierania metryk systemowych i monitorowania węzłów Kubernetes.",
+    "heuristic-detection": "Wykrywanie stron phishingowych przy użyciu około 20 ważonych heurystyk. Projekt obsługuje ręczne testowanie konkretnych adresów URL, automatyczne przetwarzanie zbiorów danych CSV oraz dynamiczną analizę odwiedzanych stron za pomocą rozszerzenia Chrome, Selenium i ChromeDriver.",
+    "bin-to-deb": "Narzędzia i skrypty do tworzenia pakietów Debian z plików binarnych, ułatwiające przygotowanie oprogramowania do instalacji w systemach opartych na Debianie.",
+    "kali-dockerized": "Skonteneryzowane środowisko Kali Linux do testów bezpieczeństwa i eksperymentów. Obejmuje obsługę systemd oraz integrację ProxyChains umożliwiającą kierowanie wybranego ruchu sieciowego przez łańcuchy serwerów proxy.",
+    "docker-parrot": "Skonteneryzowane środowisko Parrot OS z edycjami Core i Security, przeznaczone do badań nad bezpieczeństwem, testów i pracy w środowisku Linux.",
+    "starship-conf": "Własna konfiguracja promptu Starship i skrypty pomocnicze do dostosowania oraz usprawnienia środowiska wiersza poleceń."
+  }
+};
+
 const supportedLanguages = Object.keys(translations);
 const languageSelect = document.querySelector("#languageSelect");
 const menuToggle = document.querySelector("#menuToggle");
@@ -564,6 +648,20 @@ function setLanguage(language, savePreference = true) {
 
     if (Object.prototype.hasOwnProperty.call(t, key)) {
       element.placeholder = t[key];
+    }
+  });
+
+  // Translate project descriptions.
+  document.querySelectorAll("[data-project-translation]").forEach((element) => {
+    const projectId = element.dataset.projectTranslation;
+    const translatedText = projectTranslations[selectedLanguage]?.[projectId];
+
+    if (translatedText) {
+      element.textContent = translatedText;
+    } else {
+      console.warn(
+        `Missing project translation: ${selectedLanguage}.${projectId}`
+      );
     }
   });
 
@@ -623,21 +721,20 @@ function setLanguage(language, savePreference = true) {
     }
   }
   if (menuToggle) {
+    const isOpen = navLinks?.classList.contains("open") ?? false;
+
     const labels = {
-      sk: "Otvoriť navigáciu",
-      en: "Open navigation",
-      de: "Navigation öffnen",
-      ar: "فتح القائمة",
-      ja: "ナビゲーションを開く",
-      fr: "Ouvrir la navigation",
-      it: "Apri la navigazione",
-      pl: "Otwórz nawigację"
+      sk: isOpen ? "Zavrieť navigáciu" : "Otvoriť navigáciu",
+      en: isOpen ? "Close navigation" : "Open navigation",
+      de: isOpen ? "Navigation schließen" : "Navigation öffnen",
+      ar: isOpen ? "إغلاق القائمة" : "فتح القائمة",
+      ja: isOpen ? "ナビゲーションを閉じる" : "ナビゲーションを開く",
+      fr: isOpen ? "Fermer la navigation" : "Ouvrir la navigation",
+      it: isOpen ? "Chiudi la navigazione" : "Apri la navigazione",
+      pl: isOpen ? "Zamknij nawigację" : "Otwórz nawigację"
     };
 
-    menuToggle.setAttribute(
-      "aria-label",
-      labels[selectedLanguage]
-    );
+    menuToggle.setAttribute("aria-label", labels[selectedLanguage]);
   }
 }
 
