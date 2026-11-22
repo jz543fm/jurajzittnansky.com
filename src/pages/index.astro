@@ -1,0 +1,782 @@
+---
+import '../styles/global.css';
+import { profile, languages, translations, projectTranslations } from '../data/portfolio';
+
+const t = translations.sk;
+const projectFilters = [
+  { id: "all", label: t["filter.all"], i18n: "filter.all" },
+  { id: "kubernetes", label: "Kubernetes" },
+  { id: "cybersecurity", label: "Cybersecurity" },
+  { id: "monitoring", label: "Monitoring" },
+  { id: "tooling", label: "Tooling" },
+];
+---
+
+<html lang="sk" class="dark scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{profile.name} {profile.surname} — Software Engineer</title>
+    <meta name="description" content={t["hero.bio"]} />
+    <meta property="og:title" content={`${profile.name} ${profile.surname} — Software Engineer`} />
+    <meta property="og:description" content={t["hero.bio"]} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://jurajzittnansky.com" />
+    <meta property="og:image" content="/og-image.png" />
+    <link rel="canonical" href="https://jurajzittnansky.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+    <style>
+      .bento-card {
+        position: relative;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.036) 0%, rgba(255, 255, 255, 0.01) 100%);
+        box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
+      }
+      .bento-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        background: radial-gradient(
+          440px circle at var(--mouse-x, 50%) var(--mouse-y, 0%),
+          rgba(16, 185, 129, 0.12),
+          transparent 48%
+        );
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+      }
+      .bento-card:hover::before {
+        opacity: 1;
+      }
+      .reveal {
+        opacity: 0;
+        transform: translateY(14px);
+        transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1), transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .reveal.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .nav-link.is-active {
+        background-color: rgba(16, 185, 129, 0.14);
+        color: #6ee7b7;
+        border-color: rgba(52, 211, 153, 0.25);
+      }
+    </style>
+  </head>
+  <body class="relative bg-[#050507] text-zinc-100 font-['Inter'] antialiased selection:bg-emerald-500/30 selection:text-emerald-200 overflow-x-hidden">
+    
+    <!-- Scroll progress indikátor -->
+    <div id="scroll-progress" class="fixed top-0 left-0 z-[60] h-[2px] w-0 bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 shadow-[0_0_12px_rgba(16,185,129,0.8)] transition-[width] duration-75"></div>
+
+    <!-- Prémiové pozadie: dot-matrix + duálna ambientná žiara -->
+    <div aria-hidden="true" class="pointer-events-none fixed inset-0 -z-10">
+      <div class="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.06)_1px,transparent_1px)] [background-size:24px_24px] [mask-image:radial-gradient(ellipse_75%_60%_at_50%_0%,#000_55%,transparent_100%)]"></div>
+      <div class="absolute -top-40 left-1/2 -translate-x-1/2 h-[480px] w-[860px] rounded-full bg-gradient-to-tr from-emerald-500/12 via-teal-500/8 to-cyan-500/10 blur-[140px]"></div>
+      <div class="absolute top-[50%] -right-40 h-[380px] w-[380px] rounded-full bg-emerald-500/5 blur-[130px]"></div>
+    </div>
+
+    <!-- Floating Glass Navigácia -->
+    <header class="sticky top-0 z-50 border-b border-white/[0.06] bg-[#050507]/75 backdrop-blur-2xl">
+      <nav aria-label="Hlavná navigácia" class="mx-auto flex max-w-6xl items-center justify-between px-6 py-3.5">
+        <a href="#home" class="group flex items-center gap-2 font-['JetBrains_Mono'] text-lg font-bold tracking-tight">
+          <span class="flex h-8 w-8 items-center justify-center rounded-lg border border-white/10 bg-white/[0.03] text-sm shadow-inner group-hover:border-emerald-400/50 transition">
+            J<span class="text-emerald-400">.</span>Z
+          </span>
+        </a>
+
+        <div id="desktop-nav" class="hidden md:flex items-center gap-1 rounded-full border border-white/[0.07] bg-white/[0.02] px-2 py-1 text-xs text-zinc-400 backdrop-blur-md">
+          <a href="#about" data-section="about" data-i18n="nav.about" class="nav-link rounded-full border border-transparent px-3.5 py-1.5 hover:bg-white/[0.06] hover:text-white transition">{t["nav.about"]}</a>
+          <a href="#experience" data-section="experience" data-i18n="nav.experience" class="nav-link rounded-full border border-transparent px-3.5 py-1.5 hover:bg-white/[0.06] hover:text-white transition">{t["nav.experience"]}</a>
+          <a href="#stack" data-section="stack" data-i18n="nav.stack" class="nav-link rounded-full border border-transparent px-3.5 py-1.5 hover:bg-white/[0.06] hover:text-white transition">{t["nav.stack"]}</a>
+          <a href="#projects" data-section="projects" data-i18n="nav.projects" class="nav-link rounded-full border border-transparent px-3.5 py-1.5 hover:bg-white/[0.06] hover:text-white transition">{t["nav.projects"]}</a>
+          <a href="#contact" data-section="contact" data-i18n="nav.contact" class="nav-link rounded-full border border-transparent px-3.5 py-1.5 hover:bg-white/[0.06] hover:text-white transition">{t["nav.contact"]}</a>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <button
+            id="cmdk-trigger"
+            type="button"
+            title="Command Palette (⌘K)"
+            class="hidden sm:inline-flex cursor-pointer items-center gap-2 rounded-lg border border-white/10 bg-white/[0.03] px-2.5 py-1.5 font-['JetBrains_Mono'] text-[11px] text-zinc-400 hover:border-white/20 hover:text-zinc-200 transition"
+          >
+            <span>⌘K</span>
+          </button>
+
+          <select id="lang-select" aria-label="Jazyk" class="cursor-pointer rounded-lg border border-white/10 bg-white/[0.03] px-2.5 py-1.5 font-['JetBrains_Mono'] text-xs text-zinc-300 hover:border-white/20 focus:border-emerald-400 focus:outline-none transition">
+            {languages.map((lang) => (
+              <option value={lang.code} class="bg-zinc-950 text-zinc-200">{lang.label}</option>
+            ))}
+          </select>
+
+          <a href="#contact" data-i18n="nav.cta" class="hidden sm:inline-flex rounded-lg bg-gradient-to-b from-emerald-400 to-emerald-500 px-4 py-1.5 text-xs sm:text-sm font-semibold text-zinc-950 shadow-[0_0_24px_-4px_rgba(16,185,129,0.5)] hover:brightness-110 transition">
+            {t["nav.cta"]}
+          </a>
+
+          <button
+            id="mobile-menu-btn"
+            type="button"
+            aria-label="Menu"
+            aria-expanded="false"
+            class="md:hidden inline-flex h-8 w-8 cursor-pointer items-center justify-center rounded-lg border border-white/10 bg-white/[0.03] font-['JetBrains_Mono'] text-xs text-zinc-300 hover:border-white/25"
+          >
+            ☰
+          </button>
+        </div>
+      </nav>
+
+      <!-- Mobilné rozbalovacie menu -->
+      <div id="mobile-menu" class="hidden md:hidden border-t border-white/[0.06] bg-[#07070b]/95 px-6 py-4 space-y-2 font-['JetBrains_Mono'] text-xs text-zinc-300">
+        <a href="#about" data-i18n="nav.about" class="mobile-nav-link block rounded-lg px-3 py-2 hover:bg-white/[0.05]">{t["nav.about"]}</a>
+        <a href="#experience" data-i18n="nav.experience" class="mobile-nav-link block rounded-lg px-3 py-2 hover:bg-white/[0.05]">{t["nav.experience"]}</a>
+        <a href="#stack" data-i18n="nav.stack" class="mobile-nav-link block rounded-lg px-3 py-2 hover:bg-white/[0.05]">{t["nav.stack"]}</a>
+        <a href="#projects" data-i18n="nav.projects" class="mobile-nav-link block rounded-lg px-3 py-2 hover:bg-white/[0.05]">{t["nav.projects"]}</a>
+        <a href="#education" class="mobile-nav-link block rounded-lg px-3 py-2 hover:bg-white/[0.05]">05 / Vzdelanie</a>
+        <a href="#contact" data-i18n="nav.contact" class="mobile-nav-link block rounded-lg bg-emerald-500/15 px-3 py-2 text-emerald-300">{t["nav.contact"]}</a>
+      </div>
+    </header>
+
+    <main id="home" class="mx-auto max-w-6xl px-6">
+      
+      <!-- Hero sekcia -->
+      <section class="grid grid-cols-1 lg:grid-cols-12 gap-12 py-20 lg:py-28 items-center">
+        <div class="lg:col-span-7 space-y-7">
+          <div class="inline-flex items-center gap-2.5 rounded-full border border-emerald-400/20 bg-emerald-400/[0.06] px-3.5 py-1.5 font-['JetBrains_Mono'] text-[11px] tracking-wider text-emerald-300 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
+            </span>
+            <span data-i18n="hero.badge">{t["hero.badge"]}</span>
+          </div>
+
+          <div class="space-y-2.5">
+            <p data-i18n="hero.greeting" class="font-['JetBrains_Mono'] text-sm text-zinc-400">{t["hero.greeting"]}</p>
+            <h1 class="text-4xl sm:text-6xl lg:text-[64px] font-bold tracking-tight leading-[1.05]">
+              <span class="bg-gradient-to-b from-white via-white to-zinc-400 bg-clip-text text-transparent">
+                {profile.name}
+              </span><br />
+              <span class="bg-gradient-to-r from-zinc-200 via-zinc-300 to-zinc-500 bg-clip-text text-transparent">
+                {profile.surname}<span class="text-emerald-400">.</span>
+              </span>
+            </h1>
+          </div>
+
+          <p data-i18n="hero.bio" class="max-w-xl text-zinc-400 text-base sm:text-lg leading-relaxed">
+            {t["hero.bio"]}
+          </p>
+
+          <div class="flex flex-wrap gap-2">
+            {profile.heroTags.map((tag) => (
+              <span class="rounded-full border border-white/[0.08] bg-white/[0.02] px-3.5 py-1 font-['JetBrains_Mono'] text-xs text-zinc-300 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] hover:border-emerald-400/40 hover:text-emerald-300 transition">
+                {tag}
+              </span>
+            ))}
+          </div>
+
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <a href="#projects" data-i18n="hero.btnProjects" class="rounded-xl bg-white px-6 py-3 text-sm font-semibold text-zinc-950 shadow-[0_0_30px_-6px_rgba(255,255,255,0.35)] hover:bg-zinc-200 transition">
+              {t["hero.btnProjects"]}
+            </a>
+            <a href="#contact" data-i18n="hero.btnContact" class="rounded-xl border border-white/10 bg-white/[0.03] px-6 py-3 text-sm font-medium text-zinc-200 hover:border-white/25 hover:bg-white/[0.06] transition">
+              {t["hero.btnContact"]}
+            </a>
+          </div>
+
+          <div class="flex items-center gap-6 pt-3 font-['JetBrains_Mono'] text-xs text-zinc-500">
+            {profile.socials.map((s) => (
+              <a href={s.url} target="_blank" rel="noopener noreferrer" class="hover:text-emerald-400 transition">
+                {s.name} ↗
+              </a>
+            ))}
+          </div>
+        </div>
+
+        <!-- Pravý stĺpec: Prémiový sklenený terminál -->
+        <div class="lg:col-span-5 space-y-3">
+          <div dir="ltr" class="relative overflow-hidden rounded-2xl border border-white/10 bg-[#0a0a0e]/90 shadow-[0_24px_80px_-16px_rgba(0,0,0,0.9),inset_0_1px_0_rgba(255,255,255,0.1)] backdrop-blur-xl">
+            <div class="flex items-center justify-between border-b border-white/[0.06] bg-white/[0.02] px-4 py-3">
+              <div class="flex items-center gap-1.5">
+                <span class="h-2.5 w-2.5 rounded-full bg-zinc-700 hover:bg-red-500 transition"></span>
+                <span class="h-2.5 w-2.5 rounded-full bg-zinc-700 hover:bg-amber-500 transition"></span>
+                <span class="h-2.5 w-2.5 rounded-full bg-zinc-700 hover:bg-emerald-500 transition"></span>
+              </div>
+              <span class="font-['JetBrains_Mono'] text-[11px] text-zinc-500">~/juraj/engineering — zsh</span>
+              <span class="flex items-center gap-1 font-['JetBrains_Mono'] text-[10px] text-emerald-400">● LIVE</span>
+            </div>
+
+            <div id="terminal-output" class="space-y-2 p-5 font-['JetBrains_Mono'] text-xs sm:text-sm max-h-64 overflow-y-auto">
+              <p><span class="text-emerald-400 font-bold">❯</span> whoami</p>
+              <p class="text-zinc-300 pl-4">software-engineer</p>
+              <p><span class="text-emerald-400 font-bold">❯</span> focus --list</p>
+              <div class="text-zinc-400 pl-4 space-y-0.5">
+                <p><span class="text-emerald-400/70">01</span> cloud-native & kubernetes</p>
+                <p><span class="text-emerald-400/70">02</span> distributed-systems</p>
+                <p><span class="text-emerald-400/70">03</span> offensive-security & linux</p>
+              </div>
+              <p class="text-zinc-600 text-xs pt-1"># zadaj 'help' alebo použi šípky ↑/↓</p>
+            </div>
+
+            <form id="terminal-form" class="flex items-center gap-2 border-t border-white/[0.06] bg-black/40 px-5 py-3 font-['JetBrains_Mono'] text-xs sm:text-sm">
+              <span class="text-emerald-400 font-bold">❯</span>
+              <input
+                id="terminal-input"
+                type="text"
+                autocomplete="off"
+                placeholder="help | projects | lang en | clear"
+                class="w-full bg-transparent text-zinc-200 placeholder-zinc-600 focus:outline-none"
+              />
+            </form>
+
+            <div class="flex justify-between border-t border-white/[0.06] bg-white/[0.015] px-6 py-2.5 font-['JetBrains_Mono'] text-[10px] tracking-[0.2em] text-zinc-500">
+              <span>BUILD</span>
+              <span>SECURE</span>
+              <span>SCALE</span>
+            </div>
+          </div>
+
+          <div dir="ltr" class="flex items-center justify-between px-2 font-['JetBrains_Mono'] text-[11px] text-zinc-500">
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span> CLOUD NATIVE</span>
+            <span>DEVOPS · SECURITY · SOFTWARE</span>
+            <span>01 — 06</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 01 / O MNE -->
+      <section id="about" class="reveal border-t border-white/[0.06] py-24">
+        <div class="mb-12">
+          <p data-i18n="about.tag" class="font-['JetBrains_Mono'] text-xs tracking-widest text-emerald-400 mb-2">{t["about.tag"]}</p>
+          <h2 data-i18n="about.title" class="text-3xl sm:text-4xl font-bold bg-gradient-to-b from-white to-zinc-400 bg-clip-text text-transparent">
+            {t["about.title"]}
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          <div class="bento-card lg:col-span-6 rounded-2xl border border-white/[0.08] p-8">
+            <span class="font-['JetBrains_Mono'] text-4xl text-emerald-400/80 block mb-3">“</span>
+            <p data-i18n="about.quote" class="text-lg sm:text-xl text-zinc-200 leading-relaxed">{t["about.quote"]}</p>
+          </div>
+          <div class="bento-card lg:col-span-6 rounded-2xl border border-white/[0.08] p-8 flex flex-col justify-between space-y-6">
+            <div class="space-y-4 text-zinc-400 leading-relaxed">
+              <p data-i18n="about.p1">{t["about.p1"]}</p>
+              <p data-i18n="about.p2">{t["about.p2"]}</p>
+            </div>
+            <div class="grid grid-cols-3 gap-4 pt-5 border-t border-white/[0.06] font-['JetBrains_Mono']">
+              <div>
+                <p class="text-2xl font-bold text-white">6+</p>
+                <p class="text-[10px] tracking-wider text-zinc-500 mt-0.5">YEARS EXP</p>
+              </div>
+              <div>
+                <p class="text-2xl font-bold text-emerald-400">K8s</p>
+                <p class="text-[10px] tracking-wider text-zinc-500 mt-0.5">CLOUD NATIVE</p>
+              </div>
+              <div>
+                <p class="text-2xl font-bold text-white">SecOps</p>
+                <p class="text-[10px] tracking-wider text-zinc-500 mt-0.5">LINUX & NET</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 02 / KARIÉRA -->
+      <section id="experience" class="reveal border-t border-white/[0.06] py-24">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+          <div>
+            <p data-i18n="exp.tag" class="font-['JetBrains_Mono'] text-xs tracking-widest text-emerald-400 mb-2">{t["exp.tag"]}</p>
+            <h2 data-i18n="exp.title" class="text-3xl sm:text-4xl font-bold bg-gradient-to-b from-white to-zinc-400 bg-clip-text text-transparent">
+              {t["exp.title"]}
+            </h2>
+          </div>
+          <p data-i18n="exp.sub" class="text-sm text-zinc-400 max-w-md">{t["exp.sub"]}</p>
+        </div>
+
+        <div class="space-y-4">
+          {profile.experience.map((job) => (
+            <article class="bento-card group relative grid grid-cols-1 md:grid-cols-12 gap-4 rounded-2xl border border-white/[0.08] p-6 sm:p-7 hover:border-emerald-400/30 transition">
+              <div class="md:col-span-3 font-['JetBrains_Mono'] text-xs text-zinc-500 pt-1">
+                {job.period}
+              </div>
+              <div class="md:col-span-8 space-y-2.5">
+                <h3 class="text-xl font-semibold text-zinc-100 group-hover:text-white transition">{job.role}</h3>
+                <p class="text-sm font-medium text-emerald-400">{job.company}</p>
+                <p class="text-sm text-zinc-400 leading-relaxed">{job.desc}</p>
+                <div class="flex flex-wrap gap-2 pt-2">
+                  {job.skills.map((skill) => (
+                    <span class="rounded-md border border-white/[0.06] bg-white/[0.03] px-2.5 py-0.5 font-['JetBrains_Mono'] text-xs text-zinc-300">
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div class="hidden md:block md:col-span-1 text-right font-['JetBrains_Mono'] text-2xl font-bold text-white/[0.06] group-hover:text-emerald-400/25 transition">
+                {job.num}
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <!-- 03 / TECHNOLÓGIE -->
+      <section id="stack" class="reveal border-t border-white/[0.06] py-24">
+        <div class="mb-12">
+          <p data-i18n="stack.tag" class="font-['JetBrains_Mono'] text-xs tracking-widest text-emerald-400 mb-2">{t["stack.tag"]}</p>
+          <h2 data-i18n="stack.title" class="text-3xl sm:text-4xl font-bold bg-gradient-to-b from-white to-zinc-400 bg-clip-text text-transparent mb-2">
+            {t["stack.title"]}
+          </h2>
+          <p data-i18n="stack.sub" class="text-sm text-zinc-400">{t["stack.sub"]}</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {profile.stack.map((group) => (
+            <article class="bento-card rounded-2xl border border-white/[0.08] p-6 hover:border-white/15 transition">
+              <div class="flex h-10 w-10 items-center justify-center rounded-xl border border-emerald-400/20 bg-emerald-400/[0.06] font-['JetBrains_Mono'] text-lg text-emerald-400 mb-4">
+                {group.icon}
+              </div>
+              <h3 class="text-lg font-semibold text-zinc-100 mb-4">{group.category}</h3>
+              <div class="flex flex-wrap gap-2">
+                {group.items.map((item) => (
+                  <span class="rounded-lg border border-white/[0.06] bg-black/40 px-2.5 py-1 font-['JetBrains_Mono'] text-xs text-zinc-300 hover:border-emerald-400/40 hover:text-emerald-300 transition">
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <!-- 04 / PROJEKTY -->
+      <section id="projects" class="reveal border-t border-white/[0.06] py-24">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+          <div>
+            <p data-i18n="proj.tag" class="font-['JetBrains_Mono'] text-xs tracking-widest text-emerald-400 mb-2">{t["proj.tag"]}</p>
+            <h2 data-i18n="proj.title" class="text-3xl sm:text-4xl font-bold bg-gradient-to-b from-white to-zinc-400 bg-clip-text text-transparent">
+              {t["proj.title"]}
+            </h2>
+          </div>
+          <p data-i18n="proj.sub" class="text-sm text-zinc-400">{t["proj.sub"]}</p>
+        </div>
+
+        <!-- Filtre kategórií projektov -->
+        <div id="project-filters" class="flex flex-wrap gap-2 mb-8 font-['JetBrains_Mono'] text-xs">
+          {projectFilters.map((f, idx) => (
+            <button
+              type="button"
+              data-filter={f.id}
+              data-i18n={f.i18n}
+              class:list={[
+                "cursor-pointer rounded-full border px-3.5 py-1.5 transition",
+                idx === 0
+                  ? "border-emerald-400/40 bg-emerald-400/15 text-emerald-300"
+                  : "border-white/[0.08] bg-white/[0.02] text-zinc-400 hover:border-white/20 hover:text-zinc-200",
+              ]}
+            >
+              {f.label}
+            </button>
+          ))}
+        </div>
+
+        <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {profile.projects.map((proj) => {
+            const cat = proj.num.toLowerCase().includes("kubernetes")
+              ? "kubernetes"
+              : proj.num.toLowerCase().includes("cybersecurity")
+              ? "cybersecurity"
+              : proj.num.toLowerCase().includes("monitoring")
+              ? "monitoring"
+              : "tooling";
+            return (
+              <a
+                href={proj.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-category={cat}
+                class="project-card bento-card group flex flex-col justify-between rounded-2xl border border-white/[0.08] p-6 hover:-translate-y-1 hover:border-emerald-400/40 transition-all duration-200"
+              >
+                <div>
+                  <div class="flex items-center justify-between font-['JetBrains_Mono'] text-[11px] text-zinc-500 mb-5">
+                    <span>{proj.num}</span>
+                    <span class="flex h-7 w-7 items-center justify-center rounded-full border border-white/[0.06] bg-white/[0.02] group-hover:border-emerald-400/40 group-hover:text-emerald-400 transition">↗</span>
+                  </div>
+                  <div class="font-['JetBrains_Mono'] text-xl text-emerald-400 mb-2.5">{proj.icon}</div>
+                  <h3 class="text-lg font-semibold text-zinc-100 mb-2 group-hover:text-emerald-300 transition">{proj.title}</h3>
+                  <p data-project-desc={proj.slug} class="text-sm text-zinc-400 leading-relaxed mb-6">{proj.desc}</p>
+                </div>
+                <div class="flex flex-wrap gap-1.5 pt-3 border-t border-white/[0.05]">
+                  {proj.tags.map((tag) => (
+                    <span class="rounded-md bg-white/[0.03] px-2 py-0.5 font-['JetBrains_Mono'] text-[11px] text-zinc-400">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </a>
+            );
+          })}
+        </div>
+
+        <div class="mt-10">
+          <a href="https://github.com/jz543fm" target="_blank" rel="noopener noreferrer" data-i18n="proj.more" class="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.03] px-5 py-3 font-['JetBrains_Mono'] text-xs text-zinc-300 hover:border-emerald-400/40 hover:text-emerald-300 transition">
+            {t["proj.more"]}
+          </a>
+        </div>
+      </section>
+
+      <!-- 05 / VZDELANIE -->
+      <section id="education" class="reveal border-t border-white/[0.06] py-24">
+        <div class="mb-12">
+          <p data-i18n="edu.tag" class="font-['JetBrains_Mono'] text-xs tracking-widest text-emerald-400 mb-2">{t["edu.tag"]}</p>
+          <h2 data-i18n="edu.title" class="text-3xl sm:text-4xl font-bold bg-gradient-to-b from-white to-zinc-400 bg-clip-text text-transparent">
+            {t["edu.title"]}
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+          {profile.education.map((edu) => (
+            <article class="bento-card rounded-2xl border border-white/[0.08] p-6 sm:p-7 hover:border-white/15 transition">
+              <div class="font-['JetBrains_Mono'] text-xs text-emerald-400 mb-2">{edu.period}</div>
+              <h3 class="text-lg font-semibold text-zinc-100">{edu.school}</h3>
+              <p class="text-sm text-zinc-400 mt-1">{edu.degree}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <!-- 06 / KONTAKT -->
+      <section id="contact" class="reveal border-t border-white/[0.06] py-24">
+        <div class="bento-card relative overflow-hidden rounded-3xl border border-white/10 p-8 sm:p-14">
+          <div aria-hidden="true" class="pointer-events-none absolute -right-24 -bottom-24 h-72 w-72 rounded-full bg-emerald-500/15 blur-[90px]"></div>
+          <p data-i18n="contact.tag" class="font-['JetBrains_Mono'] text-xs tracking-widest text-emerald-400 mb-3">{t["contact.tag"]}</p>
+          <h2 class="text-3xl sm:text-5xl font-bold tracking-tight mb-4">
+            <span data-i18n="contact.title1" class="bg-gradient-to-b from-white to-zinc-300 bg-clip-text text-transparent">{t["contact.title1"]}</span><br />
+            <span data-i18n="contact.title2" class="bg-gradient-to-r from-emerald-300 to-teal-400 bg-clip-text text-transparent">{t["contact.title2"]}</span>
+          </h2>
+          <p data-i18n="contact.sub" class="text-zinc-400 max-w-lg mb-8 text-base">
+            {t["contact.sub"]}
+          </p>
+          <div class="flex flex-wrap items-center gap-4">
+            <a href={`mailto:${profile.email}`} class="inline-flex items-center gap-2 rounded-xl bg-gradient-to-b from-emerald-400 to-emerald-500 px-6 py-3 font-['JetBrains_Mono'] text-sm font-semibold text-zinc-950 shadow-[0_0_30px_-5px_rgba(16,185,129,0.5)] hover:brightness-110 transition">
+              {profile.email} ↗
+            </a>
+            <button
+              id="copy-email-btn"
+              type="button"
+              data-email={profile.email}
+              class="cursor-pointer rounded-xl border border-white/10 bg-white/[0.04] px-5 py-3 font-['JetBrains_Mono'] text-xs text-zinc-200 hover:border-white/25 hover:bg-white/[0.08] transition"
+            >
+              <span data-i18n="contact.copy">{t["contact.copy"]}</span>
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Command Palette Modal (⌘K / Ctrl+K) -->
+    <div id="cmdk-backdrop" class="fixed inset-0 z-[70] hidden items-start justify-center bg-black/75 px-4 pt-24 backdrop-blur-sm">
+      <div class="w-full max-w-lg overflow-hidden rounded-2xl border border-white/15 bg-[#0c0c11] shadow-2xl">
+        <div class="flex items-center border-b border-white/[0.08] px-4 py-3">
+          <span class="font-['JetBrains_Mono'] text-xs text-emerald-400 mr-3">⌘K</span>
+          <input
+            id="cmdk-search"
+            type="text"
+            data-i18n-placeholder="cmdk.placeholder" placeholder={t["cmdk.placeholder"]}
+            class="w-full bg-transparent text-sm text-zinc-100 placeholder-zinc-500 focus:outline-none"
+          />
+          <button id="cmdk-close" type="button" class="cursor-pointer font-['JetBrains_Mono'] text-xs text-zinc-500 hover:text-zinc-300">ESC</button>
+        </div>
+        <div id="cmdk-list" class="max-h-72 overflow-y-auto p-2 space-y-1 font-['JetBrains_Mono'] text-xs"></div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/[0.06] py-10 text-center sm:text-left">
+      <div class="mx-auto flex max-w-6xl flex-col sm:flex-row items-center justify-between gap-4 px-6 font-['JetBrains_Mono'] text-xs text-zinc-500">
+        <a href="#home" class="font-bold text-zinc-200">J<span class="text-emerald-400">.</span>Z</a>
+        <p dir="ltr">Designed by $ sudo pkill -u root</p>
+        <span>© {new Date().getFullYear()} {profile.name} {profile.surname}</span>
+      </div>
+    </footer>
+
+    <!-- Klientský skript -->
+    <script define:vars={{ translations, projectTranslations, languages, projects: profile.projects, email: profile.email }}>
+      // 1. Scroll progress bar + Scroll Spy
+      const progressBar = document.getElementById('scroll-progress');
+      const sectionIds = ['about', 'experience', 'stack', 'projects', 'contact'];
+      const navLinks = document.querySelectorAll('#desktop-nav .nav-link');
+
+      window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        if (progressBar && docHeight > 0) {
+          progressBar.style.width = `${Math.min(100, (scrollTop / docHeight) * 100)}%`;
+        }
+
+        let currentId = '';
+        for (const id of sectionIds) {
+          const el = document.getElementById(id);
+          if (el && el.getBoundingClientRect().top <= 180) {
+            currentId = id;
+          }
+        }
+        navLinks.forEach((link) => {
+          link.classList.toggle('is-active', link.getAttribute('data-section') === currentId);
+        });
+      }, { passive: true });
+
+      // 2. Mobilné menu
+      const mobileBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      mobileBtn?.addEventListener('click', () => {
+        const isOpen = !mobileMenu?.classList.contains('hidden');
+        mobileMenu?.classList.toggle('hidden', isOpen);
+        mobileBtn.setAttribute('aria-expanded', String(!isOpen));
+      });
+      document.querySelectorAll('.mobile-nav-link').forEach((link) => {
+        link.addEventListener('click', () => {
+          mobileMenu?.classList.add('hidden');
+          mobileBtn?.setAttribute('aria-expanded', 'false');
+        });
+      });
+
+      // 3. Reveal animácie pri skrolovaní
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.08 });
+      document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+      // 4. Spotlight hover na bento kartách
+      document.querySelectorAll('.bento-card').forEach((card) => {
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          card.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
+          card.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
+        });
+      });
+
+      // 5. Prepínanie jazykov (i18n)
+      const select = document.getElementById('lang-select');
+      let currentLang = localStorage.getItem('lang') || 'sk';
+
+      function applyLanguage(lang) {
+        const dict = translations[lang] || translations.sk;
+        const langMeta = languages.find((l) => l.code === lang) || languages[0];
+        currentLang = lang;
+        localStorage.setItem('lang', lang);
+
+        document.documentElement.lang = lang;
+        document.documentElement.dir = langMeta.dir;
+        if (select) select.value = lang;
+
+        document.querySelectorAll('[data-i18n]').forEach((el) => {
+          const key = el.getAttribute('data-i18n');
+          if (key && dict[key]) {
+            el.textContent = dict[key];
+          }
+        });
+
+        document.querySelectorAll('[data-i18n-placeholder]').forEach((el) => {
+          const key = el.getAttribute('data-i18n-placeholder');
+          if (key && dict[key]) {
+            el.setAttribute('placeholder', dict[key]);
+          }
+        });
+
+        const projDict = projectTranslations[lang] || projectTranslations.sk;
+        document.querySelectorAll('[data-project-desc]').forEach((el) => {
+          const slug = el.getAttribute('data-project-desc');
+          if (slug && projDict[slug]) {
+            el.textContent = projDict[slug];
+          }
+        });
+      }
+
+      if (select) {
+        select.addEventListener('change', (e) => applyLanguage(e.target.value));
+      }
+      applyLanguage(currentLang);
+
+      // 6. Filtrovanie projektov
+      const filterBtns = document.querySelectorAll('#project-filters button');
+      const projectCards = document.querySelectorAll('.project-card');
+      filterBtns.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const filter = btn.getAttribute('data-filter');
+          filterBtns.forEach((b) => {
+            b.className = "cursor-pointer rounded-full border border-white/[0.08] bg-white/[0.02] px-3.5 py-1.5 text-zinc-400 hover:border-white/20 hover:text-zinc-200 transition";
+          });
+          btn.className = "cursor-pointer rounded-full border border-emerald-400/40 bg-emerald-400/15 px-3.5 py-1.5 text-emerald-300 transition";
+
+          projectCards.forEach((card) => {
+            const cat = card.getAttribute('data-category');
+            if (filter === 'all' || cat === filter) {
+              card.classList.remove('hidden');
+            } else {
+              card.classList.add('hidden');
+            }
+          });
+        });
+      });
+
+      // 7. Interaktívny terminál s históriou a príkazom 'lang'
+      const form = document.getElementById('terminal-form');
+      const input = document.getElementById('terminal-input');
+      const output = document.getElementById('terminal-output');
+      const history = [];
+      let historyIdx = -1;
+
+      const commands = {
+        help: 'Príkazy: whoami, focus, stack, projects, lang <code>, contact, clear',
+        whoami: 'Ing. Juraj Žittňanský — Software & DevOps Engineer (Slovakia)',
+        focus: '• cloud-native • distributed-systems • cybersecurity',
+        stack: 'Kubernetes, Docker, Helm, Kustomize, Terraform, Java, TS, Node.js, Linux',
+        projects: projects.map((p) => p.title).join(' · '),
+        contact: `${email} | github.com/jz543fm`,
+      };
+
+      input?.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowUp' && history.length > 0) {
+          e.preventDefault();
+          historyIdx = Math.min(history.length - 1, historyIdx + 1);
+          input.value = history[history.length - 1 - historyIdx];
+        } else if (e.key === 'ArrowDown') {
+          e.preventDefault();
+          historyIdx = Math.max(-1, historyIdx - 1);
+          input.value = historyIdx === -1 ? '' : history[history.length - 1 - historyIdx];
+        }
+      });
+
+      form?.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const raw = input.value.trim();
+        if (!raw) return;
+        history.push(raw);
+        historyIdx = -1;
+
+        const cmd = raw.toLowerCase();
+
+        if (cmd === 'clear') {
+          output.innerHTML = '';
+          input.value = '';
+          return;
+        }
+
+        const pCmd = document.createElement('p');
+        pCmd.innerHTML = `<span class="text-emerald-400 font-bold">❯</span> ${raw.replace(/</g, '&lt;')}`;
+        output.appendChild(pCmd);
+
+        let responseText = commands[cmd];
+        if (cmd.startsWith('lang ')) {
+          const code = cmd.split(/\s+/)[1];
+          if (translations[code]) {
+            applyLanguage(code);
+            responseText = `Jazyk prepnutý na: ${code.toUpperCase()}`;
+          } else {
+            responseText = `Dostupné jazyky: ${Object.keys(translations).join(', ')}`;
+          }
+        }
+
+        const pRes = document.createElement('p');
+        pRes.className = 'text-zinc-400 pl-4';
+        pRes.textContent = responseText || `Neznámy príkaz: ${raw} (skús 'help')`;
+        output.appendChild(pRes);
+
+        output.scrollTop = output.scrollHeight;
+        input.value = '';
+      });
+
+      // 8. Kopírovanie e-mailu
+      const copyBtn = document.getElementById('copy-email-btn');
+      copyBtn?.addEventListener('click', async () => {
+        const emailVal = copyBtn.getAttribute('data-email');
+        if (!emailVal) return;
+        await navigator.clipboard.writeText(emailVal);
+        const span = copyBtn.querySelector('span');
+        const dict = translations[currentLang] || translations.sk;
+        if (span) {
+          span.textContent = dict['contact.copied'] || 'Skopírované!';
+          setTimeout(() => {
+            span.textContent = dict['contact.copy'] || 'Kopírovať e-mail';
+          }, 2000);
+        }
+      });
+
+      // 9. Command Palette (⌘K / Ctrl+K)
+      const backdrop = document.getElementById('cmdk-backdrop');
+      const cmdkSearch = document.getElementById('cmdk-search');
+      const cmdkList = document.getElementById('cmdk-list');
+      const cmdkTrigger = document.getElementById('cmdk-trigger');
+      const cmdkClose = document.getElementById('cmdk-close');
+
+      function getCmdkItems() {
+        const dict = translations[currentLang] || translations.sk;
+        return [
+          { label: dict['cmdk.sec.about'], action: () => location.hash = '#about' },
+          { label: dict['cmdk.sec.experience'], action: () => location.hash = '#experience' },
+          { label: dict['cmdk.sec.stack'], action: () => location.hash = '#stack' },
+          { label: dict['cmdk.sec.projects'], action: () => location.hash = '#projects' },
+          { label: dict['cmdk.sec.education'], action: () => location.hash = '#education' },
+          { label: dict['cmdk.sec.contact'], action: () => location.hash = '#contact' },
+          { label: `${dict['cmdk.copy']} (${email})`, action: async () => { await navigator.clipboard.writeText(email); } },
+          ...projects.map((p) => ({
+            label: `GitHub: ${p.title}`,
+            action: () => window.open(p.url, '_blank', 'noopener,noreferrer'),
+          })),
+        ];
+      }
+
+      function renderCmdk(query = '') {
+        if (!cmdkList) return;
+        const q = query.toLowerCase();
+        const filtered = getCmdkItems().filter((item) => item.label.toLowerCase().includes(q));
+        cmdkList.innerHTML = '';
+        filtered.forEach((item) => {
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'flex w-full cursor-pointer items-center justify-between rounded-lg px-3 py-2 text-left text-zinc-300 hover:bg-emerald-500/15 hover:text-emerald-300 transition';
+          btn.innerHTML = `<span>${item.label}</span><span class="text-zinc-600">↵</span>`;
+          btn.addEventListener('click', () => {
+            item.action();
+            closeCmdk();
+          });
+          cmdkList.appendChild(btn);
+        });
+      }
+
+      function openCmdk() {
+        backdrop?.classList.remove('hidden');
+        backdrop?.classList.add('flex');
+        renderCmdk('');
+        setTimeout(() => cmdkSearch?.focus(), 10);
+      }
+
+      function closeCmdk() {
+        backdrop?.classList.add('hidden');
+        backdrop?.classList.remove('flex');
+        if (cmdkSearch) cmdkSearch.value = '';
+      }
+
+      cmdkTrigger?.addEventListener('click', openCmdk);
+      cmdkClose?.addEventListener('click', closeCmdk);
+      backdrop?.addEventListener('click', (e) => {
+        if (e.target === backdrop) closeCmdk();
+      });
+      cmdkSearch?.addEventListener('input', (e) => renderCmdk(e.target.value));
+
+      window.addEventListener('keydown', (e) => {
+        if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+          e.preventDefault();
+          backdrop?.classList.contains('hidden') ? openCmdk() : closeCmdk();
+        } else if (e.key === 'Escape' && !backdrop?.classList.contains('hidden')) {
+          closeCmdk();
+        }
+      });
+    </script>
+  </body>
+</html>
