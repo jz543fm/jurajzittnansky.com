@@ -93,6 +93,13 @@ export const projectTranslations: Record<string, Record<string, string>> = {
 
 export const translations: Record<string, Record<string, string>> = {
   sk: {
+        "contact.form.name": "$ meno",
+    "contact.form.email": "$ email",
+    "contact.form.message": "$ správa",
+    "contact.form.send": "$ send --message",
+    "contact.form.sending": "> odosielam...",
+    "contact.form.success": "> 200 OK: Správa bola odoslaná.",
+    "contact.form.error": "> 500 ERR: Nepodarilo sa odoslať. Použi priamy e-mail.",
     "nav.about": "O mne",
     "nav.experience": "Skúsenosti",
     "nav.stack": "Technológie",
@@ -140,6 +147,13 @@ export const translations: Record<string, Record<string, string>> = {
     "nav.education": "05 / Edukacja",
   },
   en: {
+        "contact.form.name": "$ name",
+    "contact.form.email": "$ email",
+    "contact.form.message": "$ message",
+    "contact.form.send": "$ send --message",
+    "contact.form.sending": "> sending payload...",
+    "contact.form.success": "> 200 OK: Message sent.",
+    "contact.form.error": "> 500 ERR: Failed to send. Use direct email.",
     "nav.about": "About",
     "nav.experience": "Experience",
     "nav.stack": "Tech Stack",
@@ -186,6 +200,13 @@ export const translations: Record<string, Record<string, string>> = {
     "cmdk.copied": "Copied to clipboard"
   },
   de: {
+        "contact.form.name": "$ name",
+    "contact.form.email": "$ e-mail",
+    "contact.form.message": "$ nachricht",
+    "contact.form.send": "$ send --message",
+    "contact.form.sending": "> wird gesendet...",
+    "contact.form.success": "> 200 OK: Nachricht gesendet.",
+    "contact.form.error": "> 500 ERR: Senden fehlgeschlagen.",
     "nav.about": "Über mich",
     "nav.experience": "Erfahrung",
     "nav.stack": "Technologien",
@@ -232,6 +253,13 @@ export const translations: Record<string, Record<string, string>> = {
     "cmdk.copied": "In Zwischenablage kopiert"
   },
   ar: {
+        "contact.form.name": "$ الاسم",
+    "contact.form.email": "$ البريد الإلكتروني",
+    "contact.form.message": "$ الرسالة",
+    "contact.form.send": "$ send --message",
+    "contact.form.sending": "> جاري الإرسال...",
+    "contact.form.success": "> 200 OK: تم إرسال الرسالة.",
+    "contact.form.error": "> 500 ERR: فشل الإرسال.",
     "nav.about": "عني",
     "nav.experience": "الخبرات",
     "nav.stack": "التقنيات",
@@ -278,6 +306,13 @@ export const translations: Record<string, Record<string, string>> = {
     "cmdk.copied": "تم النسخ إلى الحافظة"
   },
   ja: {
+        "contact.form.name": "$ 名前",
+    "contact.form.email": "$ メール",
+    "contact.form.message": "$ メッセージ",
+    "contact.form.send": "$ send --message",
+    "contact.form.sending": "> 送信中...",
+    "contact.form.success": "> 200 OK: 送信しました。",
+    "contact.form.error": "> 500 ERR: 送信に失敗しました。",
     "nav.about": "私について",
     "nav.experience": "経歴",
     "nav.stack": "技術スタック",
@@ -324,6 +359,13 @@ export const translations: Record<string, Record<string, string>> = {
     "cmdk.copied": "クリップボードにコピーしました"
   },
   fr: {
+        "contact.form.name": "$ nom",
+    "contact.form.email": "$ e-mail",
+    "contact.form.message": "$ message",
+    "contact.form.send": "$ send --message",
+    "contact.form.sending": "> envoi en cours...",
+    "contact.form.success": "> 200 OK: Message envoyé.",
+    "contact.form.error": "> 500 ERR: Échec de l'envoi.",
     "nav.about": "À propos",
     "nav.experience": "Expérience",
     "nav.stack": "Technologies",
@@ -370,6 +412,13 @@ export const translations: Record<string, Record<string, string>> = {
     "cmdk.copied": "Copié dans le presse-papiers"
   },
   it: {
+        "contact.form.name": "$ nome",
+    "contact.form.email": "$ e-mail",
+    "contact.form.message": "$ messaggio",
+    "contact.form.send": "$ send --message",
+    "contact.form.sending": "> invio in corso...",
+    "contact.form.success": "> 200 OK: Messaggio inviato.",
+    "contact.form.error": "> 500 ERR: Invio non riuscito.",
     "nav.about": "Chi sono",
     "nav.experience": "Esperienza",
     "nav.stack": "Tecnologie",
@@ -416,6 +465,13 @@ export const translations: Record<string, Record<string, string>> = {
     "cmdk.copied": "Copiato negli appunti"
   },
   pl: {
+        "contact.form.name": "$ imię",
+    "contact.form.email": "$ email",
+    "contact.form.message": "$ wiadomość",
+    "contact.form.send": "$ send --message",
+    "contact.form.sending": "> wysyłanie...",
+    "contact.form.success": "> 200 OK: Wiadomość wysłana.",
+    "contact.form.error": "> 500 ERR: Nie udało się wysłać.",
     "nav.about": "O mnie",
     "nav.experience": "Doświadczenie",
     "nav.stack": "Technologie",

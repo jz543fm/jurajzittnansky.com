@@ -95,7 +95,7 @@ const projectFilters = [
       <div class="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.06)_1px,transparent_1px)] [background-size:24px_24px] [mask-image:radial-gradient(ellipse_75%_60%_at_50%_0%,#000_55%,transparent_100%)]"></div>
       <div class="absolute -top-40 left-1/2 -translate-x-1/2 h-[480px] w-[860px] rounded-full bg-gradient-to-tr from-emerald-500/12 via-teal-500/8 to-cyan-500/10 blur-[140px]"></div>
       <div class="absolute top-[55%] -right-40 h-[360px] w-[360px] rounded-full bg-emerald-400/[0.04] blur-[120px]"></div>
-      <span class="bg-cli-dollar fixed right-6 bottom-3 font-['JetBrains_Mono'] text-[13rem] sm:text-[19rem] font-bold leading-none text-emerald-400 select-none">$</span>
+      <span class="bg-cli-dollar pointer-events-none fixed right-3 bottom-2 sm:right-6 sm:bottom-3 font-['JetBrains_Mono'] text-7xl sm:text-[14rem] font-bold leading-none text-emerald-400 select-none">$</span>
     </div>
 
     <!-- Navigácia v CLI duchu -->
@@ -153,7 +153,7 @@ const projectFilters = [
         <a href="#experience" data-i18n="nav.experience" class="mobile-nav-link block rounded-lg px-3 py-2 hover:bg-white/[0.05]">{t["nav.experience"]}</a>
         <a href="#stack" data-i18n="nav.stack" class="mobile-nav-link block rounded-lg px-3 py-2 hover:bg-white/[0.05]">{t["nav.stack"]}</a>
         <a href="#projects" data-i18n="nav.projects" class="mobile-nav-link block rounded-lg px-3 py-2 hover:bg-white/[0.05]">{t["nav.projects"]}</a>
-        <a href="#education" class="mobile-nav-link block rounded-lg px-3 py-2 hover:bg-white/[0.05]">05 / Vzdelanie</a>
+        <a href="#education" data-i18n="nav.education" class="mobile-nav-link block rounded-lg px-3 py-2 hover:bg-white/[0.05]">{t["nav.education"] ?? "05 / Vzdelanie"}</a>
         <a href="#contact" data-i18n="nav.contact" class="mobile-nav-link block rounded-lg bg-emerald-500/15 px-3 py-2 text-emerald-300">{t["nav.contact"]}</a>
       </div>
     </header>
@@ -478,19 +478,38 @@ const projectFilters = [
           <p data-i18n="contact.sub" class="text-zinc-400 max-w-lg mb-8 text-base">
             {t["contact.sub"]}
           </p>
-          <div class="flex flex-wrap items-center gap-4">
-            <a href={`mailto:${profile.email}`} class="inline-flex items-center gap-2 rounded-xl bg-gradient-to-b from-emerald-400 to-emerald-500 px-6 py-3 font-['JetBrains_Mono'] text-sm font-semibold text-zinc-950 shadow-[0_0_30px_-5px_rgba(16,185,129,0.5)] hover:brightness-110 transition">
-              $ mailto {profile.email} ↗
-            </a>
-            <button
-              id="copy-email-btn"
-              type="button"
-              data-email={profile.email}
-              class="cursor-pointer rounded-xl border border-white/10 bg-white/[0.04] px-5 py-3 font-['JetBrains_Mono'] text-xs text-zinc-200 hover:border-white/25 hover:bg-white/[0.08] transition"
-            >
-              <span data-i18n="contact.copy">{t["contact.copy"]}</span>
-            </button>
-          </div>
+
+          <form id="contact-form" class="space-y-4 max-w-xl font-['JetBrains_Mono'] text-xs sm:text-sm mb-8">
+            <input type="text" name="website" tabindex="-1" autocomplete="off" class="hidden" />
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="cf-name" data-i18n="contact.form.name" class="block text-zinc-400 mb-1.5">{t["contact.form.name"] ?? "$ meno"}</label>
+                <input id="cf-name" name="name" type="text" required maxlength="100" placeholder="Ján Novák" class="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-2.5 text-zinc-100 placeholder-zinc-600 focus:border-emerald-400 focus:outline-none transition" />
+              </div>
+              <div>
+                <label for="cf-email" data-i18n="contact.form.email" class="block text-zinc-400 mb-1.5">{t["contact.form.email"] ?? "$ email"}</label>
+                <input id="cf-email" name="email" type="email" required maxlength="150" placeholder="jan@example.com" class="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-2.5 text-zinc-100 placeholder-zinc-600 focus:border-emerald-400 focus:outline-none transition" />
+              </div>
+            </div>
+            <div>
+              <label for="cf-message" data-i18n="contact.form.message" class="block text-zinc-400 mb-1.5">{t["contact.form.message"] ?? "$ správa"}</label>
+              <textarea id="cf-message" name="message" rows="4" required maxlength="4000" placeholder="Ahoj Juraj, ..." class="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-2.5 text-zinc-100 placeholder-zinc-600 focus:border-emerald-400 focus:outline-none transition"></textarea>
+            </div>
+            <div class="flex flex-wrap items-center gap-4">
+              <button id="cf-submit" type="submit" data-i18n="contact.form.send" class="cursor-pointer rounded-xl bg-gradient-to-b from-emerald-400 to-emerald-500 px-6 py-3 font-semibold text-zinc-950 shadow-[0_0_30px_-5px_rgba(16,185,129,0.5)] hover:brightness-110 disabled:opacity-50 transition">
+                {t["contact.form.send"] ?? "$ send --message"}
+              </button>
+              <button
+                id="copy-email-btn"
+                type="button"
+                data-email={profile.email}
+                class="cursor-pointer rounded-xl border border-white/10 bg-white/[0.04] px-5 py-3 text-xs text-zinc-200 hover:border-white/25 hover:bg-white/[0.08] transition"
+              >
+                <span data-i18n="contact.copy">{t["contact.copy"]}</span> ({profile.email})
+              </button>
+            </div>
+            <p id="cf-status" role="status" class="text-xs text-zinc-400 min-h-[1.25rem]"></p>
+          </form>
         </div>
       </section>
     </main>
@@ -802,6 +821,47 @@ const projectFilters = [
           backdrop?.classList.contains('hidden') ? openCmdk() : closeCmdk();
         } else if (e.key === 'Escape' && !backdrop?.classList.contains('hidden')) {
           closeCmdk();
+        }
+      });
+
+      // 10. Odoslanie kontaktného formulára cez Cloudflare Worker (/api/contact)
+      const contactForm = document.getElementById('contact-form');
+      const cfSubmit = document.getElementById('cf-submit');
+      const cfStatus = document.getElementById('cf-status');
+
+      contactForm?.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        if (!cfSubmit || !cfStatus) return;
+
+        const dict = translations[currentLang] || translations.sk;
+        const formData = new FormData(contactForm);
+        const payload = {
+          name: formData.get('name'),
+          email: formData.get('email'),
+          message: formData.get('message'),
+          website: formData.get('website'),
+        };
+
+        cfSubmit.setAttribute('disabled', 'true');
+        cfStatus.className = 'text-xs text-zinc-400 min-h-[1.25rem]';
+        cfStatus.textContent = dict['contact.form.sending'] || '> sending...';
+
+        try {
+          const res = await fetch('/api/contact', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload),
+          });
+          if (!res.ok) throw new Error('Request failed');
+
+          cfStatus.className = 'text-xs text-emerald-400 min-h-[1.25rem]';
+          cfStatus.textContent = dict['contact.form.success'] || '> 200 OK: Message sent.';
+          contactForm.reset();
+        } catch {
+          cfStatus.className = 'text-xs text-red-400 min-h-[1.25rem]';
+          cfStatus.textContent = dict['contact.form.error'] || '> 500 ERR: Failed to send.';
+        } finally {
+          cfSubmit.removeAttribute('disabled');
         }
       });
     </script>
