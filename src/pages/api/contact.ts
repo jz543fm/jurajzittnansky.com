@@ -2,9 +2,35 @@ import type { APIRoute } from 'astro';
 
 export const prerender = false;
 
+async function parsePayload(request: Request): Promise<Record<string, unknown>> {
+  const rawText = await request.text();
+  if (!rawText) return {};
+
+  const contentType = request.headers.get('content-type') || '';
+
+  if (contentType.includes('application/json')) {
+    return JSON.parse(rawText) as Record<string, unknown>;
+  }
+
+  if (contentType.includes('application/x-www-form-urlencoded')) {
+    const params = new URLSearchParams(rawText);
+    return Object.fromEntries(params.entries());
+  }
+
+  try {
+    return JSON.parse(rawText) as Record<string, unknown>;
+  } catch {
+    const params = new URLSearchParams(rawText);
+    if ([...params.keys()].length > 0) {
+      return Object.fromEntries(params.entries());
+    }
+    throw new Error('Unsupported body format');
+  }
+}
+
 export const POST: APIRoute = async ({ request, locals }) => {
   try {
-    const body = await request.json();
+    const body = await parsePayload(request);
     const name = String(body.name ?? '').trim();
     const email = String(body.email ?? '').trim();
     const message = String(body.message ?? '').trim();
