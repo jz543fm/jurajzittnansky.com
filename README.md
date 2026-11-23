@@ -1,5 +1,7 @@
 # jurajzittnansky.com
 
+[jurajzittnansky.com](https://jurajzittnansky.com)
+
 CLI-inspired personal engineering portfolio for **Ing. Juraj Žittňanský** (Software & DevOps Engineer), built with **Astro**, **TypeScript**, and **Tailwind CSS**, and deployed on **Cloudflare**.
 
 ## Highlights
