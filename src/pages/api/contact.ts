@@ -42,8 +42,8 @@ export const POST: APIRoute = async ({ request }) => {
     }
 
     const workerEnv = env as Record<string, string | undefined>;
-    const apiKey = workerEnv.RESEND_API_KEY || import.meta.env.RESEND_API_KEY;
-    const toEmail = workerEnv.CONTACT_TO_EMAIL || import.meta.env.CONTACT_TO_EMAIL;
+    const apiKey = (workerEnv.RESEND_API_KEY || import.meta.env.RESEND_API_KEY || '').trim();
+    const toEmail = (workerEnv.CONTACT_TO_EMAIL || import.meta.env.CONTACT_TO_EMAIL || '').trim();
 
     if (!apiKey || !toEmail) {
       return new Response(JSON.stringify({ error: 'Mail service not configured' }), {
@@ -68,8 +68,7 @@ export const POST: APIRoute = async ({ request }) => {
     });
 
     if (!res.ok) {
-      const details = await res.text();
-      return new Response(JSON.stringify({ error: 'Failed to send email', details }), {
+      return new Response(JSON.stringify({ error: 'Failed to send email' }), {
         status: 502,
         headers: { 'Content-Type': 'application/json' },
       });
@@ -79,9 +78,8 @@ export const POST: APIRoute = async ({ request }) => {
       status: 200,
       headers: { 'Content-Type': 'application/json' },
     });
-  } catch (err) {
-    const detail = err instanceof Error ? err.message : String(err);
-    return new Response(JSON.stringify({ error: 'Bad request', detail }), {
+  } catch {
+    return new Response(JSON.stringify({ error: 'Bad request' }), {
       status: 400,
       headers: { 'Content-Type': 'application/json' },
     });
