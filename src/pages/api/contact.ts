@@ -2,35 +2,18 @@ import type { APIRoute } from 'astro';
 
 export const prerender = false;
 
-async function parsePayload(request: Request): Promise<Record<string, unknown>> {
-  const rawText = await request.text();
-  if (!rawText) return {};
-
-  const contentType = request.headers.get('content-type') || '';
-
-  if (contentType.includes('application/json')) {
-    return JSON.parse(rawText) as Record<string, unknown>;
-  }
-
-  if (contentType.includes('application/x-www-form-urlencoded')) {
-    const params = new URLSearchParams(rawText);
-    return Object.fromEntries(params.entries());
-  }
-
-  try {
-    return JSON.parse(rawText) as Record<string, unknown>;
-  } catch {
-    const params = new URLSearchParams(rawText);
-    if ([...params.keys()].length > 0) {
-      return Object.fromEntries(params.entries());
-    }
-    throw new Error('Unsupported body format');
-  }
-}
-
 export const POST: APIRoute = async ({ request, locals }) => {
   try {
-    const body = await parsePayload(request);
+    let body: Record<string, unknown> = {};
+    try {
+      body = (await request.json()) as Record<string, unknown>;
+    } catch {
+      const text = await request.text();
+      if (text) {
+        body = Object.fromEntries(new URLSearchParams(text).entries());
+      }
+    }
+
     const name = String(body.name ?? '').trim();
     const email = String(body.email ?? '').trim();
     const message = String(body.message ?? '').trim();
@@ -57,7 +40,7 @@ export const POST: APIRoute = async ({ request, locals }) => {
       });
     }
 
-    const runtimeEnv = (locals as any)?.runtime?.env ?? {};
+    const runtimeEnv = (locals as { runtime?: { env?: Record<string, string | undefined> } })?.runtime?.env ?? {};
     const apiKey = runtimeEnv.RESEND_API_KEY || import.meta.env.RESEND_API_KEY;
     const toEmail = runtimeEnv.CONTACT_TO_EMAIL || import.meta.env.CONTACT_TO_EMAIL;
 
@@ -95,8 +78,9 @@ export const POST: APIRoute = async ({ request, locals }) => {
       status: 200,
       headers: { 'Content-Type': 'application/json' },
     });
-  } catch {
-    return new Response(JSON.stringify({ error: 'Bad request' }), {
+  } catch (err) {
+    const detail = err instanceof Error ? err.message : String(err);
+    return new Response(JSON.stringify({ error: 'Bad request', detail }), {
       status: 400,
       headers: { 'Content-Type': 'application/json' },
     });
