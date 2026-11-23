@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import { profile, languages, translations, projectTranslations } from '../data/portfolio';
+import { profile, languages, translations, projectTranslations, experienceTranslations, stackCategoryTranslations, educationTranslations } from '../data/portfolio';
 
 const t = translations.sk;
 const projectFilters = [
@@ -314,15 +314,15 @@ const projectFilters = [
         </div>
 
         <div class="space-y-4">
-          {profile.experience.map((job) => (
+          {profile.experience.map((job, jobIdx) => (
             <article class="bento-card group relative grid grid-cols-1 md:grid-cols-12 gap-4 rounded-2xl border border-white/[0.08] p-6 sm:p-7 hover:border-emerald-400/30 transition">
               <div class="md:col-span-3 font-['JetBrains_Mono'] text-xs text-zinc-500 pt-1">
                 $ {job.period}
               </div>
               <div class="md:col-span-8 space-y-2.5">
-                <h3 class="text-xl font-semibold text-zinc-100 transition">{job.role}</h3>
+                <h3 data-exp-role={jobIdx} class="text-xl font-semibold text-zinc-100 transition">{job.role}</h3>
                 <p class="text-sm font-medium text-emerald-400">{job.company}</p>
-                <p class="text-sm text-zinc-400 leading-relaxed">{job.desc}</p>
+                <p data-exp-desc={jobIdx} class="text-sm text-zinc-400 leading-relaxed">{job.desc}</p>
                 <div class="flex flex-wrap gap-2 pt-2">
                   {job.skills.map((skill) => (
                     <span class="rounded-md border border-white/[0.06] bg-white/[0.03] px-2.5 py-0.5 font-['JetBrains_Mono'] text-xs text-zinc-300">
@@ -350,7 +350,7 @@ const projectFilters = [
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {profile.stack.map((group) => (
+          {profile.stack.map((group, groupIdx) => (
             <article class="bento-card rounded-2xl border border-white/[0.08] p-6 hover:border-white/15 transition">
               <div class="flex items-center justify-between mb-4">
                 <div class="flex h-10 w-10 items-center justify-center rounded-xl border border-emerald-400/20 bg-emerald-400/[0.06] font-['JetBrains_Mono'] text-lg text-emerald-400">
@@ -358,7 +358,7 @@ const projectFilters = [
                 </div>
                 <span class="font-['JetBrains_Mono'] text-[11px] text-zinc-600">$ which</span>
               </div>
-              <h3 class="text-lg font-semibold text-zinc-100 mb-4">{group.category}</h3>
+              <h3 data-stack-cat={groupIdx} class="text-lg font-semibold text-zinc-100 mb-4">{group.category}</h3>
               <div class="flex flex-wrap gap-2">
                 {group.items.map((item) => (
                   <span class="rounded-lg border border-white/[0.06] bg-black/40 px-2.5 py-1 font-['JetBrains_Mono'] text-xs text-zinc-300 hover:border-emerald-400/40 hover:text-emerald-300 transition">
@@ -456,11 +456,11 @@ const projectFilters = [
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-          {profile.education.map((edu) => (
+          {profile.education.map((edu, eduIdx) => (
             <article class="bento-card rounded-2xl border border-white/[0.08] p-6 sm:p-7 hover:border-white/15 transition">
               <div class="font-['JetBrains_Mono'] text-xs text-emerald-400 mb-2">$ {edu.period}</div>
-              <h3 class="text-lg font-semibold text-zinc-100">{edu.school}</h3>
-              <p class="text-sm text-zinc-400 mt-1">{edu.degree}</p>
+              <h3 data-edu-school={eduIdx} class="text-lg font-semibold text-zinc-100">{edu.school}</h3>
+              <p data-edu-degree={eduIdx} class="text-sm text-zinc-400 mt-1">{edu.degree}</p>
             </article>
           ))}
         </div>
@@ -541,7 +541,7 @@ const projectFilters = [
       </div>
     </footer>
 
-    <script define:vars={{ translations, projectTranslations, languages, projects: profile.projects, email: profile.email }}>
+    <script define:vars={{ translations, projectTranslations, experienceTranslations, stackCategoryTranslations, educationTranslations, languages, projects: profile.projects, email: profile.email }}>
       // 1. Scroll progress bar + Scroll Spy
       const progressBar = document.getElementById('scroll-progress');
       const sectionIds = ['about', 'experience', 'stack', 'projects', 'contact'];
@@ -639,6 +639,40 @@ const projectFilters = [
           if (slug && projDict[slug]) {
             el.textContent = projDict[slug];
           }
+        });
+
+        const expList = experienceTranslations[lang] || experienceTranslations.sk || [];
+        document.querySelectorAll('[data-exp-period]').forEach((el) => {
+          const idx = Number(el.getAttribute('data-exp-period'));
+          if (expList[idx]) el.textContent = `$ ${expList[idx].period}`;
+        });
+        document.querySelectorAll('[data-exp-role]').forEach((el) => {
+          const idx = Number(el.getAttribute('data-exp-role'));
+          if (expList[idx]) el.textContent = expList[idx].role;
+        });
+        document.querySelectorAll('[data-exp-desc]').forEach((el) => {
+          const idx = Number(el.getAttribute('data-exp-desc'));
+          if (expList[idx]) el.textContent = expList[idx].desc;
+        });
+
+        const stackList = stackCategoryTranslations[lang] || stackCategoryTranslations.sk || [];
+        document.querySelectorAll('[data-stack-cat]').forEach((el) => {
+          const idx = Number(el.getAttribute('data-stack-cat'));
+          if (stackList[idx]) el.textContent = stackList[idx];
+        });
+
+        const eduList = educationTranslations[lang] || educationTranslations.sk || [];
+        document.querySelectorAll('[data-edu-period]').forEach((el) => {
+          const idx = Number(el.getAttribute('data-edu-period'));
+          if (eduList[idx]) el.textContent = `$ ${eduList[idx].period}`;
+        });
+        document.querySelectorAll('[data-edu-school]').forEach((el) => {
+          const idx = Number(el.getAttribute('data-edu-school'));
+          if (eduList[idx]) el.textContent = eduList[idx].school;
+        });
+        document.querySelectorAll('[data-edu-degree]').forEach((el) => {
+          const idx = Number(el.getAttribute('data-edu-degree'));
+          if (eduList[idx]) el.textContent = eduList[idx].degree;
         });
       }
 

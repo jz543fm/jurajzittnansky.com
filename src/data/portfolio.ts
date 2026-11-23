@@ -793,3 +793,327 @@ export const profile = {
     },
   ],
 };
+
+export const experienceTranslations: Record<string, Array<{ period: string; role: string; desc: string }>> = {
+  sk: [
+    {
+      period: "AUG 2025 — SÚČASNOSŤ",
+      role: "Software Engineer",
+      desc: "Vývoj softvérových riešení, technická architektúra a cloud-native technológie vrátane Kubernetes operátorov a controllerov.",
+    },
+    {
+      period: "OKT 2022 — JÚN 2025",
+      role: "DevOps Engineer",
+      desc: "Privátna AI cloudová infraštruktúra, Kubernetes platformy, CI/CD, monitoring, alerting a automatizácia.",
+    },
+    {
+      period: "JAN 2022 — SEP 2022",
+      role: "DevOps Engineer",
+      desc: "Automatizácia infraštruktúry a technické úlohy v oblasti DevOps.",
+    },
+    {
+      period: "2019 — 2022",
+      role: "Software Developer / DevOps Engineer",
+      desc: "Skúsenosti s vývojom softvéru, Linux systémami, vývojom aplikácií a infraštruktúrou.",
+    },
+  ],
+  en: [
+    {
+      period: "AUG 2025 — PRESENT",
+      role: "Software Engineer",
+      desc: "Software engineering, technical architecture, and cloud-native technologies including Kubernetes operators and controllers.",
+    },
+    {
+      period: "OCT 2022 — JUN 2025",
+      role: "DevOps Engineer",
+      desc: "Private AI cloud infrastructure, Kubernetes platforms, CI/CD, monitoring, alerting, and automation.",
+    },
+    {
+      period: "JAN 2022 — SEP 2022",
+      role: "DevOps Engineer",
+      desc: "Infrastructure automation and DevOps engineering tasks.",
+    },
+    {
+      period: "2019 — 2022",
+      role: "Software Developer / DevOps Engineer",
+      desc: "Experience with software development, Linux systems, application engineering, and infrastructure.",
+    },
+  ],
+  ja: [
+    {
+      period: "2025年8月 — 現在",
+      role: "ソフトウェアエンジニア",
+      desc: "Kubernetesオペレーターやコントローラーを含むソフトウェア開発、技術アーキテクチャ、クラウドネイティブ技術を担当。",
+    },
+    {
+      period: "2022年10月 — 2025年6月",
+      role: "DevOpsエンジニア",
+      desc: "プライベートAIクラウド基盤、Kubernetesプラットフォーム、CI/CD、監視・アラート、自動化を推進。",
+    },
+    {
+      period: "2022年1月 — 2022年9月",
+      role: "DevOpsエンジニア",
+      desc: "インフラ自動化およびDevOps関連の技術業務を担当。",
+    },
+    {
+      period: "2019年 — 2022年",
+      role: "ソフトウェア開発者 / DevOpsエンジニア",
+      desc: "ソフトウェア開発、Linuxシステム、アプリケーション開発、インフラ構築の経験。",
+    },
+  ],
+  sv: [
+    {
+      period: "AUG 2025 — NU",
+      role: "Mjukvaruingenjör",
+      desc: "Mjukvaruutveckling, teknisk arkitektur och cloud-native-teknik inklusive Kubernetes-operatorer och controllers.",
+    },
+    {
+      period: "OKT 2022 — JUNI 2025",
+      role: "DevOps-ingenjör",
+      desc: "Privat AI-molninfrastruktur, Kubernetes-plattformar, CI/CD, övervakning, larm och automatisering.",
+    },
+    {
+      period: "JAN 2022 — SEP 2022",
+      role: "DevOps-ingenjör",
+      desc: "Infrastrukturautomatisering och tekniska DevOps-uppgifter.",
+    },
+    {
+      period: "2019 — 2022",
+      role: "Mjukvaruutvecklare / DevOps-ingenjör",
+      desc: "Erfarenhet av mjukvaruutveckling, Linux-system, applikationsutveckling och infrastruktur.",
+    },
+  ],
+  pl: [
+    {
+      period: "SIE 2025 — OBECNIE",
+      role: "Inżynier oprogramowania",
+      desc: "Rozwój oprogramowania, architektura techniczna oraz technologie cloud-native, w tym operatory i kontrolery Kubernetes.",
+    },
+    {
+      period: "PAŹ 2022 — CZE 2025",
+      role: "Inżynier DevOps",
+      desc: "Prywatna infrastruktura chmurowa AI, platformy Kubernetes, CI/CD, monitoring, alertowanie i automatyzacja.",
+    },
+    {
+      period: "STY 2022 — WRZ 2022",
+      role: "Inżynier DevOps",
+      desc: "Automatyzacja infrastruktury oraz zadania inżynieryjne w obszarze DevOps.",
+    },
+    {
+      period: "2019 — 2022",
+      role: "Programista / Inżynier DevOps",
+      desc: "Doświadczenie w tworzeniu oprogramowania, systemach Linux, budowie aplikacji i infrastrukturze.",
+    },
+  ],
+  de: [
+    {
+      period: "AUG 2025 — HEUTE",
+      role: "Software-Ingenieur",
+      desc: "Softwareentwicklung, technische Architektur und Cloud-Native-Technologien einschließlich Kubernetes-Operatoren und -Controllern.",
+    },
+    {
+      period: "OKT 2022 — JUN 2025",
+      role: "DevOps-Ingenieur",
+      desc: "Private-AI-Cloud-Infrastruktur, Kubernetes-Plattformen, CI/CD, Monitoring, Alerting und Automatisierung.",
+    },
+    {
+      period: "JAN 2022 — SEP 2022",
+      role: "DevOps-Ingenieur",
+      desc: "Infrastrukturautomatisierung und DevOps-Aufgaben.",
+    },
+    {
+      period: "2019 — 2022",
+      role: "Softwareentwickler / DevOps-Ingenieur",
+      desc: "Erfahrung in Softwareentwicklung, Linux-Systemen, Anwendungsentwicklung und Infrastruktur.",
+    },
+  ],
+  fr: [
+    {
+      period: "AOÛT 2025 — PRÉSENT",
+      role: "Ingénieur logiciel",
+      desc: "Développement logiciel, architecture technique et technologies cloud-native incluant opérateurs et contrôleurs Kubernetes.",
+    },
+    {
+      period: "OCT 2022 — JUIN 2025",
+      role: "Ingénieur DevOps",
+      desc: "Infrastructure cloud IA privée, plateformes Kubernetes, CI/CD, supervision, alertes et automatisation.",
+    },
+    {
+      period: "JANV 2022 — SEPT 2022",
+      role: "Ingénieur DevOps",
+      desc: "Automatisation d'infrastructure et missions d'ingénierie DevOps.",
+    },
+    {
+      period: "2019 — 2022",
+      role: "Développeur logiciel / Ingénieur DevOps",
+      desc: "Expérience en développement logiciel, systèmes Linux, conception d'applications et infrastructure.",
+    },
+  ],
+  it: [
+    {
+      period: "AGO 2025 — OGGI",
+      role: "Ingegnere software",
+      desc: "Sviluppo software, architettura tecnica e tecnologie cloud-native inclusi operator e controller Kubernetes.",
+    },
+    {
+      period: "OTT 2022 — GIU 2025",
+      role: "Ingegnere DevOps",
+      desc: "Infrastruttura cloud AI privata, piattaforme Kubernetes, CI/CD, monitoraggio, alerting e automazione.",
+    },
+    {
+      period: "GEN 2022 — SET 2022",
+      role: "Ingegnere DevOps",
+      desc: "Automazione dell'infrastruttura e attività ingegneristiche DevOps.",
+    },
+    {
+      period: "2019 — 2022",
+      role: "Sviluppatore software / Ingegnere DevOps",
+      desc: "Esperienza in sviluppo software, sistemi Linux, ingegneria delle applicazioni e infrastruttura.",
+    },
+  ],
+  ar: [
+    {
+      period: "أغسطس 2025 — الآن",
+      role: "مهندس برمجيات",
+      desc: "تطوير البرمجيات والهندسة التقنية وتقنيات السحابة الأصلية بما في ذلك مشغلات ومتحكمات Kubernetes.",
+    },
+    {
+      period: "أكتوبر 2022 — يونيو 2025",
+      role: "مهندس DevOps",
+      desc: "بنية تحتية سحابية خاصة للذكاء الاصطناعي ومنصات Kubernetes وCI/CD والمراقبة والتنبيه والأتمتة.",
+    },
+    {
+      period: "يناير 2022 — سبتمبر 2022",
+      role: "مهندس DevOps",
+      desc: "أتمتة البنية التحتية ومهام هندسة DevOps.",
+    },
+    {
+      period: "2019 — 2022",
+      role: "مطور برمجيات / مهندس DevOps",
+      desc: "خبرة في تطوير البرمجيات وأنظمة Linux وتطوير التطبيقات والبنية التحتية.",
+    },
+  ],
+};
+
+export const stackCategoryTranslations: Record<string, string[]> = {
+  sk: ["Cloud & Infraštruktúra", "Monitoring & Observabilita", "Programovanie", "Cybersecurity", "Nástroje & Platformy"],
+  en: ["Cloud & Infrastructure", "Monitoring & Observability", "Programming", "Cybersecurity", "Tools & Platforms"],
+  ja: ["クラウド＆インフラ", "監視＆オブザーバビリティ", "プログラミング", "サイバーセキュリティ", "ツール＆プラットフォーム"],
+  sv: ["Moln & Infrastruktur", "Övervakning & Observabilitet", "Programmering", "Cybersäkerhet", "Verktyg & Plattformar"],
+  pl: ["Chmura i Infrastruktura", "Monitoring i Obserwowalność", "Programowanie", "Cyberbezpieczeństwo", "Narzędzia i Platformy"],
+  de: ["Cloud & Infrastruktur", "Monitoring & Observability", "Programmierung", "Cybersicherheit", "Tools & Plattformen"],
+  fr: ["Cloud & Infrastructure", "Supervision & Observabilité", "Programmation", "Cybersécurité", "Outils & Plateformes"],
+  it: ["Cloud & Infrastruttura", "Monitoraggio & Observability", "Programmazione", "Cybersecurity", "Strumenti & Piattaforme"],
+  ar: ["السحابة والبنية التحتية", "المراقبة والقابلية للرصد", "البرمجة", "الأمن السيبراني", "الأدوات والمنصات"],
+};
+
+export const educationTranslations: Record<string, Array<{ period: string; school: string; degree: string }>> = {
+  sk: [
+    {
+      period: "2018 — 2020",
+      school: "Technická univerzita v Košiciach (TUKE)",
+      degree: "Inžinierske štúdium (Ing.) — Informatika",
+    },
+    {
+      period: "2015 — 2018",
+      school: "Technická univerzita v Košiciach (TUKE)",
+      degree: "Bakalárske štúdium (Bc.) — Informatika",
+    },
+  ],
+  en: [
+    {
+      period: "2018 — 2020",
+      school: "Technical University of Košice (TUKE)",
+      degree: "Master's Degree (Ing.) — Computer Science",
+    },
+    {
+      period: "2015 — 2018",
+      school: "Technical University of Košice (TUKE)",
+      degree: "Bachelor's Degree (Bc.) — Computer Science",
+    },
+  ],
+  ja: [
+    {
+      period: "2018年 — 2020年",
+      school: "コシツェ工科大学（TUKE）",
+      degree: "修士課程（Ing.）— 情報科学",
+    },
+    {
+      period: "2015年 — 2018年",
+      school: "コシツェ工科大学（TUKE）",
+      degree: "学士課程（Bc.）— 情報科学",
+    },
+  ],
+  sv: [
+    {
+      period: "2018 — 2020",
+      school: "Tekniska universitetet i Košice (TUKE)",
+      degree: "Masterexamen (Ing.) — Datavetenskap",
+    },
+    {
+      period: "2015 — 2018",
+      school: "Tekniska universitetet i Košice (TUKE)",
+      degree: "Kandidatexamen (Bc.) — Datavetenskap",
+    },
+  ],
+  pl: [
+    {
+      period: "2018 — 2020",
+      school: "Politechnika w Koszycach (TUKE)",
+      degree: "Studia magisterskie (Ing.) — Informatyka",
+    },
+    {
+      period: "2015 — 2018",
+      school: "Politechnika w Koszycach (TUKE)",
+      degree: "Studia inżynierskie/licencjackie (Bc.) — Informatyka",
+    },
+  ],
+  de: [
+    {
+      period: "2018 — 2020",
+      school: "Technische Universität Košice (TUKE)",
+      degree: "Masterstudium (Ing.) — Informatik",
+    },
+    {
+      period: "2015 — 2018",
+      school: "Technische Universität Košice (TUKE)",
+      degree: "Bachelorstudium (Bc.) — Informatik",
+    },
+  ],
+  fr: [
+    {
+      period: "2018 — 2020",
+      school: "Université technique de Košice (TUKE)",
+      degree: "Master (Ing.) — Informatique",
+    },
+    {
+      period: "2015 — 2018",
+      school: "Université technique de Košice (TUKE)",
+      degree: "Licence (Bc.) — Informatique",
+    },
+  ],
+  it: [
+    {
+      period: "2018 — 2020",
+      school: "Università Tecnica di Košice (TUKE)",
+      degree: "Laurea Magistrale (Ing.) — Informatica",
+    },
+    {
+      period: "2015 — 2018",
+      school: "Università Tecnica di Košice (TUKE)",
+      degree: "Laurea Triennale (Bc.) — Informatica",
+    },
+  ],
+  ar: [
+    {
+      period: "2018 — 2020",
+      school: "جامعة كوشيتسه التقنية (TUKE)",
+      degree: "درجة الماجستير (Ing.) — علوم الحاسوب",
+    },
+    {
+      period: "2015 — 2018",
+      school: "جامعة كوشيتسه التقنية (TUKE)",
+      degree: "درجة البكالوريوس (Bc.) — علوم الحاسوب",
+    },
+  ],
+};
