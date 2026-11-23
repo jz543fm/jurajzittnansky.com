@@ -3,8 +3,44 @@ import { env } from 'cloudflare:workers';
 
 export const prerender = false;
 
+const RATE_WINDOW_MS = 60_000;
+const RATE_MAX_REQUESTS = 3;
+const ipHits = new Map<string, { count: number; resetAt: number }>();
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const entry = ipHits.get(ip);
+
+  if (!entry || now > entry.resetAt) {
+    ipHits.set(ip, { count: 1, resetAt: now + RATE_WINDOW_MS });
+    return false;
+  }
+
+  entry.count += 1;
+  if (entry.count > RATE_MAX_REQUESTS) {
+    return true;
+  }
+
+  return false;
+}
+
 export const POST: APIRoute = async ({ request }) => {
   try {
+    const clientIp =
+      request.headers.get('cf-connecting-ip') ||
+      request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
+      'unknown';
+
+    if (isRateLimited(clientIp)) {
+      return new Response(JSON.stringify({ error: 'Too many requests' }), {
+        status: 429,
+        headers: {
+          'Content-Type': 'application/json',
+          'Retry-After': '60',
+        },
+      });
+    }
+
     let body: Record<string, unknown> = {};
     try {
       body = (await request.json()) as Record<string, unknown>;
