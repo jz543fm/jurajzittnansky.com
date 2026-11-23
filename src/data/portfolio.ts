@@ -1017,7 +1017,7 @@ export const educationTranslations: Record<string, Array<{ period: string; schoo
     {
       period: "2015 — 2018",
       school: "Technická univerzita v Košiciach (TUKE)",
-      degree: "Bakalárske štúdium (Bc.) — Informatika",
+      degree: "Bakalárske štúdium (Bc.) — Počítačové siete",
     },
   ],
   en: [
@@ -1029,7 +1029,7 @@ export const educationTranslations: Record<string, Array<{ period: string; schoo
     {
       period: "2015 — 2018",
       school: "Technical University of Košice (TUKE)",
-      degree: "Bachelor's Degree (Bc.) — Computer Science",
+      degree: "Bachelor's Degree (Bc.) — Computer Networks",
     },
   ],
   ja: [
@@ -1041,7 +1041,7 @@ export const educationTranslations: Record<string, Array<{ period: string; schoo
     {
       period: "2015年 — 2018年",
       school: "コシツェ工科大学（TUKE）",
-      degree: "学士課程（Bc.）— 情報科学",
+      degree: "学士課程（Bc.）— コンピュータネットワーク",
     },
   ],
   sv: [
@@ -1053,7 +1053,7 @@ export const educationTranslations: Record<string, Array<{ period: string; schoo
     {
       period: "2015 — 2018",
       school: "Tekniska universitetet i Košice (TUKE)",
-      degree: "Kandidatexamen (Bc.) — Datavetenskap",
+      degree: "Kandidatexamen (Bc.) — Datornätverk",
     },
   ],
   pl: [
@@ -1065,7 +1065,7 @@ export const educationTranslations: Record<string, Array<{ period: string; schoo
     {
       period: "2015 — 2018",
       school: "Politechnika w Koszycach (TUKE)",
-      degree: "Studia inżynierskie/licencjackie (Bc.) — Informatyka",
+      degree: "Studia licencjackie/inżynierskie (Bc.) — Sieci komputerowe",
     },
   ],
   de: [
@@ -1077,7 +1077,7 @@ export const educationTranslations: Record<string, Array<{ period: string; schoo
     {
       period: "2015 — 2018",
       school: "Technische Universität Košice (TUKE)",
-      degree: "Bachelorstudium (Bc.) — Informatik",
+      degree: "Bachelorstudium (Bc.) — Computernetzwerke",
     },
   ],
   fr: [
@@ -1089,7 +1089,7 @@ export const educationTranslations: Record<string, Array<{ period: string; schoo
     {
       period: "2015 — 2018",
       school: "Université technique de Košice (TUKE)",
-      degree: "Licence (Bc.) — Informatique",
+      degree: "Licence (Bc.) — Réseaux informatiques",
     },
   ],
   it: [
@@ -1101,7 +1101,7 @@ export const educationTranslations: Record<string, Array<{ period: string; schoo
     {
       period: "2015 — 2018",
       school: "Università Tecnica di Košice (TUKE)",
-      degree: "Laurea Triennale (Bc.) — Informatica",
+      degree: "Laurea Triennale (Bc.) — Reti di calcolatori",
     },
   ],
   ar: [
@@ -1113,7 +1113,7 @@ export const educationTranslations: Record<string, Array<{ period: string; schoo
     {
       period: "2015 — 2018",
       school: "جامعة كوشيتسه التقنية (TUKE)",
-      degree: "درجة البكالوريوس (Bc.) — علوم الحاسوب",
+      degree: "درجة البكالوريوس (Bc.) — شبكات الحاسوب",
     },
   ],
 };
