@@ -8,6 +8,7 @@ const projectFilters = [
   { id: "kubernetes", label: "Kubernetes" },
   { id: "cybersecurity", label: "Cybersecurity" },
   { id: "monitoring", label: "Monitoring" },
+  { id: "iot", label: "IoT" },
   { id: "tooling", label: "Tooling" },
 ];
 ---
@@ -228,7 +229,7 @@ const projectFilters = [
 
             <div id="terminal-output" class="space-y-2 p-5 font-['JetBrains_Mono'] text-xs sm:text-sm max-h-64 overflow-y-auto">
               <p><span class="text-emerald-400 font-bold">$</span> whoami</p>
-              <p class="text-zinc-300 pl-4">software-engineer</p>
+              <p class="text-zinc-300 pl-4">Software Engineer · DevOps Engineer · SRE · Integration Developer</p>
               <p><span class="text-emerald-400 font-bold">$</span> focus --list | awk &apos;&#123;print $0&#125;&apos;</p>
               <div class="text-zinc-400 pl-4 space-y-0.5">
                 <p><span class="text-emerald-400/70">01</span> cloud-native & kubernetes</p>
@@ -409,6 +410,8 @@ const projectFilters = [
               ? "cybersecurity"
               : proj.num.toLowerCase().includes("monitoring")
               ? "monitoring"
+              : proj.num.toLowerCase().includes("iot")
+              ? "iot"
               : "tooling";
             return (
               <a
@@ -714,8 +717,8 @@ const projectFilters = [
         sk: {
           help: 'Príkazy: whoami, focus, stack, projects, man, lang <code>, contact, clear',
           man: 'NAME: juraj-cli — cloud-native, kubernetes, linux, security & automation portfolio',
-          whoami: 'Ing. Juraj Žittňanský — Softvérový a DevOps inžinier (Slovensko)',
-          focus: '• cloud-native • distribuované systémy • kybernetická bezpečnosť',
+          whoami: 'Ing. Juraj Žittňanský — Softvérový inžinier, DevOps Engineer, SRE a Integration Developer (Slovensko)',
+          focus: '• cloud-native, devops & sre • distribuované systémy & integrácie • kybernetická bezpečnosť',
           langSwitched: (code) => `Jazyk prepnutý na: ${code.toUpperCase()}`,
           langAvailable: (list) => `Dostupné jazyky: ${list}`,
           notFound: (raw) => `bash: ${raw}: príkaz sa nenašiel (skús 'help')`,
@@ -723,8 +726,8 @@ const projectFilters = [
         en: {
           help: 'Commands: whoami, focus, stack, projects, man, lang <code>, contact, clear',
           man: 'NAME: juraj-cli — cloud-native, kubernetes, linux, security & automation portfolio',
-          whoami: 'Ing. Juraj Žittňanský — Software & DevOps Engineer (Slovakia)',
-          focus: '• cloud-native • distributed-systems • cybersecurity',
+          whoami: 'Ing. Juraj Žittňanský — Software Engineer, DevOps Engineer, SRE & Integration Developer (Slovakia)',
+          focus: '• cloud-native, devops & sre • distributed-systems & integrations • cybersecurity',
           langSwitched: (code) => `Language switched to: ${code.toUpperCase()}`,
           langAvailable: (list) => `Available languages: ${list}`,
           notFound: (raw) => `bash: ${raw}: command not found (try 'help')`,
@@ -732,8 +735,8 @@ const projectFilters = [
         sv: {
           help: 'Kommandon: whoami, focus, stack, projects, man, lang <code>, contact, clear',
           man: 'NAME: juraj-cli — portfölj för cloud-native, kubernetes, linux, säkerhet och automatisering',
-          whoami: 'Ing. Juraj Žittňanský — Mjukvaru- och DevOps-ingenjör (Slovakien)',
-          focus: '• cloud-native • distribuerade system • cybersäkerhet',
+          whoami: 'Ing. Juraj Žittňanský — Mjukvaruingenjör, DevOps Engineer, SRE & Integration Developer (Slovakien)',
+          focus: '• cloud-native, devops & sre • distribuerade system & integrationer • cybersäkerhet',
           langSwitched: (code) => `Språket har bytts till: ${code.toUpperCase()}`,
           langAvailable: (list) => `Tillgängliga språk: ${list}`,
           notFound: (raw) => `bash: ${raw}: kommandot hittades inte (prova 'help')`,
@@ -741,8 +744,8 @@ const projectFilters = [
         de: {
           help: 'Befehle: whoami, focus, stack, projects, man, lang <code>, contact, clear',
           man: 'NAME: juraj-cli — Portfolio für Cloud-Native, Kubernetes, Linux, Sicherheit und Automatisierung',
-          whoami: 'Ing. Juraj Žittňanský — Software- und DevOps-Ingenieur (Slowakei)',
-          focus: '• cloud-native • verteilte systeme • cybersicherheit',
+          whoami: 'Ing. Juraj Žittňanský — Software-Ingenieur, DevOps Engineer, SRE & Integration Developer (Slowakei)',
+          focus: '• cloud-native, devops & sre • verteilte systeme & integrationen • cybersicherheit',
           langSwitched: (code) => `Sprache gewechselt zu: ${code.toUpperCase()}`,
           langAvailable: (list) => `Verfügbare Sprachen: ${list}`,
           notFound: (raw) => `bash: ${raw}: Befehl nicht gefunden (versuche 'help')`,
@@ -750,8 +753,8 @@ const projectFilters = [
         ar: {
           help: 'الأوامر: whoami, focus, stack, projects, man, lang <code>, contact, clear',
           man: 'NAME: juraj-cli — ملف أعمال للأنظمة السحابية وكوبرنيتيس ولينكس والأمن والأتمتة',
-          whoami: 'م. يوراي جيتنيانسكي — مهندس برمجيات وDevOps (سلوفاكيا)',
-          focus: '• سحابي • أنظمة موزعة • أمن سيبراني',
+          whoami: 'م. يوراي جيتنيانسكي — مهندس برمجيات ومهندس DevOps وSRE ومطور تكامل أنظمة (سلوفاكيا)',
+          focus: '• سحابي وDevOps وSRE • أنظمة موزعة وتكامل • أمن سيبراني',
           langSwitched: (code) => `تم تغيير اللغة إلى: ${code.toUpperCase()}`,
           langAvailable: (list) => `اللغات المتاحة: ${list}`,
           notFound: (raw) => `bash: ${raw}: الأمر غير موجود (جرّب 'help')`,
@@ -759,8 +762,8 @@ const projectFilters = [
         ja: {
           help: 'コマンド: whoami, focus, stack, projects, man, lang <code>, contact, clear',
           man: 'NAME: juraj-cli — クラウドネイティブ、Kubernetes、Linux、セキュリティ、自動化のポートフォリオ',
-          whoami: 'Ing. Juraj Žittňanský — ソフトウェア＆DevOpsエンジニア（スロバキア）',
-          focus: '• クラウドネイティブ • 分散システム • サイバーセキュリティ',
+          whoami: 'Ing. Juraj Žittňanský — ソフトウェアエンジニア、DevOps エンジニア、SRE ＆ インテグレーション開発者（スロバキア）',
+          focus: '• クラウドネイティブ・DevOps・SRE • 分散システム＆システム連携 • サイバーセキュリティ',
           langSwitched: (code) => `言語を切り替えました: ${code.toUpperCase()}`,
           langAvailable: (list) => `利用可能な言語: ${list}`,
           notFound: (raw) => `bash: ${raw}: コマンドが見つかりません ('help' を試してください)`,
@@ -768,8 +771,8 @@ const projectFilters = [
         fr: {
           help: 'Commandes : whoami, focus, stack, projects, man, lang <code>, contact, clear',
           man: 'NAME: juraj-cli — portfolio cloud-native, kubernetes, linux, sécurité et automatisation',
-          whoami: 'Ing. Juraj Žittňanský — Ingénieur logiciel et DevOps (Slovaquie)',
-          focus: '• cloud-native • systèmes distribués • cybersécurité',
+          whoami: 'Ing. Juraj Žittňanský — Ingénieur logiciel, DevOps Engineer, SRE & Integration Developer (Slovaquie)',
+          focus: '• cloud-native, devops & sre • systèmes distribués & intégrations • cybersécurité',
           langSwitched: (code) => `Langue changée en : ${code.toUpperCase()}`,
           langAvailable: (list) => `Langues disponibles : ${list}`,
           notFound: (raw) => `bash: ${raw}: commande introuvable (essayez 'help')`,
@@ -777,8 +780,8 @@ const projectFilters = [
         it: {
           help: 'Comandi: whoami, focus, stack, projects, man, lang <code>, contact, clear',
           man: 'NAME: juraj-cli — portfolio cloud-native, kubernetes, linux, sicurezza e automazione',
-          whoami: 'Ing. Juraj Žittňanský — Ingegnere software e DevOps (Slovacchia)',
-          focus: '• cloud-native • sistemi distribuiti • cybersecurity',
+          whoami: 'Ing. Juraj Žittňanský — Ingegnere software, DevOps Engineer, SRE & Integration Developer (Slovacchia)',
+          focus: '• cloud-native, devops & sre • sistemi distribuiti & integrazioni • cybersecurity',
           langSwitched: (code) => `Lingua impostata su: ${code.toUpperCase()}`,
           langAvailable: (list) => `Lingue disponibili: ${list}`,
           notFound: (raw) => `bash: ${raw}: comando non trovato (prova 'help')`,
@@ -786,8 +789,8 @@ const projectFilters = [
         pl: {
           help: 'Polecenia: whoami, focus, stack, projects, man, lang <code>, contact, clear',
           man: 'NAME: juraj-cli — portfolio cloud-native, kubernetes, linux, bezpieczeństwo i automatyzacja',
-          whoami: 'Ing. Juraj Žittňanský — Inżynier oprogramowania i DevOps (Słowacja)',
-          focus: '• cloud-native • systemy rozproszone • cyberbezpieczeństwo',
+          whoami: 'Ing. Juraj Žittňanský — Inżynier oprogramowania, DevOps Engineer, SRE i Integration Developer (Słowacja)',
+          focus: '• cloud-native, devops & sre • systemy rozproszone i integracje • cyberbezpieczeństwo',
           langSwitched: (code) => `Zmieniono język na: ${code.toUpperCase()}`,
           langAvailable: (list) => `Dostępne języki: ${list}`,
           notFound: (raw) => `bash: ${raw}: nie znaleziono polecenia (wpisz 'help')`,
@@ -802,7 +805,7 @@ const projectFilters = [
         man: () => getTermDict().man,
         whoami: () => getTermDict().whoami,
         focus: () => getTermDict().focus,
-        stack: () => 'Kubernetes, Docker, Helm, Kustomize, Terraform, Java, TS, Node.js, Linux',
+        stack: () => 'Kubernetes, Docker, Podman, Helm, Kustomize, Terraform, Loki, Java, TS, Node.js, Linux',
         projects: () => projects.map((p) => p.title).join(' · '),
         contact: () => `${email} | github.com/jz543fm`,
       };
